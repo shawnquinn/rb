@@ -1,0 +1,25 @@
+// Use this file to overwrite the basic Bootstrap variables and add your own variables
+// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
+// Just copy a variable from /sass/bootstrap/_variables.scss, paste it here and edit the value.
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700|Roboto+Slab:400,700|Libre+Baskerville:400i');
+
+@mixin h-100 {
+  height: 100%;
+}
+
+// Theme Colors
+$brand-primary: #169BBF; // Brand Blue for HomeAidSD
+
+$brand-accent: #1DE0FF; //
+$brand-primary-dark: #0C5366;
+$brand-black: #454545; // Offset Black (Dark Grey) Color
+$brand-grey-dark: $brand-black;
+$white: #ffffff;
+$white-off: #D1D1D1;
+$black: #212121;
+
+// Font Stack
+$font-header: 'Roboto Slab', serif;
+$font-body: 'Open Sans', sans-serif;
+$font-secondary: 'Libre Baskerville', serif;
