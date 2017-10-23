@@ -25,7 +25,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <body <?php body_class(); ?>>
 
-
+<?php if (is_front_page()) : ?>
 		<div id="preloader">
 		  <div id="status">
 				<img id="preload-logo" class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/logo-black.png" alt="<?php echo bloginfo() ?>">
@@ -37,11 +37,15 @@ $container = get_theme_mod( 'understrap_container_type' );
      </div>
 		</div>
 
+	<?php endif; ?>
 
-	<div id="left"></div>
-	<div id="right"></div>
-	<div id="top"></div>
-	<div id="bottom"></div>
+
+	<div class="frame">
+		<div id="left"></div>
+		<div id="right"></div>
+		<div id="top"></div>
+		<div id="bottom"></div>
+	</div>
 
 	<div id="slideoutnav" class="sidenav">
 	  <a href="javascript:void(0)" id="close-button" class="closebtn nav-button" onclick="closeNav()"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/arrow-left.svg" /><span>Close Menu</span></a>
@@ -160,12 +164,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	</div><!-- .wrapper-navbar end -->
 
-	<div class="site-wrapper-inner" id="page">
-		<?php //get_template_part('home-hero'); ?>
-		<div class="bxslider">
-			<div class="slides slide-1"></div>
-			<div class="slides slide-2"></div>
-			<div class="slides slide-3"></div>
-		</div>
-
-		<div class="cover-container">
+	<div class="bxslider">
+		<div class="slides slide-1"></div>
+		<div class="slides slide-2"></div>
+		<div class="slides slide-3"></div>
+	</div>

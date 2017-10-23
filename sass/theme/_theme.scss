@@ -21,7 +21,7 @@
 
 body {
   font-family: $font-body;
-  color: $brand-black;
+  color: $white;
 }
 // Body Border
 #bottom,
@@ -236,6 +236,7 @@ h3,
 h4,
 h5,
 h6 {
+  color: $white;
   font-family: $font-header;
   font-weight: 700;
 }
@@ -755,6 +756,23 @@ h6 {
 
 
 // Layout
+
+.wrapper {
+  position: relative;
+  z-index: 99;
+  height: 100vh;
+  #content {
+    position: relative;
+  }
+}
+
+.logo-inside {
+  position: absolute;
+  right: 1rem;
+  width: 200px;
+  margin-top: 1.2rem;
+}
+
 .cover-container {
   position: relative;
   z-index: 100;
@@ -767,4 +785,8 @@ h6 {
       font-weight: 300;
     }
   }
+}
+
+.entry-header {
+
 }

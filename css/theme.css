@@ -13053,7 +13053,7 @@ ul.bxslider {
 
 body {
   font-family: "Mosk", sans-serif;
-  color: #212121; }
+  color: #ffffff; }
 
 #bottom,
 #left,
@@ -13241,6 +13241,7 @@ h3,
 h4,
 h5,
 h6 {
+  color: #ffffff;
   font-family: "Open Sans", serif;
   font-weight: 700; }
 
@@ -13650,6 +13651,19 @@ h6 {
 .bx-viewport, .bxslider {
   height: 100% !important; }
 
+.wrapper {
+  position: relative;
+  z-index: 99;
+  height: 100vh; }
+  .wrapper #content {
+    position: relative; }
+
+.logo-inside {
+  position: absolute;
+  right: 1rem;
+  width: 200px;
+  margin-top: 1.2rem; }
+
 .cover-container {
   position: relative;
   z-index: 100; }
@@ -13756,6 +13770,7 @@ body {
  * Footer
  */
 .mastfoot {
+  z-index: 99;
   color: white; }
 
 /*

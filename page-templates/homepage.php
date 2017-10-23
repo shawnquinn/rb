@@ -15,6 +15,11 @@ get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
+<div class="site-wrapper-inner" id="page">
+	<?php //get_template_part('home-hero'); ?>
+
+<div class="cover-container">
+
 <div class="wrapper home-page" id="full-width-page-wrapper" hidden>
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" hidden>
@@ -51,10 +56,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 </div><!-- Wrapper end -->
 
 			<main role="main" class="inner cover">
-				<h1 class="cover-heading animated fadeIn"><img class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php echo esc_html_e('', 'understrap') ?>"></h1>
+				<h1 class="cover-heading"><img class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php echo esc_html_e('', 'understrap') ?>"></h1>
 				<p class="lead text-center">Long-term colleagues formed a new law firm to advise clients, try lawsuits, and provide real value in an era of challenge and change.</p>
-
-
 			</main>
+
+</div><!-- end cover-container -->
+
+</div><!-- end site-wrapper-inner -->
 
 <?php get_footer(); ?>
