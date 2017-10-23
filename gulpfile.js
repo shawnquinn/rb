@@ -18,7 +18,7 @@ var browserSyncWatchFiles = [
 // browser-sync options
 // see: https://www.browsersync.io/docs/options/
 var browserSyncOptions = {
-    proxy: "localhost:8888/sandbox/",
+    proxy: "localhost:8888/ctm/",
     notify: false
 };
 
@@ -133,22 +133,6 @@ gulp.task('sass', function () {
     return stream;
 });
 
-gulp.task('sass-materialize', function () {
-    var stream = gulp.src('./sass/materialize/*.scss')
-        .pipe(plumber({
-            errorHandler: function (err) {
-                console.log(err);
-                this.emit('end');
-            }
-        }))
-        .pipe(sourcemaps.init()) // add this
-        .pipe(sass())
-        .pipe( autoprefixer( AUTOPREFIXER_BROWSERS ) )
-        .pipe(sourcemaps.write('./')) // add this
-        .pipe(gulp.dest('./css'))
-    return stream;
-});
-
 
 // Run:
 // gulp watch
@@ -165,7 +149,7 @@ gulp.task('watch', function () {
 // gulp imagemin
 // Running image optimizing task
 gulp.task('imagemin', function(){
-    gulp.src('img/src/**')
+    gulp.src('img-src/**')
     .pipe(imagemin())
     .pipe(gulp.dest('img'))
 });
@@ -204,28 +188,13 @@ gulp.task('minify-css', function() {
     .pipe(gulp.dest('./css/'));
 });
 
-gulp.task('minify-materialize-css', function() {
-  return gulp.src('./css/materialize.css')
-  .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(cleanCSS({compatibility: '*'}))
-    .pipe(plumber({
-            errorHandler: function (err) {
-                console.log(err);
-                this.emit('end');
-            }
-        }))
-    .pipe(rename({suffix: '.min'}))
-     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./css/'));
-});
-
 gulp.task('cleancss', function() {
   return gulp.src('./css/*.min.css', { read: false }) // much faster
     .pipe(ignore('theme.css'))
     .pipe(rimraf());
 });
 
-gulp.task('styles', function(callback){ gulpSequence('sass', 'minify-css', 'sass-materialize', 'minify-materialize-css')(callback) });
+gulp.task('styles', function(callback){ gulpSequence('sass', 'minify-css')(callback) });
 
 
 // Run:
@@ -254,20 +223,8 @@ gulp.task('scripts', function() {
         // End - All BS4 stuff
         basePaths.dev + 'js/skip-link-focus-fix.js',
 
-        // Materialize JS
-        basePaths.dev + 'js/materialize.min.js',
-
         // BXSlider
         basePaths.dev + 'js/jquery.bxslider.min.js',
-
-        // Rellax JS
-        basePaths.dev + 'js/rellax.js',
-
-        // WayPoints JS
-        basePaths.dev + 'js/jquery.waypoints.min.js',
-
-        // CounterUp JS
-        basePaths.dev + 'js/jquery.counterup.min.js',
 
         // WOW js
         basePaths.dev + 'js/wow.js',
@@ -288,6 +245,11 @@ gulp.task('scripts', function() {
 // Deleting any file inside the /src folder
 gulp.task('clean-source', function () {
   return del(['src/**/*',]);
+});
+
+// Clean Img folder
+gulp.task('clean-img', function () {
+  return del(['img/**/*',]);
 });
 
 // Run:

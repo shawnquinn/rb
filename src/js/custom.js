@@ -1,62 +1,54 @@
 // Custom JavaScript File
+
+// Init Wow Effects
 new WOW().init();
 
-var rellax = new Rellax('.rellax', {
-  speed: -2,
-  center: false,
-  round: true
-});
+// Custom Nav SlideOut
+function openNav() {
+    document.getElementById("slideoutnav").style.width = "60%";
+    document.getElementById("close-button").style.opacity = "1";
+}
 
+function closeNav() {
+    document.getElementById("slideoutnav").style.width = "0";
+    document.getElementById("close-button").style.opacity = "0";
+}
+
+// IIFE for jQuery
 ( function( $ ) {
-
   // Carousel Main
-  $(".carousel-item").first().addClass( "active" );
+  //$(".carousel-item").first().addClass( "active" );
 
-  // Click toggle Accordion
-  var $link = $('.card h5 a');
-  var $collapsed = $('.card h5 a.collapsed');
-  $link.on('click', function() {
-    $(this).children('.plus-minus').find('i.fa').toggleClass('fa-minus');
+  //Animate
+  //$("#slide-nav").css({opacity: 0});
+
+  $('#close-button').click(function() {
+    $('#slide-nav').css({opacity:0});
   });
 
-  //Bx Slider - Ticker
+  $('#open-button').click(function() {
+    $('#slide-nav').delay(300).animate({opacity: 1}, 500, "swing");
+  });
+
+
+  // Preloader
+  $(window).on('load', function() { // makes sure the whole site is loaded
+    $('#status').delay(2500).fadeOut(); // will first fade out the loading animation
+    $('#preloader').delay(3000).fadeOut(1500); // will fade out the white DIV that covers the website.
+    $('body').delay(350).css({'overflow':'visible'});
+  })
+
+  //Homepage BG Slider
   $('.bxslider').bxSlider({
-    minSlides: 4,
-    maxSlides: 4,
-    useCSS: false,
-    slideWidth: 200,
-    slideMargin: 50,
-    ticker: true,
-    speed: 32000,
-    tickerHover: true
+    auto: true,
+    mode: 'fade',
+    speed: 3000,
+    pause: 7000,
+    responsive: true,
+    pager: false,
+    randomStart: true,
   });
 
-  // ScrollToTop
-  $(window).scroll(function(){
-		if ($(this).scrollTop() > 500) {
-			$('.scrollToTop').fadeIn();
-		} else {
-			$('.scrollToTop').fadeOut();
-		}
-	});
-
-	//Click event to scroll to top
-	$('.scrollToTop').click(function(){
-		$('html, body').animate({scrollTop : 0},800);
-		return false;
-	});
-
-} )( jQuery );
 
 
-( function( $ ) {
-  $('.counter').counterUp({
-    delay: 50,
-    time: 2000,
-    offset: 100,
-    // beginAt: 100,
-    // formatter: function (n) {
-    //   return n.replace(/,/g, '.');
-    // }
-  });
 } )( jQuery );

@@ -45,6 +45,9 @@ if ( ! function_exists( 'understrap_setup' ) ) :
 			'primary' 	=> __( 'Primary Menu', 'understrap' ),
 			'secondary' => __( 'Secondary Menu', 'understrap' ),
 			'footer' 		=> __( 'Footer Menu', 'understrap' ),
+			'litigation' 		=> __( 'Litigation', 'understrap' ),
+			'corporate' 		=> __( 'Corporate', 'understrap' ),
+			'attorneys' 		=> __( 'Attorneys', 'understrap' ),
 		) );
 
 		/*

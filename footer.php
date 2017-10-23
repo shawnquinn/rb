@@ -13,67 +13,33 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php get_sidebar( 'footerfull' ); ?>
 
+		<footer class="container-fluid mastfoot">
+			<div class="row inner">
+				<div class="col-6 mr-auto px-0 d-flex align-items-center">
+					<div class="logo-mini mr-3">
+						<a href="<?php echo esc_url( home_url('') ) ?>"><img class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/logo-mini.png" alt="<?php echo bloginfo() ?>"></a>
+					</div>
+					<div class="copy">
+						<p class="in-touch">GET IN TOUCH:  <a href="tel:+1-312-123-4567"><?php echo esc_html_e('312.123.4567', 'understrap') ?></a> / <a href="mailto:kate@reiterburns.com"><?php echo esc_html_e('kate@reiterburns.com', 'understrap') ?></a></p>
+						<p><?php echo esc_html_e('155 North Wacker Drive, Chicago, IL 60606, USA.', 'understrap') ?></p>
+					</div>
+				</div>
 
-
-<div class="wrapper" id="wrapper-footer">
-
-	<div class="<?php echo esc_attr( $container ); ?>">
-
-		<div class="row">
-			<div class="col-12">
-				<img class="footer-logo img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/logo-white.png" alt="<?php echo esc_html_e('HomeAid San Diego', 'understrap') ?>">
-				<address class="homeaid text-center">
-					6960 Flanders Dr., San Diego, CA 92121 | (858) 793-6292	|	info@homeaidsd.org
-				</address>
+				<div class="col-6 px-0 text-right">
+						<p><a href="<?php echo esc_url( home_url('') ) ?>"><?php echo esc_html_e('Terms &amp; Conditions', 'understrap') ?></a> / <a href="<?php echo esc_url( home_url('') ) ?>"><?php echo esc_html_e('Privacy Policy', 'understrap') ?></a>.</p>
+						<p>Copyright &copy; <?php echo date('Y'); ?> Reiter Burns LLC.</p>
+				</div>
 			</div>
-		</div>
+		</footer>
 
-		<div class="row">
+		</div><!-- end cover-container -->
 
-			<div class="col-md-12">
-
-				<footer class="site-footer" id="colophon">
-
-					<?php wp_nav_menu(
-						array(
-							'theme_location'  => 'footer',
-							'container_class' => 'justify-content-center',
-							'container_id'    => 'navbarNavDropdown',
-							'menu_class'      => 'navbar-nav',
-							'fallback_cb'     => '',
-							'menu_id'         => 'footer-menu',
-							'walker'          => new WP_Bootstrap_Navwalker(),
-						)
-					); ?>
-
-
-					<div class="site-info text-center" hidden>
-
-							<a href="<?php  echo esc_url( __( 'http://wordpress.org/','understrap' ) ); ?>"><?php printf(
-							/* translators:*/
-							esc_html__( 'Proudly powered by %s', 'understrap' ),'WordPress' ); ?></a>
-								<span class="sep"> | </span>
-
-							<?php printf( // WPCS: XSS ok.
-							/* translators:*/
-								esc_html__( 'Theme: %1$s by %2$s.', 'understrap' ), $the_theme->get( 'Name' ),  '<a href="'.esc_url( __('http://understrap.com', 'understrap')).'">understrap.com</a>' ); ?>
-
-							(<?php printf( // WPCS: XSS ok.
-							/* translators:*/
-								esc_html__( 'Version: %1$s', 'understrap' ), $the_theme->get( 'Version' ) ); ?>)
-					</div><!-- .site-info -->
-
-				</footer><!-- #colophon -->
-
-			</div><!--col end -->
-
-		</div><!-- row end -->
-
-	</div><!-- container end -->
-
-</div><!-- wrapper end -->
+	</div><!-- end site-wrapper-inner -->
 
 </div><!-- #page we need this extra closing tag here -->
+
+<script src="https://use.typekit.net/rgx3fsq.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 <?php wp_footer(); ?>
 
