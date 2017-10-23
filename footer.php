@@ -38,9 +38,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 </div><!-- #page we need this extra closing tag here -->
 
-<script src="https://use.typekit.net/rgx3fsq.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
-
 <?php wp_footer(); ?>
 
 </body>

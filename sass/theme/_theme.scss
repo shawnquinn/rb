@@ -70,30 +70,55 @@ body {
 //Preloader Styles
 #preloader {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   /* change if the mask should have another color then white */
   z-index: 999999;
+  height: 100vh;
+  width: 100vw;
   /* makes sure it stays on top */
 }
 
 #status {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 7rem;
+}
+
+#preload-logo {
+  transition: all 1.5s ease-in-out;
+  //transform: scale(0);
+  opacity: 0;
+  &.loaded {
+    //transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#progressive {
   position: absolute;
-  left: 50%;
-  /* centers the loading animation horizontally one the screen */
-  top: 50%;
-  /* centers the loading animation vertically one the screen */
-  background-image: url(https://raw.githubusercontent.com/niklausgerber/PreLoadMe/master/img/status.gif);
-  /* path to your loading animation */
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: -100px 0 0 -100px;
-  /* is width and height divided by two */
+  width: 100vw;
+  height: 3px;
+  z-index: 15;
+  top: 60%;
+  left: 0;
+  margin: 0;
+  transition: all .3s linear;
+  opacity: 1;
+  &.dumped {
+    opacity: 0;
+  }
+  .progress {
+    border-radius: 0;
+    height: 3px;
+    background-color: $brand-grey;
+    .progress-bar {
+      background-color: $brand-primary;
+      transition: width 1.5s ease-in-out;
+    }
+  }
 }
 
 // Header Styles
@@ -543,8 +568,15 @@ h6 {
   }
 
   h4 {
-    font-size: 34px;
+    font-size: 32px;
     margin: 1rem 0;
+    @media screen and (max-width: 1430px) {
+      font-size: 24px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      font-size: 22px;
+    }
 
     &::after {
       display: block;
@@ -580,7 +612,10 @@ h6 {
   transition: 0.5s;
   /* 0.5 second transition effect to slide in the sidenav */
   background-color: $brand-primary;
-  box-shadow: 80px 0 0 rgba($brand-primary, .9), 160px 0 1px rgba($brand-primary, .6), 240px 0 2px rgba($brand-primary, .3);
+  box-shadow: 0 0 0 rgba($brand-primary, .9), 0 0 1px rgba($brand-primary, .6), 0 0 2px rgba($brand-primary, .3);
+  &.shadowed {
+    box-shadow: 80px 0 0 rgba($brand-primary, .9), 160px 0 1px rgba($brand-primary, .6), 240px 0 2px rgba($brand-primary, .3);
+  }
 }
 /* The navigation menu links */
 .navbar-nav a {

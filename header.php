@@ -26,8 +26,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 <body <?php body_class(); ?>>
 
 
-		<div id="preloader" hidden>
-		  <div id="status"><img class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/logo-black.png" alt="<?php echo bloginfo() ?>"></div>
+		<div id="preloader">
+		  <div id="status">
+				<img id="preload-logo" class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/logo-black.png" alt="<?php echo bloginfo() ?>">
+			</div>
+			<div id="progressive">
+        <div class="progress" >
+            <div class="progress-bar" role="progressbar" data-transitiongoal="100"></div>
+        </div>
+     </div>
 		</div>
 
 
