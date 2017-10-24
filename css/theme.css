@@ -13481,8 +13481,8 @@ h6 {
   text-align: left;
   opacity: 0; }
   #slide-nav .menu-logo {
-    max-width: 275px;
     width: 100%;
+    max-width: 275px;
     height: auto; }
     @media (max-width: 575px) {
       #slide-nav .menu-logo {
@@ -13513,12 +13513,12 @@ h6 {
     @media (max-width: 1199px) {
       #slide-nav h4 {
         font-size: 22px; } }
-    @media screen and (max-width: 1430px) {
-      #slide-nav h4 {
-        font-size: 24px; } }
     @media (max-width: 767px) {
       #slide-nav h4 {
         font-size: 18px; } }
+    @media screen and (max-width: 1430px) {
+      #slide-nav h4 {
+        font-size: 24px; } }
     #slide-nav h4::after {
       display: block;
       width: 90%;
@@ -13556,37 +13556,65 @@ h6 {
     -webkit-box-shadow: 80px 0 0 rgba(23, 76, 161, 0.9), 160px 0 1px rgba(23, 76, 161, 0.6), 240px 0 2px rgba(23, 76, 161, 0.3);
             box-shadow: 80px 0 0 rgba(23, 76, 161, 0.9), 160px 0 1px rgba(23, 76, 161, 0.6), 240px 0 2px rgba(23, 76, 161, 0.3); }
 
-#nav-contact-info p, #nav-contact-info address {
+#nav-contact-info address,
+#nav-contact-info p {
   font-family: "museo-sans", museo-sans, sans-serif;
   font-size: 14px;
   font-weight: 600; }
 
 #nav-contact-info p {
-  color: #000;
   margin: 0;
-  text-transform: uppercase; }
-  #nav-contact-info p span, #nav-contact-info p address {
-    color: #ffffff;
+  text-transform: uppercase;
+  color: #000; }
+  #nav-contact-info p address,
+  #nav-contact-info p span {
     display: block;
-    margin: 0; }
+    margin: 0;
+    color: #ffffff; }
   #nav-contact-info p span.tel {
     font-size: 25px; }
   #nav-contact-info p span.email {
     text-transform: lowercase; }
 
 /* The navigation menu links */
-.navbar-nav a {
+.navbar-nav li.current-menu-item a {
+  color: #000; }
+  .navbar-nav li.current-menu-item a::before {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    padding-right: 1.5rem;
+    content: '';
+    background: url("../img/svg/bullet-black.svg") no-repeat; }
+  .navbar-nav li.current-menu-item a::after {
+    position: absolute;
+    top: 0;
+    left: -1.5rem;
+    display: block;
+    width: 24px;
+    height: 20px;
+    content: '';
+    background: url("../img/svg/arrow-black.svg") no-repeat; }
+
+.navbar-nav li a {
   font-family: "museo-sans", museo-sans, sans-serif;
   font-size: 14px;
-  padding-left: 1rem;
-  font-weight: 600; }
-  .navbar-nav a::before {
+  font-weight: 600;
+  position: relative;
+  padding-left: 1rem; }
+  .navbar-nav li a:hover {
+    text-decoration: none;
+    color: #000; }
+  .navbar-nav li a::before {
     display: inline-block;
     width: 10px;
     height: 10px;
     padding-right: 1.5rem;
     content: '';
     background: url("../img/svg/bullet.svg") no-repeat; }
+  .navbar-nav li a:hover::before {
+    content: '';
+    background: url("../img/svg/bullet-black.svg") no-repeat; }
 
 /* When you mouse over the navigation links, change their color */
 .offcanvas a:focus,
@@ -13615,8 +13643,8 @@ h6 {
         -ms-transform: scale(1) translateX(-10px);
             transform: scale(1) translateX(-10px); }
   .sidenav .closebtn span {
-    font-size: 14px;
     font-family: "museo-sans", museo-sans, sans-serif;
+    font-size: 14px;
     display: block;
     margin-top: 0.55rem;
     text-transform: uppercase;
@@ -13624,7 +13652,7 @@ h6 {
 
 .openbtn {
   position: absolute;
-  z-index: 100;
+  z-index: 1001;
   top: 3rem;
   left: 3rem; }
   @media (max-width: 575px) {
@@ -13642,18 +13670,18 @@ h6 {
     transition: transform 0.2s ease, -webkit-transform 0.2s ease; }
     @media (max-width: 575px) {
       .openbtn img {
-        height: 25px;
         width: auto;
+        height: 25px;
         margin: 0; } }
   .openbtn:hover img {
     -webkit-transform: scale(0.9);
         -ms-transform: scale(0.9);
             transform: scale(0.9); }
   .openbtn span {
-    font-size: 14px;
     font-family: "museo-sans", museo-sans, sans-serif;
-    display: block;
+    font-size: 14px;
     font-weight: 500;
+    display: block;
     margin-top: 1rem;
     -webkit-transition: color 0.2s ease;
     transition: color 0.2s ease;
@@ -13733,11 +13761,11 @@ h6 {
   @media (max-width: 767px) {
     .logo-inside {
       position: relative;
-      margin-top: 2rem;
       right: 0;
+      width: 250px;
+      margin-top: 2rem;
       margin-right: auto;
-      margin-left: auto;
-      width: 250px; } }
+      margin-left: auto; } }
 
 .cover-container {
   position: relative;
@@ -13806,9 +13834,9 @@ h6 {
                 align-items: center; }
         @media (max-width: 767px) {
           #about-bio .social-share ul li {
-            border-bottom: 1px solid rgba(33, 33, 33, 0.5);
+            padding: 2rem 0;
             border-right: 0;
-            padding: 2rem 0; } }
+            border-bottom: 1px solid rgba(33, 33, 33, 0.5); } }
         #about-bio .social-share ul li:last-child {
           border: 0; }
         #about-bio .social-share ul li a {

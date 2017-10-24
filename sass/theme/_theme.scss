@@ -19,7 +19,6 @@
   background: lighten($brand-primary, 15%);
 }
 
-
 body {
   font-family: $font-body;
   color: $white;
@@ -29,9 +28,7 @@ body {
     background-size: cover;
   }
 }
-
 // Body Border
-
 #framed-body {
   @include media-breakpoint-down(xs) {
     display: none;
@@ -80,6 +77,7 @@ body {
 // 	#top, #bottom, #left, #right { display: none; }
 // }
 //Preloader Styles
+
 #preloader,
 #preloader-inside {
   position: fixed;
@@ -143,6 +141,7 @@ body {
   }
 }
 // Header Styles
+
 .bg-blue {
   background-color: $brand-primary;
 }
@@ -568,11 +567,11 @@ h6 {
   opacity: 0;
 
   .menu-logo {
-    max-width: 275px;
     width: 100%;
+    max-width: 275px;
     height: auto;
     @include media-breakpoint-down(xs) {
-    max-width: 225px;
+      max-width: 225px;
     }
   }
 
@@ -609,11 +608,11 @@ h6 {
     @include media-breakpoint-down(lg) {
       font-size: 22px;
     }
-    @media screen and (max-width: 1430px) {
-      font-size: 24px;
-    }
     @include media-breakpoint-down(sm) {
       font-size: 18px;
+    }
+    @media screen and (max-width: 1430px) {
+      font-size: 24px;
     }
 
     &::after {
@@ -658,45 +657,89 @@ h6 {
 }
 
 #nav-contact-info {
-  p, address {
+  address,
+  p {
     font-family: $font-body-alt;
     font-size: 14px;
     font-weight: 600;
   }
+
   p {
-    color: #000;
     margin: 0;
     text-transform: uppercase;
-    span, address {
-      color: $white;
+    color: #000;
+
+    address,
+    span {
       display: block;
       margin: 0;
+      color: $white;
     }
+
     span {
       &.tel {
         font-size: 25px;
       }
+
       &.email {
         text-transform: lowercase;
       }
     }
   }
 }
-
 /* The navigation menu links */
-.navbar-nav a {
-  font-family: $font-body-alt;
-  font-size: 14px;
-  padding-left: 1rem;
-  font-weight: 600;
+.navbar-nav {
+  li {
+    &.current-menu-item a {
+      color: #000;
 
-  &::before {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    padding-right: 1.5rem;
-    content: '';
-    background: url('../img/svg/bullet.svg') no-repeat;
+      &::before {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        padding-right: 1.5rem;
+        content: '';
+        background: url('../img/svg/bullet-black.svg') no-repeat;
+      }
+
+      &::after {
+        position: absolute;
+        top: 0;
+        left: -1.5rem;
+        display: block;
+        width: 24px;
+        height: 20px;
+        content: '';
+        background: url('../img/svg/arrow-black.svg') no-repeat;
+      }
+    }
+
+    a {
+      font-family: $font-body-alt;
+      font-size: 14px;
+      font-weight: 600;
+      position: relative;
+      padding-left: 1rem;
+
+      &:hover {
+        text-decoration: none;
+        color: #000;
+      }
+
+      &::before {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        padding-right: 1.5rem;
+        content: '';
+        background: url('../img/svg/bullet.svg') no-repeat;
+      }
+
+      &:hover::before {
+        content: '';
+        background: url('../img/svg/bullet-black.svg') no-repeat;
+      }
+    }
   }
 }
 /* When you mouse over the navigation links, change their color */
@@ -725,8 +768,8 @@ h6 {
   }
 
   span {
-    font-size: 14px;
     font-family: $font-body-alt;
+    font-size: 14px;
     display: block;
     margin-top: 0.55rem;
     text-transform: uppercase;
@@ -736,7 +779,7 @@ h6 {
 
 .openbtn {
   position: absolute;
-  z-index: 100;
+  z-index: 1001;
   top: 3rem;
   left: 3rem;
   @include media-breakpoint-down(xs) {
@@ -751,8 +794,8 @@ h6 {
     margin: 0 auto;
     transition: transform 0.2s ease;
     @include media-breakpoint-down(xs) {
-      height: 25px;
       width: auto;
+      height: 25px;
       margin: 0;
     }
   }
@@ -762,10 +805,10 @@ h6 {
   }
 
   span {
-    font-size: 14px;
     font-family: $font-body-alt;
-    display: block;
+    font-size: 14px;
     font-weight: 500;
+    display: block;
     margin-top: 1rem;
     transition: color 0.2s ease;
     text-transform: uppercase;
@@ -798,6 +841,7 @@ h6 {
   }
 }
 //Slider
+
 .bx-wrapper {
   position: fixed;
   z-index: 99;
@@ -821,17 +865,17 @@ h6 {
   }
 
   .slide-1 {
-    background: url("../img/slide-1.jpg") no-repeat top center;
+    background: url('../img/slide-1.jpg') no-repeat top center;
     background-size: cover;
   }
 
   .slide-2 {
-    background: url("../img/slide-2.jpg") no-repeat top center;
+    background: url('../img/slide-2.jpg') no-repeat top center;
     background-size: cover;
   }
 
   .slide-3 {
-    background: url("../img/slide-3.jpg") no-repeat top center;
+    background: url('../img/slide-3.jpg') no-repeat top center;
     background-size: cover;
   }
 }
@@ -840,10 +884,11 @@ h6 {
 .bxslider {
   height: 100% !important;
   @include media-breakpoint-down(xs) {
-    min-height: 1024px
+    min-height: 1024px;
   }
 }
 // Layout
+
 .wrapper {
   position: relative;
   z-index: 999;
@@ -862,11 +907,11 @@ h6 {
   margin-top: 1.2rem;
   @include media-breakpoint-down(sm) {
     position: relative;
-    margin-top: 2rem;
     right: 0;
+    width: 250px;
+    margin-top: 2rem;
     margin-right: auto;
     margin-left: auto;
-    width: 250px;
   }
 }
 
@@ -891,6 +936,7 @@ h6 {
   }
 }
 // About Page
+
 .entry-header {
   border-bottom: 1px solid rgba($white, .5);
   @include media-breakpoint-down(sm) {
@@ -932,9 +978,9 @@ h6 {
         border-right: 1px solid rgba($brand-black, .5);
         align-items: center;
         @include media-breakpoint-down(sm) {
-          border-bottom: 1px solid rgba($brand-black, .5);
-          border-right: 0;
           padding: 2rem 0;
+          border-right: 0;
+          border-bottom: 1px solid rgba($brand-black, .5);
         }
 
         &:last-child {
@@ -1088,10 +1134,12 @@ h6 {
       display: block;
     }
   }
+
   p {
     font-family: $font-body-alt;
     font-size: 14px;
     font-weight: 600;
+
     a {
       font-family: $font-body-alt;
       font-size: 25px;
@@ -1124,11 +1172,9 @@ h6 {
   @media screen and (max-width: 1320px) {
     font-size: 13px;
   }
-
   @media screen and (max-width: 1230px) {
     font-size: 11px;
   }
-
   @media screen and (max-width: 1060px) {
     font-size: 10px;
   }

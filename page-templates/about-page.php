@@ -42,7 +42,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 										<li><a href="javascript:void(0)"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/friend.svg"> </a></li>
 									</ul>
 								</div>
-								<img class="img-fluid d-block mx-auto w-100" src="<?php echo get_template_directory_uri(); ?>/img/charles@2x.png" alt="<?php echo esc_html_e('', 'understrap') ?>">
+								<img class="img-fluid d-block mx-auto w-100" src="<?php the_field('bio_img') ?>" alt="<?php echo esc_html_e('', 'understrap') ?>">
 						  </div>
 
 							<div class="col-lg-8 my-4 my-lg-0">
