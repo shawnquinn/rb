@@ -3893,6 +3893,35 @@ function closeNav() {
 
   //Animate
   //$("#slide-nav").css({opacity: 0});
+
+
+
+  if ($(window).width() < 992) {
+     var num = "95%";
+  }
+  else {
+     var num = "66.67%";
+  }
+
+  $(window).resize(function() {
+    if ($(window).width() < 992) {
+      num = "95%";
+    }
+    else {
+      num = "66.67%";
+    }
+  });
+
+  $('#open-button').click(function() {
+    $('#slideoutnav').css("width", num);
+    $('#close-button').css("opacity", 1)
+  });
+
+  $('#close-button').click(function() {
+    $('#slideoutnav').css("width", "0%");
+    $('#close-button').css("opacity", 0)
+  });
+
   $(".progress-bar").animate({
         width: "100%"
     }, 250 ); // start in under a se
@@ -3918,6 +3947,10 @@ function closeNav() {
     $('#preload-logo').delay(200).addClass('loaded'); // Load in logo zoomed.
     $('body').delay(350).css({'overflow':'visible'});
   });
+  // Preloader inside pages
+  $(window).on('load', function() { // makes sure the whole site is loaded
+    $('#preloader-inside').fadeOut(1000); // will fade out the white DIV that covers the website.
+  });
 
   //Homepage BG Slider
   $('.bxslider').bxSlider({
@@ -3926,8 +3959,12 @@ function closeNav() {
     speed: 3000,
     pause: 7000,
     responsive: true,
+    preloadImages: 'all',
+    adad
     pager: false,
     randomStart: true,
+    touchEnabled: false,
+    oneToOneTouch: false
   });
 
 

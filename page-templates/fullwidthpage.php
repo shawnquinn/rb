@@ -14,6 +14,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 <div class="wrapper d-flex align-items-center" id="full-width-page-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content">
+
 		<div class="logo-inside">
 			<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php echo esc_html_e('', 'understrap') ?>">
 		</div>

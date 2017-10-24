@@ -141,8 +141,8 @@ gulp.task('watch', function () {
     gulp.watch('./sass/**/*.scss', ['styles']);
     gulp.watch([basePaths.dev + 'js/**/*.js','js/**/*.js','!js/theme.js','!js/theme.min.js'], ['scripts']);
 
-    //Inside the watch task.
-    gulp.watch('./img/**', ['imagemin'])
+    //Inside the watch task. THIS WAS CAUSING AN INFINITE LOOP
+    //gulp.watch('./img-src/**', ['imagemin'])
 });
 
 // Run:

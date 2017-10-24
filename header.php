@@ -20,6 +20,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<!-- TypeKit -->
+	<script src="https://use.typekit.net/rgx3fsq.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
 	<?php wp_head(); ?>
 </head>
 
@@ -37,10 +41,11 @@ $container = get_theme_mod( 'understrap_container_type' );
      </div>
 		</div>
 
+	<?php else : ?>
+		<div id="preloader-inside"></div>
 	<?php endif; ?>
 
-
-	<div class="frame">
+	<div id="framed-body">
 		<div id="left"></div>
 		<div id="right"></div>
 		<div id="top"></div>
@@ -48,7 +53,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	</div>
 
 	<div id="slideoutnav" class="sidenav">
-	  <a href="javascript:void(0)" id="close-button" class="closebtn nav-button" onclick="closeNav()"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/arrow-left.svg" /><span>Close Menu</span></a>
+	  <a href="javascript:void(0)" id="close-button" class="closebtn nav-button"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/arrow-left.svg" /><span>Close Menu</span></a>
 
 		<header id="slide-nav" class="container-fluid px-0">
 			<div class="row">
@@ -61,7 +66,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<div class="col-12">
 
 					<div class="row pt-3">
-						<div class="col-4">
+						<div class="col-sm-4 mb-3 mb-sm-0">
 							<h4>Practice Areas</h4>
 							<h5>Litigation</h5>
 							<!-- The WordPress Menu goes here -->
@@ -92,7 +97,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							); ?>
 						</div>
 
-						<div class="col-4">
+						<div class="col-sm-4 mb-3 mb-sm-0">
 							<h4>Attorneys</h4>
 							<!-- The WordPress Menu goes here -->
 							<?php wp_nav_menu(
@@ -108,8 +113,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 							); ?>
 						</div>
 
-						<div class="col-4">
+						<div id="nav-contact-info" class="col-sm-4 mb-5 mb-sm-0">
 							<h4>Contact Us</h4>
+							<p>Phone <span class="tel">312.123.4567</span></p>
+
+							<p>Email <span class="email">kate@reiterburns.com</span></p>
+
+							<p>Phone</p> <address>
+								155 North Wacker Drive, <br />
+								Chicago, IL 60606,<br />
+								USA.
+							</address>
 						</div>
 					</div>
 				</div>
@@ -119,7 +133,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	</div>
 
 <div class="site-wrapper" id="panel">
-<a href="javascript:void(0)" id="open-button" class="openbtn nav-button" onclick="openNav()"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/hamburger.svg" /><span>How Can We Help?</span></a>
+<a href="javascript:void(0)" id="open-button" class="openbtn nav-button"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/hamburger.svg" /><span>How Can We Help?</span></a>
 
 	<!-- ******************* The Navbar Area ******************* -->
 	<div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar" hidden>

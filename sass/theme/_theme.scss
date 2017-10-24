@@ -19,18 +19,32 @@
   background: lighten($brand-primary, 15%);
 }
 
+
 body {
   font-family: $font-body;
   color: $white;
+  background: transparent;
+  @include media-breakpoint-down(xs) {
+    background: url('../img/slide-1.jpg') no-repeat center center;
+    background-size: cover;
+  }
 }
+
 // Body Border
+
+#framed-body {
+  @include media-breakpoint-down(xs) {
+    display: none;
+  }
+}
+
 #bottom,
 #left,
 #right,
 #top {
   position: fixed;
-  background: $white;
   z-index: 9999;
+  background: $white;
 }
 
 #left,
@@ -62,23 +76,27 @@ body {
 #bottom {
   bottom: 0;
 }
-
-@media only screen and (max-width: 500px), only screen and (min-width: 768px) and (max-width: 1024px) {
-	#top, #bottom, #left, #right { display: none; }
-}
-
+// @media only screen and (max-width: 500px), only screen and (min-width: 768px) and (max-width: 1024px) {
+// 	#top, #bottom, #left, #right { display: none; }
+// }
 //Preloader Styles
-#preloader {
+#preloader,
+#preloader-inside {
   position: fixed;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   /* change if the mask should have another color then white */
   z-index: 999999;
-  height: 100vh;
+  display: flex;
   width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
   /* makes sure it stays on top */
+  @include media-breakpoint-down(xs) {
+    display: none;
+    visibility: hidden;
+    white-space: nowrap;
+  }
 }
 
 #status {
@@ -91,6 +109,7 @@ body {
   transition: all 1.5s ease-in-out;
   //transform: scale(0);
   opacity: 0;
+
   &.loaded {
     //transform: scale(1);
     opacity: 1;
@@ -99,30 +118,31 @@ body {
 
 #progressive {
   position: absolute;
-  width: 100vw;
-  height: 3px;
   z-index: 15;
   top: 60%;
   left: 0;
+  width: 100vw;
+  height: 3px;
   margin: 0;
-  transition: all .3s linear;
+  transition: all 0.3s linear;
   opacity: 1;
+
   &.dumped {
     opacity: 0;
   }
+
   .progress {
-    border-radius: 0;
     height: 3px;
+    border-radius: 0;
     background-color: $brand-grey;
+
     .progress-bar {
-      background-color: $brand-primary;
       transition: width 1.5s ease-in-out;
+      background-color: $brand-primary;
     }
   }
 }
-
 // Header Styles
-
 .bg-blue {
   background-color: $brand-primary;
 }
@@ -185,6 +205,7 @@ body {
   }
 }
 // Navigation
+
 nav {
   a {
     font-family: $font-body;
@@ -236,9 +257,9 @@ h3,
 h4,
 h5,
 h6 {
-  color: $white;
-  font-family: $font-header;
+  font-family: $font-body-alt;
   font-weight: 700;
+  color: $white;
 }
 // Elements
 
@@ -535,19 +556,24 @@ h6 {
   }
 }
 //BX Slider
+
 .bx-wrapper {
   max-width: 100% !important;
 }
 //Slide Nav
+
 #slide-nav {
   margin-left: 3rem !important;
-
   text-align: left;
   opacity: 0;
 
   .menu-logo {
-    width: 275px;
+    max-width: 275px;
+    width: 100%;
     height: auto;
+    @include media-breakpoint-down(xs) {
+    max-width: 225px;
+    }
   }
 
   h3,
@@ -568,15 +594,26 @@ h6 {
     color: $white;
   }
 
+  h3 {
+    @include media-breakpoint-down(sm) {
+      font-size: 42px;
+    }
+    @include media-breakpoint-down(xs) {
+      font-size: 22px;
+    }
+  }
+
   h4 {
     font-size: 32px;
     margin: 1rem 0;
+    @include media-breakpoint-down(lg) {
+      font-size: 22px;
+    }
     @media screen and (max-width: 1430px) {
       font-size: 24px;
     }
-
-    @include media-breakpoint-down(lg) {
-      font-size: 22px;
+    @include media-breakpoint-down(sm) {
+      font-size: 18px;
     }
 
     &::after {
@@ -598,7 +635,7 @@ h6 {
 .sidenav {
   position: fixed;
   /* Stay in place */
-  z-index: 999;
+  z-index: 9999;
   /* Stay on top */
   top: 0;
   left: 0;
@@ -614,14 +651,44 @@ h6 {
   /* 0.5 second transition effect to slide in the sidenav */
   background-color: $brand-primary;
   box-shadow: 0 0 0 rgba($brand-primary, .9), 0 0 1px rgba($brand-primary, .6), 0 0 2px rgba($brand-primary, .3);
+
   &.shadowed {
     box-shadow: 80px 0 0 rgba($brand-primary, .9), 160px 0 1px rgba($brand-primary, .6), 240px 0 2px rgba($brand-primary, .3);
   }
 }
+
+#nav-contact-info {
+  p, address {
+    font-family: $font-body-alt;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  p {
+    color: #000;
+    margin: 0;
+    text-transform: uppercase;
+    span, address {
+      color: $white;
+      display: block;
+      margin: 0;
+    }
+    span {
+      &.tel {
+        font-size: 25px;
+      }
+      &.email {
+        text-transform: lowercase;
+      }
+    }
+  }
+}
+
 /* The navigation menu links */
 .navbar-nav a {
+  font-family: $font-body-alt;
   font-size: 14px;
   padding-left: 1rem;
+  font-weight: 600;
 
   &::before {
     display: inline-block;
@@ -629,7 +696,7 @@ h6 {
     height: 10px;
     padding-right: 1.5rem;
     content: '';
-    background: url("../img/svg/bullet.svg") no-repeat;
+    background: url('../img/svg/bullet.svg') no-repeat;
   }
 }
 /* When you mouse over the navigation links, change their color */
@@ -658,19 +725,24 @@ h6 {
   }
 
   span {
-    font-size: 12px;
+    font-size: 14px;
+    font-family: $font-body-alt;
     display: block;
     margin-top: 0.55rem;
     text-transform: uppercase;
-    color: rgba($white, .7);
+    color: rgba($white, .8);
   }
 }
 
 .openbtn {
   position: absolute;
+  z-index: 100;
   top: 3rem;
   left: 3rem;
-  z-index: 100;
+  @include media-breakpoint-down(xs) {
+    top: 1rem;
+    left: 1rem;
+  }
 
   img {
     display: block;
@@ -678,6 +750,11 @@ h6 {
     height: 40px;
     margin: 0 auto;
     transition: transform 0.2s ease;
+    @include media-breakpoint-down(xs) {
+      height: 25px;
+      width: auto;
+      margin: 0;
+    }
   }
 
   &:hover img {
@@ -685,11 +762,18 @@ h6 {
   }
 
   span {
-    font-size: 12px;
+    font-size: 14px;
+    font-family: $font-body-alt;
     display: block;
+    font-weight: 500;
     margin-top: 1rem;
+    transition: color 0.2s ease;
     text-transform: uppercase;
-    color: rgba($white, .7);
+    color: rgba($white, .8);
+  }
+
+  &:hover span {
+    color: rgba($white, 1);
   }
 }
 
@@ -713,54 +797,59 @@ h6 {
     font-size: 18px;
   }
 }
-
-
 //Slider
 .bx-wrapper {
-  box-shadow: none;
-  border: 0;
-  background: $black;
-  position: absolute;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  width: 100%;
   height: 100vh;
   height: 100%;
-  width: 100%;
-  top: 0;
-  z-index: 99;
   margin-bottom: 0;
+  border: 0;
+  background: $black;
+  box-shadow: none;
+  @include media-breakpoint-down(xs) {
+    //display: none;
+  }
 }
 
 .bxslider {
   .slides {
-    height: 100%;
     width: 100%;
+    height: 100%;
   }
+
   .slide-1 {
-    background: url(../img/slide-1.jpg) no-repeat top center;
+    background: url("../img/slide-1.jpg") no-repeat top center;
     background-size: cover;
   }
 
   .slide-2 {
-    background: url(../img/slide-2.jpg) no-repeat top center;
+    background: url("../img/slide-2.jpg") no-repeat top center;
     background-size: cover;
   }
 
   .slide-3 {
-    background: url(../img/slide-3.jpg) no-repeat top center;
+    background: url("../img/slide-3.jpg") no-repeat top center;
     background-size: cover;
   }
 }
 
-.bx-viewport, .bxslider {
+.bx-viewport,
+.bxslider {
   height: 100% !important;
+  @include media-breakpoint-down(xs) {
+    min-height: 1024px
+  }
 }
-
-
 // Layout
-
 .wrapper {
   position: relative;
-  z-index: 99;
-  height: 100vh;
+  z-index: 999;
+  margin: 5rem 0 0;
+  padding: 30px 0 15px;
+
   #content {
     position: relative;
   }
@@ -768,9 +857,17 @@ h6 {
 
 .logo-inside {
   position: absolute;
-  right: 1rem;
-  width: 200px;
+  right: 2rem;
+  width: 180px;
   margin-top: 1.2rem;
+  @include media-breakpoint-down(sm) {
+    position: relative;
+    margin-top: 2rem;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: 250px;
+  }
 }
 
 .cover-container {
@@ -779,14 +876,260 @@ h6 {
 
   .cover {
     color: #fff;
+
     p {
       font-family: $font-body;
       font-size: 30px;
       font-weight: 300;
+      @include media-breakpoint-down(md) {
+        font-size: 24px;
+      }
+      @include media-breakpoint-down(xs) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+// About Page
+.entry-header {
+  border-bottom: 1px solid rgba($white, .5);
+  @include media-breakpoint-down(sm) {
+    text-align: center;
+  }
+
+  .entry-title {
+    font-family: $font-body;
+    font-weight: 600;
+    @include media-breakpoint-down(xs) {
+      font-size: 27px;
     }
   }
 }
 
-.entry-header {
+#about-bio {
+  position: relative;
+  margin-top: 1.25rem;
+  background: $brand-primary;
 
+  .social-share {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+
+    ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      background: $white;
+      align-items: baseline;
+      justify-content: center;
+
+      li {
+        display: flex;
+        height: 18px;
+        padding: 0 0.75rem;
+        border-right: 1px solid rgba($brand-black, .5);
+        align-items: center;
+        @include media-breakpoint-down(sm) {
+          border-bottom: 1px solid rgba($brand-black, .5);
+          border-right: 0;
+          padding: 2rem 0;
+        }
+
+        &:last-child {
+          border: 0;
+        }
+
+        a {
+          display: block;
+
+          img {
+            width: 16px;
+            height: auto;
+            transition: all 0.2s ease;
+            opacity: 0.9;
+            @include media-breakpoint-down(sm) {
+              width: 25px;
+            }
+          }
+
+          &:hover img {
+            transform: scale(1.25);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  p {
+    font-size: 18px;
+    @include media-breakpoint-down(lg) {
+      font-size: 16px;
+    }
+  }
+}
+
+#about-content {
+  font-family: $font-body-alt;
+
+  h3,
+  h4 {
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 34px;
+    display: inline-block;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba($white, .7);
+    @include media-breakpoint-down(md) {
+      font-size: 24px;
+    }
+  }
+
+  h4 {
+    font-size: 18px;
+    @include media-breakpoint-down(md) {
+      font-size: 16px;
+    }
+  }
+
+  ul {
+    padding-left: 1rem;
+    @include media-breakpoint-down(md) {
+      font-size: 12px;
+    }
+
+    li {
+      list-style-type: none;
+
+      &::before {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        padding-right: 1.5rem;
+        content: '';
+        background: url('../img/svg/bullet.svg') no-repeat;
+      }
+    }
+  }
+}
+
+#bio-links {
+  padding-top: 1rem;
+  border-top: 2px solid #000;
+
+  div:first-child {
+    border-right: 2px solid #000;
+    @include media-breakpoint-down(sm) {
+      border: 0;
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include media-breakpoint-down(xs) {
+      justify-content: start;
+    }
+
+    h5 {
+      font-size: 18px;
+      margin: 0;
+      text-transform: uppercase;
+      @include media-breakpoint-down(lg) {
+        font-size: 14px;
+      }
+
+      &::after {
+        display: block;
+        width: 0;
+        height: 1px;
+        margin-top: 0.25rem;
+        margin-right: auto;
+        margin-left: auto;
+        content: '';
+        transition: all 0.2s ease-in-out;
+        background: $white;
+      }
+    }
+
+    &:hover h5::after {
+      width: 100%;
+      content: '';
+    }
+
+    img {
+      display: block;
+      width: 25px;
+      height: auto;
+      margin-right: 1rem;
+      transition: all 0.2s ease-in-out;
+    }
+
+    &:hover img {
+      transform: scale(1.2);
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+#bio-contact {
+  p.phone {
+    span {
+      font-size: 25px;
+      display: block;
+    }
+  }
+  p {
+    font-family: $font-body-alt;
+    font-size: 14px;
+    font-weight: 600;
+    a {
+      font-family: $font-body-alt;
+      font-size: 25px;
+      display: inline-block;
+      padding: 0 0.5rem;
+      transition: all 0.2s ease-in-out;
+      text-transform: none !important;
+      color: $white;
+      background: $brand-primary;
+      @include media-breakpoint-down(lg) {
+        font-size: 18px;
+      }
+      @include media-breakpoint-down(md) {
+        font-size: 14px;
+      }
+
+      &:hover {
+        text-decoration: none;
+        background: #000;
+      }
+    }
+  }
+}
+
+#breadcrumbs {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0.7;
+  @media screen and (max-width: 1320px) {
+    font-size: 13px;
+  }
+
+  @media screen and (max-width: 1230px) {
+    font-size: 11px;
+  }
+
+  @media screen and (max-width: 1060px) {
+    font-size: 10px;
+  }
 }
