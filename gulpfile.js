@@ -149,9 +149,9 @@ gulp.task('watch', function () {
 // gulp imagemin
 // Running image optimizing task
 gulp.task('imagemin', function(){
-    gulp.src('img-src/**')
+    gulp.src('./img-src/**')
     .pipe(imagemin())
-    .pipe(gulp.dest('img'))
+    .pipe(gulp.dest('./img'))
 });
 
 
@@ -231,6 +231,7 @@ gulp.task('scripts', function() {
 
         // Any Custom JavaScript
         basePaths.dev + 'js/custom.js'
+
     ];
   gulp.src(scripts)
     .pipe(concat('theme.min.js'))
