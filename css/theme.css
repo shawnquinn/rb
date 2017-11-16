@@ -13477,7 +13477,7 @@ h6 {
   max-width: 100% !important; }
 
 #slide-nav {
-  margin-left: 3rem !important;
+  padding-left: 3rem !important;
   text-align: left;
   opacity: 0; }
   #slide-nav .menu-logo {
@@ -13531,10 +13531,10 @@ h6 {
     margin: 1.5rem 0 0.75rem; }
 
 /* The side navigation menu */
-.sidenav {
+#slideoutnav {
   position: fixed;
   /* Stay in place */
-  z-index: 9999;
+  z-index: 99999;
   /* Stay on top */
   top: 0;
   left: 0;
@@ -13549,12 +13549,26 @@ h6 {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   /* 0.5 second transition effect to slide in the sidenav */
-  background-color: #174ca1;
-  -webkit-box-shadow: 0 0 0 rgba(23, 76, 161, 0.9), 0 0 1px rgba(23, 76, 161, 0.6), 0 0 2px rgba(23, 76, 161, 0.3);
-          box-shadow: 0 0 0 rgba(23, 76, 161, 0.9), 0 0 1px rgba(23, 76, 161, 0.6), 0 0 2px rgba(23, 76, 161, 0.3); }
-  .sidenav.shadowed {
-    -webkit-box-shadow: 80px 0 0 rgba(23, 76, 161, 0.9), 160px 0 1px rgba(23, 76, 161, 0.6), 240px 0 2px rgba(23, 76, 161, 0.3);
-            box-shadow: 80px 0 0 rgba(23, 76, 161, 0.9), 160px 0 1px rgba(23, 76, 161, 0.6), 240px 0 2px rgba(23, 76, 161, 0.3); }
+  background-color: #174ca1; }
+
+.stack-1,
+.stack-2 {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  width: 0;
+  height: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: #174ca1; }
+
+.stack-1 {
+  opacity: 0.3; }
+
+.stack-2 {
+  opacity: 0.6; }
 
 #nav-contact-info address,
 #nav-contact-info p {

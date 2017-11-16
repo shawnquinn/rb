@@ -30,7 +30,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 <body <?php body_class(); ?>>
 
 <?php if (is_front_page()) : ?>
-		<div id="preloader">
+		<div id="preloader" hidden>
 		  <div id="status">
 				<img id="preload-logo" class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/logo-black.png" alt="<?php echo bloginfo() ?>">
 			</div>
@@ -38,11 +38,11 @@ $container = get_theme_mod( 'understrap_container_type' );
         <div class="progress" >
             <div class="progress-bar" role="progressbar" data-transitiongoal="100"></div>
         </div>
-     </div>
+     	</div>
 		</div>
 
 	<?php else : ?>
-		<div id="preloader-inside"></div>
+		<div id="preloader-inside" hidden></div>
 	<?php endif; ?>
 
 	<div id="framed-body">
@@ -53,7 +53,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 	</div>
 
 	<div id="slideoutnav" class="sidenav">
-	  <a href="javascript:void(0)" id="close-button" class="closebtn nav-button"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/arrow-left.svg" /><span>Close Menu</span></a>
+
+	  	<a href="javascript:void(0)" id="close-button" class="closebtn nav-button"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/arrow-left.svg" /><span>Close Menu</span></a>
 
 		<header id="slide-nav" class="container-fluid px-0">
 			<div class="row">
@@ -130,7 +131,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 			</div>
 	  </header>
 
-	</div>
+	</div><!-- SlideoutNav -->
+	<div class="stack-1"></div>
+	<div class="stack-2"></div>
 
 <div class="site-wrapper" id="panel">
 <a href="javascript:void(0)" id="open-button" class="openbtn nav-button"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/hamburger.svg" /><span>How Can We Help?</span></a>

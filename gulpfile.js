@@ -18,7 +18,7 @@ var browserSyncWatchFiles = [
 // browser-sync options
 // see: https://www.browsersync.io/docs/options/
 var browserSyncOptions = {
-    proxy: "localhost:8888/ctm/",
+    proxy: "localhost:8888/sandbox/",
     notify: false
 };
 

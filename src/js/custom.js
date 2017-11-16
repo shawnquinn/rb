@@ -4,15 +4,15 @@
 //new WOW().init();
 
 // Custom Nav SlideOut
-function openNav() {
-    document.getElementById("slideoutnav").style.width = "66.67%";
-    document.getElementById("close-button").style.opacity = "1";
-}
+// function openNav() {
+//     document.getElementById("slideoutnav").style.width = "66.67%";
+//     document.getElementById("close-button").style.opacity = "1";
+// }
 
-function closeNav() {
-    document.getElementById("slideoutnav").style.width = "0";
-    document.getElementById("close-button").style.opacity = "0";
-}
+// function closeNav() {
+//     document.getElementById("slideoutnav").style.width = "0";
+//     document.getElementById("close-button").style.opacity = "0";
+// }
 
 // IIFE for jQuery
 ( function( $ ) {
@@ -22,13 +22,13 @@ function closeNav() {
   //Animate
   //$("#slide-nav").css({opacity: 0});
 
-
+  var num = "95%";
 
   if ($(window).width() < 992) {
-     var num = "95%";
+      num = "95%";
   }
   else {
-     var num = "66.67%";
+      num = "66.67%";
   }
 
   $(window).resize(function() {
@@ -41,21 +41,27 @@ function closeNav() {
   });
 
   $('#open-button').click(function() {
-    $('#slideoutnav').css("width", num);
-    $('#close-button').css("opacity", 1)
+    $('.stack-1').animate({width: "85%"}, 200, "swing");
+    $('.stack-2').stop().delay(200).animate({width: "75%"}, 400, "swing");
+    $('#slideoutnav').stop().delay(400).animate({width: num}, 600, "swing");
+
+    $('#close-button').css("opacity", 1);
   });
 
   $('#close-button').click(function() {
     $('#slideoutnav').css("width", "0%");
-    $('#close-button').css("opacity", 0)
+    $('#close-button').css("opacity", 0);
+
+    $('.stack-1').css("width", "0%");
+    $('.stack-2').css("width", "0%");
   });
 
   $(".progress-bar").animate({
         width: "100%"
-    }, 250 ); // start in under a se
+    }, 250 ); // start in 250 milliseconds
 
   $('#open-button').click(function() {
-    $('#slide-nav').stop().delay(300).animate({opacity: 1}, 500, "swing");
+    $('#slide-nav').stop().delay(1200).animate({opacity: 1}, 500, "swing");
     $('.sidenav').addClass('shadowed');
   });
 
