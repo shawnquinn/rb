@@ -84,8 +84,8 @@ body {
   /* change if the mask should have another color then white */
   z-index: 999999;
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: #fff;
   align-items: center;
   justify-content: center;
@@ -100,11 +100,13 @@ body {
 #status {
   width: 100%;
   height: auto;
-  margin-bottom: 7rem;
+  margin-bottom: 7.1rem;
+  background: transparent;
 }
 
 #preload-logo {
   transition: all 1.5s ease-in-out;
+  background-color:transparent;
   //transform: scale(0);
   opacity: 0;
 
@@ -566,15 +568,6 @@ h6 {
   text-align: left;
   opacity: 0;
 
-  .menu-logo {
-    width: 100%;
-    max-width: 275px;
-    height: auto;
-    @include media-breakpoint-down(xs) {
-      max-width: 225px;
-    }
-  }
-
   h3,
   h4,
   h5 {
@@ -630,6 +623,22 @@ h6 {
     margin: 1.5rem 0 0.75rem;
   }
 }
+
+/* The side navigation menu Logo*/
+.menu-logo {
+  width: 100%;
+  max-width: 275px;
+  height: auto;
+  position: absolute;
+  top: 3rem;
+  right: 5rem;
+
+  opacity: 0;
+  @include media-breakpoint-down(xs) {
+    max-width: 225px;
+  }
+}
+
 /* The side navigation menu */
 #slideoutnav {
   position: fixed;
@@ -862,8 +871,15 @@ h6 {
     font-size: 18px;
   }
 }
-//Slider
 
+// Parallax Scene
+#plx {
+  position: absolute !important;
+  height: 100%;
+  width: 100%;
+}
+
+//Slider
 .bx-wrapper {
   position: fixed;
   z-index: 99;
@@ -947,6 +963,10 @@ h6 {
       font-family: $font-body;
       font-size: 30px;
       font-weight: 300;
+      position: relative !important;
+
+      animation-delay: 2s;
+
       @include media-breakpoint-down(md) {
         font-size: 24px;
       }
@@ -1199,4 +1219,52 @@ h6 {
   @media screen and (max-width: 1060px) {
     font-size: 10px;
   }
+}
+
+// Signature Sign
+$sign-x: 586px;
+$sign-y: 171px;
+$sign-frames: 90;
+$sign-duration: 1.5s;
+$sign-delay: 0.5s;
+
+#rb-sign {
+    display: block;
+    margin: 0 auto;
+    width: $sign-x;
+    height: $sign-y;
+    background: url(http://reiter.wpengine.com/wp-content/uploads/2017/11/sequence.png) no-repeat;
+		background-size: 100% auto;
+    &.white {
+        //background-image: url(http://drygiel.com/projects/sign/frames-255-white.png);
+    }
+
+    &.play {
+        -moz-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
+        -o-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
+        -webkit-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
+        animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
+    }
+}
+
+a#rb-sign {
+    opacity:1;
+}
+
+@-webkit-keyframes sign-anim {
+    to {
+        background-position: 0 $sign-frames * -$sign-y;
+    }
+}
+
+@-moz-keyframes sign-anim {
+    to {
+        background-position: 0 $sign-frames * -$sign-y;
+    }
+}
+
+@keyframes sign-anim {
+    to {
+        background-position: 0 $sign-frames * -$sign-y;
+    }
 }

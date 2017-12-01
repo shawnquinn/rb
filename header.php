@@ -30,11 +30,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 <body <?php body_class(); ?>>
 
 <?php if (is_front_page()) : ?>
-		<div id="preloader" hidden>
+		<div id="preloader">
 		  <div id="status">
-				<img id="preload-logo" class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/logo-black.png" alt="<?php echo bloginfo() ?>">
+		  <a id="rb-sign" class="play" href="#" target="_blank"></a>
+		  <div hidden><img id="preload-logo" class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/logo-black.png" alt="<?php echo bloginfo() ?>"></div>
 			</div>
-			<div id="progressive">
+			<div id="progressive" hidden>
         <div class="progress" >
             <div class="progress-bar" role="progressbar" data-transitiongoal="100"></div>
         </div>
@@ -56,11 +57,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	  	<a href="javascript:void(0)" id="close-button" class="closebtn nav-button"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/arrow-left.svg" /><span>Close Menu</span></a>
 
+		<img class="menu-logo" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php echo bloginfo() ?>">  
+
 		<header id="slide-nav" class="container-fluid px-0">
 			<div class="row">
 				<div class="col-12">
-					<img class="menu-logo" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php echo bloginfo() ?>">
-					<h3>How Can We Help?</h3>
+					<h3 hidden>How Can We Help?</h3>
 				</div>
 			</div>
 			<div class="row">
@@ -181,8 +183,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	</div><!-- .wrapper-navbar end -->
 
-	<div class="bxslider">
-		<div class="slides slide-1"></div>
-		<div class="slides slide-2"></div>
-		<div class="slides slide-3"></div>
+	<div data-relative-input="true" id="plx">
+		<div class="bxslider" data-depth="0.033">
+			<div class="slides slide-1"></div>
+			<div class="slides slide-2"></div>
+			<div class="slides slide-3"></div>
+		</div>
 	</div>

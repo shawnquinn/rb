@@ -13105,8 +13105,8 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: #fff;
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -13127,11 +13127,13 @@ body {
 #status {
   width: 100%;
   height: auto;
-  margin-bottom: 7rem; }
+  margin-bottom: 7.1rem;
+  background: transparent; }
 
 #preload-logo {
   -webkit-transition: all 1.5s ease-in-out;
   transition: all 1.5s ease-in-out;
+  background-color: transparent;
   opacity: 0; }
   #preload-logo.loaded {
     opacity: 1; }
@@ -13480,13 +13482,6 @@ h6 {
   padding-left: 3rem !important;
   text-align: left;
   opacity: 0; }
-  #slide-nav .menu-logo {
-    width: 100%;
-    max-width: 275px;
-    height: auto; }
-    @media (max-width: 575px) {
-      #slide-nav .menu-logo {
-        max-width: 225px; } }
   #slide-nav h3,
   #slide-nav h4,
   #slide-nav h5 {
@@ -13529,6 +13524,19 @@ h6 {
   #slide-nav h5 {
     font-size: 18px;
     margin: 1.5rem 0 0.75rem; }
+
+/* The side navigation menu Logo*/
+.menu-logo {
+  width: 100%;
+  max-width: 275px;
+  height: auto;
+  position: absolute;
+  top: 3rem;
+  right: 5rem;
+  opacity: 0; }
+  @media (max-width: 575px) {
+    .menu-logo {
+      max-width: 225px; } }
 
 /* The side navigation menu */
 #slideoutnav {
@@ -13722,6 +13730,11 @@ h6 {
   .sidenav a {
     font-size: 18px; } }
 
+#plx {
+  position: absolute !important;
+  height: 100%;
+  width: 100%; }
+
 .bx-wrapper {
   position: fixed;
   z-index: 99;
@@ -13789,7 +13802,10 @@ h6 {
     .cover-container .cover p {
       font-family: "Mosk", sans-serif;
       font-size: 30px;
-      font-weight: 300; }
+      font-weight: 300;
+      position: relative !important;
+      -webkit-animation-delay: 2s;
+              animation-delay: 2s; }
       @media (max-width: 991px) {
         .cover-container .cover p {
           font-size: 24px; } }
@@ -14013,6 +14029,28 @@ h6 {
   @media screen and (max-width: 1060px) {
     #breadcrumbs {
       font-size: 10px; } }
+
+#rb-sign {
+  display: block;
+  margin: 0 auto;
+  width: 586px;
+  height: 171px;
+  background: url(http://reiter.wpengine.com/wp-content/uploads/2017/11/sequence.png) no-repeat;
+  background-size: 100% auto; }
+  #rb-sign.play {
+    -webkit-animation: sign-anim 1.5s 0.5s steps(90) forwards;
+    animation: sign-anim 1.5s 0.5s steps(90) forwards; }
+
+a#rb-sign {
+  opacity: 1; }
+
+@-webkit-keyframes sign-anim {
+  to {
+    background-position: 0 -15390px; } }
+
+@keyframes sign-anim {
+  to {
+    background-position: 0 -15390px; } }
 
 /*
  * Globals

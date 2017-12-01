@@ -52,6 +52,7 @@
     "jquery": "3.2.1",
     "materialize-css": "^0.100.2",
     "merge2": "^1.1.0",
+    "parallax-js": "^3.1.0",
     "popper.js": "^1.11.1",
     "run-sequence": "^2.0.0",
     "undescores-for-npm": "^1.0.0"

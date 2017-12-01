@@ -219,9 +219,12 @@ gulp.task('scripts', function() {
 
         // Start - All BS4 stuff
         basePaths.dev + 'js/bootstrap4/bootstrap.js',
-
         // End - All BS4 stuff
+
         basePaths.dev + 'js/skip-link-focus-fix.js',
+
+        // Parallax JS
+        basePaths.dev + 'js/parallax.min.js',
 
         // BXSlider
         basePaths.dev + 'js/jquery.bxslider.min.js',
