@@ -3984,7 +3984,7 @@ setTimeout(function() {
   });
 
   //Homepage BG Slider
-  $('.bxslider').bxSlider({
+  $('.bxslider-OFF').bxSlider({
     auto: true,
     mode: 'fade',
     speed: 3000,

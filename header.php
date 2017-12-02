@@ -186,7 +186,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<div data-relative-input="true" id="plx">
 		<div class="bxslider" data-depth="0.033">
 			<div class="slides slide-1"></div>
-			<div class="slides slide-2"></div>
-			<div class="slides slide-3"></div>
+			<div class="slides slide-2" hidden></div>
+			<div class="slides slide-3" hidden></div>
 		</div>
 	</div>

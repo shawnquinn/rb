@@ -13737,6 +13737,7 @@ h6 {
 
 .bx-wrapper {
   position: fixed;
+  overflow: hidden;
   z-index: 99;
   top: 0;
   width: 100%;
@@ -13804,8 +13805,10 @@ h6 {
       font-size: 30px;
       font-weight: 300;
       position: relative !important;
-      -webkit-animation-delay: 2s;
-              animation-delay: 2s; }
+      -webkit-animation-duration: 2s;
+              animation-duration: 2s;
+      -webkit-animation-delay: 3.5s;
+              animation-delay: 3.5s; }
       @media (max-width: 991px) {
         .cover-container .cover p {
           font-size: 24px; } }

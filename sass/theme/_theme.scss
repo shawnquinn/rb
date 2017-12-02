@@ -882,6 +882,7 @@ h6 {
 //Slider
 .bx-wrapper {
   position: fixed;
+  overflow: hidden;
   z-index: 99;
   top: 0;
   width: 100%;
@@ -965,7 +966,8 @@ h6 {
       font-weight: 300;
       position: relative !important;
 
-      animation-delay: 2s;
+      animation-duration: 2s;
+      animation-delay: 3.5s;
 
       @include media-breakpoint-down(md) {
         font-size: 24px;
