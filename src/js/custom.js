@@ -15,23 +15,22 @@
 // }
 
 
-
-
-// Wait for Signature to Load then add Parallax effect to logo
-  // First Instance
-  
-setTimeout(function() { 
-  // Second Instance
-  var logo = document.getElementById('main-home');
-  var pxInstance2 = new Parallax(logo);
- }, 3600);
-
-   // Second Instance
-    var scene = document.getElementById('plx');
-    var pxInstance1 = new Parallax(scene);
-
 // IIFE for jQuery
 ( function( $ ) {
+  // Wait for Signature to Load then add Parallax effect to logo
+  // First Instance
+  setTimeout(function() { 
+    // Second Instance
+    var logo = document.getElementById('main-home');
+    var pxInstance2 = new Parallax(logo);
+  }, 3600);
+
+
+  if( $('body.home').length ){
+    // Second Instance
+    var scene = document.getElementById('plx');
+    var pxInstance1 = new Parallax(scene);
+  }
   // Carousel Main
   //$(".carousel-item").first().addClass( "active" );
 

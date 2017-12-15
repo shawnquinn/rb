@@ -137,7 +137,28 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<div class="stack-1"></div>
 	<div class="stack-2"></div>
 
-<div class="site-wrapper" id="panel">
+
+<?php if ( !is_front_page() && has_post_thumbnail() ) : ?>
+
+<?php
+	$content = '';
+	$thumb_id = get_post_thumbnail_id();
+	$thumb_url = wp_get_attachment_image_src($thumb_id,'full', true);
+	
+	$content .= '<div class="site-wrapper" id="panel" style="background-image: url('.$thumb_url[0].')">';
+	echo $content; 
+?>
+
+<?php else : ?>
+
+<?php
+	$content = '';
+	$content .= '<div class="site-wrapper" id="panel">';
+	echo $content; 
+?>
+
+<?php endif; ?>
+
 <a href="javascript:void(0)" id="open-button" class="openbtn nav-button"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/hamburger.svg" /><span>How Can We Help?</span></a>
 
 	<!-- ******************* The Navbar Area ******************* -->
@@ -183,10 +204,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	</div><!-- .wrapper-navbar end -->
 
-	<div data-relative-input="true" id="plx">
-		<div class="bxslider" data-depth="0.033">
-			<div class="slides slide-1"></div>
-			<div class="slides slide-2" hidden></div>
-			<div class="slides slide-3" hidden></div>
+	<?php if ( is_front_page() ) : ?>
+		<div data-relative-input="true" id="plx">
+			<div class="bxslider" data-depth="0.033">
+				<div class="slides slide-1"></div>
+				<div class="slides slide-2" hidden></div>
+				<div class="slides slide-3" hidden></div>
+			</div>
 		</div>
-	</div>
+	
+	<?php endif; ?>

@@ -13823,7 +13823,8 @@ h6 {
       text-align: center; } }
   .entry-header .entry-title {
     font-family: "Mosk", sans-serif;
-    font-weight: 600; }
+    font-weight: 600;
+    margin-bottom: 0; }
     @media (max-width: 575px) {
       .entry-header .entry-title {
         font-size: 27px; } }
@@ -14072,7 +14073,8 @@ a:hover {
   text-shadow: none;
   /* Prevent inheritance from `body` */
   background-color: #fff;
-  border: .05rem solid #fff; }
+  border: .05rem solid #fff;
+  border-radius: 0; }
 
 /*
  * Base structure
@@ -14084,6 +14086,8 @@ body {
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
+  background: url("../img/slide-1.jpg") center center;
+  background-size: cover;
   display: table;
   width: 100%;
   height: 100%;

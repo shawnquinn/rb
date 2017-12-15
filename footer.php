@@ -12,7 +12,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
 <?php get_sidebar( 'footerfull' ); ?>
-</div><!-- #page we need this extra closing tag here -->
+<!--</div> #page we need this extra closing tag here.... DO WE? -->
 		<footer class="container-fluid mastfoot">
 			<div class="row inner">
 				<div class="<?php if (is_front_page()) : ?>col-md-8<?php else: ?> col-md-8 col-lg-5<?php endif; ?> mr-auto px-0 d-flex text-center text-md-left align-items-center justify-content-center justify-content-md-start flex-column flex-md-row">

@@ -230,7 +230,7 @@ gulp.task('scripts', function() {
         basePaths.dev + 'js/jquery.bxslider.min.js',
 
         // WOW js
-        basePaths.dev + 'js/wow.js',
+        //basePaths.dev + 'js/wow.js',
 
         // Any Custom JavaScript
         basePaths.dev + 'js/custom.js'
