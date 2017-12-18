@@ -32,7 +32,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<?php endif; ?>
 
 				<div class="col-lg-3 col-md-4 px-0 text-center text-md-right mt-4 mt-md-0">
-						<p><a href="<?php echo esc_url( home_url('/terms-conditions/') ) ?>"><?php echo esc_html_e('Terms &amp; Conditions', 'understrap') ?></a> / <a href="<?php echo home_url('/privacy-policy/') ?>"><?php echo esc_html_e('Privacy Policy', 'understrap') ?></a>.</p>
+						<p><a href="<?php echo esc_url( home_url('') ) ?>"><?php echo esc_html_e('Terms &amp; Conditions', 'understrap') ?></a> / <a href="<?php echo home_url('') ?>"><?php echo esc_html_e('Privacy Policy', 'understrap') ?></a>.</p>
 						<p><?php echo esc_html_e('Copyright &copy;', 'understrap') ?> <?php echo date('Y'); ?> <?php bloginfo(); echo esc_html_e(' LLC.', 'understrap') ?></p>
 				</div>
 			</div>

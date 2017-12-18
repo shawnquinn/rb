@@ -1,6 +1,6 @@
 <?php
 /**
- * Partial template for content in page.php
+ * Single post partial template.
  *
  * @package understrap
  */
@@ -9,14 +9,20 @@
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
+
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		<p><?php the_field('sub_title') ?></p>
+
+		<div class="entry-meta">
+
+			<?php understrap_posted_on(); ?>
+
+		</div><!-- .entry-meta -->
+
 	</header><!-- .entry-header -->
-	
 
-	<?php //echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
-	<div class="entry-content my-3 py-2">
+	<div class="entry-content">
 
 		<?php the_content(); ?>
 
@@ -31,7 +37,7 @@
 
 	<footer class="entry-footer">
 
-		<?php edit_post_link( __( 'Edit', 'understrap' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php understrap_entry_footer(); ?>
 
 	</footer><!-- .entry-footer -->
 

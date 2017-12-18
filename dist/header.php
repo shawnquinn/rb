@@ -57,7 +57,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	  	<a href="javascript:void(0)" id="close-button" class="closebtn nav-button"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/arrow-left.svg" /><span>Close Menu</span></a>
 
-		  <a href="<?php echo home_url('/') ?>"><img class="menu-logo" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php echo bloginfo() ?>"></a>
+		<img class="menu-logo" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php echo bloginfo() ?>">  
 
 		<header id="slide-nav" class="container-fluid px-0">
 			<div class="row">
@@ -122,7 +122,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 							<p>Email <span class="email"><a href="mailto:kate@reiterburns.com">kate@reiterburns.com</a></span></p>
 
-							<p>Offices</p> <address>
+							<p>Phone</p> <address>
 								155 North Wacker Drive, <br />
 								Chicago, IL 60606,<br />
 								USA
