@@ -70,8 +70,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<div class="row pt-3">
 						<div class="col-sm-4 mb-3 mb-sm-0">
-							<h4>Practice Areas</h4>
-							<h5>Litigation</h5>
+							<a href="<?php echo home_url( '/practice-philosophy/' ) ?>"><h4><?php echo esc_html( 'Practice Areas' ) ?></h4></a>
+							<a href="<?php echo home_url( '/practice-philosophy/' ) ?>"><h5><?php echo esc_html( 'Litigation' ) ?></h5></a>
 							<!-- The WordPress Menu goes here -->
 							<?php wp_nav_menu(
 								array(
@@ -85,7 +85,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								)
 							); ?>
 
-							<h5>Corporate</h5>
+							<a href="<?php echo home_url( '/practice-philosophy/' ) ?>"><h5><?php echo esc_html( 'Corporate' ) ?></h5></a>
 							<!-- The WordPress Menu goes here -->
 							<?php wp_nav_menu(
 								array(
@@ -101,7 +101,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						</div>
 
 						<div class="col-sm-4 mb-3 mb-sm-0">
-							<h4>Attorneys</h4>
+						<a href="<?php echo home_url( '/attorneys/' ) ?>"><h4><?php echo esc_html( 'Attorneys' ) ?></h4></a>
 							<!-- The WordPress Menu goes here -->
 							<?php wp_nav_menu(
 								array(
@@ -118,7 +118,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 						<div id="nav-contact-info" class="col-sm-4 mb-5 mb-sm-0">
 							<h4>Contact Us</h4>
-							<p>Phone <span class="tel">312.123.4567</span></p>
+							<p>Phone <span class="tel">312.982.0090</span></p>
 
 							<p>Email <span class="email">kate@reiterburns.com</span></p>
 
@@ -144,7 +144,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	$content = '';
 	$thumb_id = get_post_thumbnail_id();
 	$thumb_url = wp_get_attachment_image_src($thumb_id,'full', true);
-	
+
 	$content .= '<div class="site-wrapper" id="panel" style="background-image: url('.$thumb_url[0].')">';
 	echo $content; 
 ?>

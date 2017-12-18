@@ -1,6 +1,5 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
 // Global Styles
-
 * {
   -moz-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11,12 +10,12 @@
 
 ::selection {
   color: $white;
-  background: lighten($brand-primary, 15%);
+  background: darken($brand-primary, 5%);
 }
 
 ::-moz-selection {
   color: $white;
-  background: lighten($brand-primary, 15%);
+  background: darken($brand-primary, 5%);
 }
 
 body {
@@ -28,6 +27,7 @@ body {
     background-size: cover;
   }
 }
+
 // Body Border
 #framed-body {
   @include media-breakpoint-down(xs) {
@@ -73,11 +73,11 @@ body {
 #bottom {
   bottom: 0;
 }
+
 // @media only screen and (max-width: 500px), only screen and (min-width: 768px) and (max-width: 1024px) {
 // 	#top, #bottom, #left, #right { display: none; }
 // }
 //Preloader Styles
-
 #preloader,
 #preloader-inside {
   position: fixed;
@@ -106,10 +106,8 @@ body {
 
 #preload-logo {
   transition: all 1.5s ease-in-out;
-  background-color:transparent;
-  //transform: scale(0);
+  background-color: transparent; //transform: scale(0);
   opacity: 0;
-
   &.loaded {
     //transform: scale(1);
     opacity: 1;
@@ -126,24 +124,21 @@ body {
   margin: 0;
   transition: all 0.3s linear;
   opacity: 1;
-
   &.dumped {
     opacity: 0;
   }
-
   .progress {
     height: 3px;
     border-radius: 0;
     background-color: $brand-grey;
-
     .progress-bar {
       transition: width 1.5s ease-in-out;
       background-color: $brand-primary;
     }
   }
 }
-// Header Styles
 
+// Header Styles
 .bg-blue {
   background-color: $brand-primary;
 }
@@ -168,15 +163,12 @@ body {
 
 .navbar {
   padding: 1rem;
-
   .container {
     position: relative;
   }
-
   #navbarNavDropdown {
     margin-top: auto;
   }
-
   .button-box {
     font-family: $font-header;
     font-size: 18px;
@@ -184,7 +176,6 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-
     button {
       height: 75px;
       margin-left: 2rem;
@@ -197,7 +188,6 @@ body {
       border-color: $brand-primary;
       border-radius: 0 0 25px 25px;
       background: $brand-primary;
-
       &:hover {
         transform: translateY(-1.5rem);
         box-shadow: 0 -4px 8px rgba(#000, .7);
@@ -205,8 +195,8 @@ body {
     }
   }
 }
-// Navigation
 
+// Navigation
 nav {
   a {
     font-family: $font-body;
@@ -215,12 +205,10 @@ nav {
     text-transform: uppercase;
     color: $brand-black !important;
     border-radius: 50px;
-
     &:hover {
       color: $white !important;
       background: $brand-primary;
     }
-
     &.custom-logo-link:hover {
       background: none;
     }
@@ -237,7 +225,6 @@ nav {
       padding-left: 0.75rem;
     }
   }
-
   &.secondary-nav .nav-link {
     font-size: 18px;
     padding-right: 1.5rem;
@@ -250,8 +237,8 @@ nav {
     }
   }
 }
-// Typography
 
+// Typography
 h1,
 h2,
 h3,
@@ -262,8 +249,8 @@ h6 {
   font-weight: 700;
   color: $white;
 }
-// Elements
 
+// Elements
 .btn {
   font-family: $font-header;
   font-size: 18px;
@@ -274,41 +261,35 @@ h6 {
   transition: all 0.2s ease;
   text-transform: uppercase;
   border-radius: 5rem;
-
   &-md {
     font-size: 15px;
     padding: 0.75rem 0;
   }
-
   &-primary {
     border-color: $brand-primary;
     background: $brand-primary;
-
     &:hover {
       color: $brand-primary;
       border-color: $brand-primary;
       background: $white;
     }
   }
-
   &-secondary {
     color: $brand-primary;
     border-color: $white;
     background-color: $white;
-
     &:hover {
       color: $white;
       border-color: $brand-primary;
       background-color: $brand-primary;
     }
   }
-
   &:hover {
     cursor: pointer;
   }
 }
-// Slider/Carousel Hero
 
+// Slider/Carousel Hero
 .carousel {
   .carousel-control-next,
   .carousel-control-prev {
@@ -320,7 +301,6 @@ h6 {
       align-items: flex-end;
     }
   }
-
   &:hover {
     .carousel-control-next,
     .carousel-control-prev {
@@ -344,21 +324,18 @@ h6 {
     @include media-breakpoint-down(xs) {
       background-position: 65% center;
     }
-
     &.slide-1 {
       background: url('../img/slide-1.jpg');
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
     }
-
     &.slide-2 {
       background: url('../img/slide-2.jpg');
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
     }
-
     &.slide-3 {
       background: url('../img/slide-3.jpg');
       background-repeat: no-repeat;
@@ -373,12 +350,10 @@ h6 {
     height: 630px;
     @include media-breakpoint-down(xs) {
       height: 400px;
-
       .container {
         position: relative;
         z-index: 4;
       }
-
       &::before {
         position: absolute;
         z-index: 3;
@@ -389,7 +364,6 @@ h6 {
         background-color: rgba($white, .5);
       }
     }
-
     h1 {
       font-size: 72px;
       @include media-breakpoint-down(lg) {
@@ -401,15 +375,12 @@ h6 {
       @include media-breakpoint-down(sm) {
         font-size: 33px;
       }
-
       &.alt {
         color: $white;
-
         span {
           color: $white;
         }
       }
-
       &::after {
         position: relative;
         display: block;
@@ -422,48 +393,43 @@ h6 {
           margin: 2rem auto 0;
         }
       }
-
       span {
         font-family: $font-secondary;
         font-weight: 300;
       }
     }
-
     p {
       font-size: 22px;
       margin: 2rem 0 0;
       @include media-breakpoint-down(md) {
         font-size: 18px;
       }
-
       &.alt {
         color: $white;
       }
     }
   }
-
   #testimonials & .carousel-item {
     z-index: 3;
-    height: 550px;
-    //position: relative;
+    height: 550px; //position: relative;
   }
 }
+
+
 /*
 // Homepage Section
 */
+
 .home-page section {
   padding-top: 6rem;
   padding-bottom: 6rem;
-
   & .section-title {
     margin: 0;
     padding-bottom: 1.75rem;
   }
-
   & .section-lead {
     margin: 1rem 0;
   }
-
   &#testimonials {
     padding-top: 8rem;
     padding-bottom: 8rem;
@@ -472,7 +438,6 @@ h6 {
 
 #welcome {
   position: relative;
-
   h2 {
     font-size: 52px;
   }
@@ -482,7 +447,6 @@ h6 {
   &:first-child {
     padding-bottom: 6rem;
   }
-
   .icon {
     margin-right: 1rem;
     padding: 0.5rem;
@@ -490,28 +454,23 @@ h6 {
     border: 3px solid lighten($brand-black, 65%);
     border-radius: 10px;
     background-color: #fff;
-
     i {
       font-size: 54px;
       transition: all 0.33s ease;
       color: $brand-primary;
     }
-
     &:hover {
       border: 3px solid $brand-primary;
       background-color: $brand-primary;
-
       i {
         color: #fff;
       }
     }
   }
-
   .content {
     h4 {
       font-size: 21px;
     }
-
     p {
       font-size: 14px;
       font-weight: 600;
@@ -519,55 +478,51 @@ h6 {
     }
   }
 }
+
+
 /*
 // Footer info
 */
+
 #wrapper-footer {
-  color: #fff;
-  //  background-color: $brand-primary;
+  color: #fff; //  background-color: $brand-primary;
   background: linear-gradient(135deg, $brand-primary, $brand-black);
   background: url('../img/bg-smooth.jpg');
   background-position: center top;
   background-size: cover;
-
   img.footer-logo {
     width: 200px;
     height: auto;
   }
-
   address {
     font-size: 20px;
     font-weight: 300;
     margin-top: 2rem;
   }
-
   .navbar-nav {
     display: block;
     text-align: center;
-
     li.nav-item {
       display: inline-block;
       margin: 0 1rem;
     }
-
     .nav-link {
       font-family: $font-header;
       color: #fff;
     }
   }
 }
-//BX Slider
 
+//BX Slider
 .bx-wrapper {
   max-width: 100% !important;
 }
-//Slide Nav
 
+//Slide Nav
 #slide-nav {
   padding-left: 3rem !important;
   text-align: left;
   opacity: 0;
-
   h3,
   h4,
   h5 {
@@ -579,13 +534,11 @@ h6 {
     text-transform: uppercase;
     color: $black;
   }
-
   h4,
   h5 {
     font-weight: 400;
     color: $white;
   }
-
   h3 {
     @include media-breakpoint-down(sm) {
       font-size: 42px;
@@ -594,7 +547,6 @@ h6 {
       font-size: 22px;
     }
   }
-
   h4 {
     font-size: 32px;
     margin: 1rem 0;
@@ -607,7 +559,6 @@ h6 {
     @media screen and (max-width: 1430px) {
       font-size: 24px;
     }
-
     &::after {
       display: block;
       width: 90%;
@@ -617,14 +568,24 @@ h6 {
       background: $white;
     }
   }
-
   h5 {
     font-size: 18px;
     margin: 1.5rem 0 0.75rem;
   }
+
+  a:hover, 
+  a:hover h4 {
+    text-decoration: none;
+  }
+  a:hover h4,
+  a:hover h5 {
+    color:$brand-black;
+  }
 }
 
+
 /* The side navigation menu Logo*/
+
 .menu-logo {
   width: 100%;
   max-width: 275px;
@@ -632,14 +593,15 @@ h6 {
   position: absolute;
   top: 3rem;
   right: 5rem;
-
   opacity: 0;
   @include media-breakpoint-down(xs) {
     max-width: 225px;
   }
 }
 
+
 /* The side navigation menu */
+
 #slideoutnav {
   position: fixed;
   /* Stay in place */
@@ -656,11 +618,8 @@ h6 {
   padding-top: 10rem;
   /* Place content 6rem from the top */
   transition: 0.5s;
-  
   /* 0.5 second transition effect to slide in the sidenav */
-  background-color: $brand-primary;
-  //box-shadow: 0 0 0 rgba($brand-primary, .9), 0 0 1px rgba($brand-primary, .6), 0 0 2px rgba($brand-primary, .3);
-
+  background-color: $brand-primary; //box-shadow: 0 0 0 rgba($brand-primary, .9), 0 0 1px rgba($brand-primary, .6), 0 0 2px rgba($brand-primary, .3);
   &.shadowed {
     //box-shadow: 80px 0 0 rgba($brand-primary, .9), 160px 0 1px rgba($brand-primary, .6), 240px 0 2px rgba($brand-primary, .3);
   }
@@ -694,36 +653,34 @@ h6 {
     font-size: 14px;
     font-weight: 600;
   }
-
   p {
     margin: 0;
     text-transform: uppercase;
     color: #000;
-
     address,
     span {
       display: block;
       margin: 0;
       color: $white;
     }
-
     span {
       &.tel {
         font-size: 25px;
       }
-
       &.email {
         text-transform: lowercase;
       }
     }
   }
 }
+
+
 /* The navigation menu links */
+
 .navbar-nav {
   li {
     &.current-menu-item a {
       color: #000;
-
       &::before {
         display: inline-block;
         width: 10px;
@@ -732,7 +689,6 @@ h6 {
         content: '';
         background: url('../img/svg/bullet-black.svg') no-repeat;
       }
-
       &::after {
         position: absolute;
         top: 0;
@@ -744,19 +700,16 @@ h6 {
         background: url('../img/svg/arrow-black.svg') no-repeat;
       }
     }
-
     a {
       font-family: $font-body-alt;
       font-size: 14px;
       font-weight: 600;
       position: relative;
       padding-left: 1rem;
-
       &:hover {
         text-decoration: none;
         color: #000;
       }
-
       &::before {
         display: inline-block;
         width: 10px;
@@ -765,7 +718,6 @@ h6 {
         content: '';
         background: url('../img/svg/bullet.svg') no-repeat;
       }
-
       &:hover::before {
         content: '';
         background: url('../img/svg/bullet-black.svg') no-repeat;
@@ -773,19 +725,24 @@ h6 {
     }
   }
 }
+
+
 /* When you mouse over the navigation links, change their color */
+
 .offcanvas a:focus,
 .sidenav a:hover {
   color: #f1f1f1;
 }
+
+
 /* Position and style the close button (top right corner) */
+
 .sidenav .closebtn {
   position: absolute;
   top: 2.5rem;
   left: 4rem;
   transition: opacity 0.2s ease-in-out;
   opacity: 0;
-
   img {
     display: block;
     width: auto;
@@ -793,11 +750,9 @@ h6 {
     margin: 0 auto;
     transition: transform 0.2s ease;
   }
-
   &:hover img {
     transform: scale(1) translateX(-10px);
   }
-
   span {
     font-family: $font-body-alt;
     font-size: 14px;
@@ -817,7 +772,6 @@ h6 {
     top: 1rem;
     left: 1rem;
   }
-
   img {
     display: block;
     width: auto;
@@ -830,11 +784,9 @@ h6 {
       margin: 0;
     }
   }
-
   &:hover img {
     transform: scale(.9);
   }
-
   span {
     font-family: $font-body-alt;
     font-size: 14px;
@@ -845,7 +797,6 @@ h6 {
     text-transform: uppercase;
     color: rgba($white, .8);
   }
-
   &:hover span {
     color: rgba($white, 1);
   }
@@ -856,17 +807,25 @@ h6 {
 .sidenav .closebtn {
   text-decoration: none !important;
 }
+
+
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+
 #main {
   padding: 20px;
   transition: margin-left 0.5s;
 }
+
+.entry-content {
+  min-height: 450px;
+}
+
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
 @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;
   }
-
   .sidenav a {
     font-size: 18px;
   }
@@ -906,12 +865,10 @@ h6 {
     background: url('../img/slide-1.jpg') no-repeat top center;
     background-size: cover;
   }
-
   .slide-2 {
     background: url('../img/slide-2.jpg') no-repeat top center;
     background-size: cover;
   }
-
   .slide-3 {
     background: url('../img/slide-3.jpg') no-repeat top center;
     background-size: cover;
@@ -925,14 +882,13 @@ h6 {
     min-height: 1024px;
   }
 }
-// Layout
 
+// Layout
 .wrapper {
   position: relative;
   z-index: 999;
   margin: 5rem 0 0;
   padding: 30px 0 15px;
-
   #content {
     position: relative;
   }
@@ -942,7 +898,8 @@ h6 {
   position: absolute;
   right: 2rem;
   width: 180px;
-  margin-top: 1.2rem;
+  margin-top: 1.5rem;
+  z-index: 9;
   @include media-breakpoint-down(sm) {
     position: relative;
     right: 0;
@@ -956,19 +913,15 @@ h6 {
 .cover-container {
   position: relative;
   z-index: 100;
-
   .cover {
     color: #fff;
-
     p {
       font-family: $font-body;
       font-size: 30px;
       font-weight: 300;
       position: relative !important;
-
       animation-duration: 2s;
       animation-delay: 3.5s;
-
       @include media-breakpoint-down(md) {
         font-size: 24px;
       }
@@ -978,14 +931,13 @@ h6 {
     }
   }
 }
-// About Page
 
+// About Page
 .entry-header {
   border-bottom: 1px solid rgba($white, .5);
   @include media-breakpoint-down(sm) {
     text-align: center;
   }
-
   .entry-title {
     font-family: $font-body;
     font-weight: 600;
@@ -996,17 +948,20 @@ h6 {
   }
 }
 
+.box-holder {
+  position: relative;
+  background: $brand-primary;
+}
+
 #about-bio {
   position: relative;
   margin-top: 1.25rem;
-  background: $brand-primary;
-
+  //background: $brand-primary;
   .social-share {
     position: absolute;
     z-index: 5;
     top: 0;
     left: 0;
-
     ul {
       display: flex;
       margin: 0;
@@ -1014,11 +969,10 @@ h6 {
       background: $white;
       align-items: baseline;
       justify-content: center;
-
       li {
         display: flex;
         height: 18px;
-        padding: 0 0.75rem;
+        padding: 0 0.5rem;
         border-right: 1px solid rgba($brand-black, .5);
         align-items: center;
         @include media-breakpoint-down(sm) {
@@ -1026,24 +980,20 @@ h6 {
           border-right: 0;
           border-bottom: 1px solid rgba($brand-black, .5);
         }
-
         &:last-child {
           border: 0;
         }
-
         a {
           display: block;
-
           img {
-            width: 16px;
+            width: 14px;
             height: auto;
             transition: all 0.2s ease;
             opacity: 0.9;
             @include media-breakpoint-down(sm) {
-              width: 25px;
+              width: 20px;
             }
           }
-
           &:hover img {
             transform: scale(1.25);
             opacity: 1;
@@ -1052,7 +1002,9 @@ h6 {
       }
     }
   }
-
+  .bio-content {
+    background: $brand-primary;
+  }
   p {
     font-size: 18px;
     @include media-breakpoint-down(lg) {
@@ -1063,12 +1015,10 @@ h6 {
 
 #about-content {
   font-family: $font-body-alt;
-
   h3,
   h4 {
     text-transform: uppercase;
   }
-
   h3 {
     font-size: 34px;
     display: inline-block;
@@ -1079,23 +1029,21 @@ h6 {
       font-size: 24px;
     }
   }
-
   h4 {
     font-size: 18px;
     @include media-breakpoint-down(md) {
       font-size: 16px;
     }
   }
-
   ul {
-    padding-left: 1rem;
+    padding-left: 0.5rem;
+    font-size: 14px;
+    font-weight: 700;
     @include media-breakpoint-down(md) {
       font-size: 12px;
     }
-
     li {
       list-style-type: none;
-
       &::before {
         display: inline-block;
         width: 10px;
@@ -1109,16 +1057,14 @@ h6 {
 }
 
 #bio-links {
-  padding-top: 1rem;
+  padding-top: 1.5rem;
   border-top: 2px solid #000;
-
   div:first-child {
     border-right: 2px solid #000;
     @include media-breakpoint-down(sm) {
       border: 0;
     }
   }
-
   a {
     display: flex;
     align-items: center;
@@ -1126,7 +1072,6 @@ h6 {
     @include media-breakpoint-down(xs) {
       justify-content: start;
     }
-
     h5 {
       font-size: 18px;
       margin: 0;
@@ -1134,7 +1079,6 @@ h6 {
       @include media-breakpoint-down(lg) {
         font-size: 14px;
       }
-
       &::after {
         display: block;
         width: 0;
@@ -1147,12 +1091,10 @@ h6 {
         background: $white;
       }
     }
-
     &:hover h5::after {
       width: 100%;
       content: '';
     }
-
     img {
       display: block;
       width: 25px;
@@ -1160,11 +1102,9 @@ h6 {
       margin-right: 1rem;
       transition: all 0.2s ease-in-out;
     }
-
     &:hover img {
       transform: scale(1.2);
     }
-
     &:hover {
       text-decoration: none;
     }
@@ -1178,12 +1118,10 @@ h6 {
       display: block;
     }
   }
-
   p {
     font-family: $font-body-alt;
     font-size: 14px;
     font-weight: 600;
-
     a {
       font-family: $font-body-alt;
       font-size: 25px;
@@ -1199,7 +1137,6 @@ h6 {
       @include media-breakpoint-down(md) {
         font-size: 14px;
       }
-
       &:hover {
         text-decoration: none;
         background: #000;
@@ -1207,6 +1144,309 @@ h6 {
     }
   }
 }
+
+// Attorney Index Page
+#attorneys-index {
+  .bio-holder {
+    h3 {
+      font-size: 24px;
+      @include media-breakpoint-down(lg) {
+        font-size: 20px;
+      }
+    }
+  }
+  #about-bio p {
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 700;
+    &.title {
+      font-size: 18px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.7);
+      &::after {
+        content: '';
+        height: 2px;
+        display: block;
+        background-color: rgba(255, 255, 255, 0.7);
+        width: 100%;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
+
+.scrollbar {
+  width: 100%;
+  height: 10px;
+  .handle {
+    width: 100px;
+    /* overriden if dynamicHandle: 1 */
+    height: 100%;
+    background: #222;
+  }
+}
+
+body {
+  background: #e8e8e8;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.wrap {
+  position: relative;
+  margin: 0.5rem 0;
+}
+
+
+/* Frame */
+
+.frame {
+  // height: 250px;
+  // line-height: 250px;
+  overflow: hidden;
+}
+
+.frame ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-size: 50px;
+}
+
+.frame ul li.attorneys {
+  // float: left;
+  width: 290px;
+  padding-left: 0;
+  padding-right: 0; // height: 100%;
+  margin: 0 100px 0 0;
+  // padding: 0;
+  //background: #333;
+  //color: #ddd;
+  //text-align: center;
+  //cursor: pointer;
+  &:first-child {
+    margin-left: 0;
+  } 
+  &:last-child {
+    margin-right: 0;
+  } 
+  @include media-breakpoint-down(lg) {
+    width: 395px;
+  }
+  @include media-breakpoint-down(md) {
+    width: 275px;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 210px;
+    margin: 0 50px 0 0;
+  }
+}
+
+.frame ul li.attorneys.active {
+  color: #fff; //background: #a03232;
+}
+
+
+/* Scrollbar */
+
+.scrollbar {
+  margin: 2rem 0 0 0;
+  height: 16px;
+  padding: 3px 0 3px 0;
+  background: rgba($white, 0.3);
+  line-height: 0;
+  border-radius: 50px;
+}
+
+.scrollbar .handle {
+  width: 100px;
+  height: 100%;
+  position: relative;
+  background: $brand-primary;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.scrollbar .handle .mousearea {
+  position: absolute;
+  top: -9px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+}
+
+
+/* Scroll Items Pages Controller */
+
+.pages {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+  text-align: center;
+}
+
+.pages li {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 0 4px;
+  text-indent: -999px;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .2);
+}
+
+.pages li:hover {
+  background: #aaa;
+}
+
+.pages li.active {
+  background: #666;
+}
+
+
+/* Controls */
+
+.controls {
+  position: absolute;
+  top: 35%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  @media screen and (max-width: 1300px) {
+    top: 40%;
+  }
+  .btn {
+    font-family: "Open Sans", serif;
+    height: 125px;
+    width: 65px;
+    color: rgba($white, 0.5);
+    font-weight: normal;
+    line-height: 1;
+    padding: 0;
+    transition: all .2s ease;
+    text-transform: uppercase;
+    border-radius: 0;
+    @media screen and (max-width: 1300px) {
+      width: 40px;
+    }
+
+    &.prevPage,
+    &.nextPage {
+      position: absolute;
+      background-image: url(../img/svg/angle-left.svg);
+      background-color: transparent;
+      background-repeat: no-repeat;
+      transition: all 0.2s;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    &.prevPage {
+      left: 4rem;
+      @media screen and (max-width: 1400px) {
+        left: 2rem;
+      }
+      @media screen and (max-width: 1300px) {
+        left: 1.5rem;
+      }
+    }
+    &.nextPage {
+      background-image: url(../img/svg/angle-right.svg);
+      right: 4rem;
+      @media screen and (max-width: 1400px) {
+        right: 2rem;
+      }
+      @media screen and (max-width: 1300px) {
+        right: 1.5rem;
+      }
+    }
+  }
+}
+
+// Buttons Foucs
+.btn.focus,
+.btn:focus,
+.wpcf7 input.focus[type=submit],
+.wpcf7 input[type=submit]:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+
+//Practice Areas Page
+#practices-areas-page {
+  .box-holder {
+    p {
+      font-size: 18px;
+    }
+  }
+  ul.areas-list {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(#fff, 0.4);
+    li {
+      a {
+        font-family: museo-sans,museo-sans,sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        position: relative;
+        padding-left: 1rem;
+
+        &:hover {
+          text-decoration: none;
+          color: #000;
+        }
+
+        &::before {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          padding-right: 1.5rem;
+          content: '';
+          background: url(../img/svg/bullet.svg) no-repeat;
+        }
+        &:hover::before {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          padding-right: 1.5rem;
+          content: '';
+          background: url(../img/svg/bullet-black.svg) no-repeat;
+        }
+      }
+    }
+  }
+}
+
+
+
+#litigation-single {
+  #about-content {
+    h4 {
+      font-size: 18px;
+      text-transform: none;
+      @include media-breakpoint-down(md) {
+        font-size: 16px;
+      }
+    }
+  }
+  #bio-contact p {
+    font-family: museo-sans,museo-sans,sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.7;
+  }
+}
+
 
 #breadcrumbs {
   font-size: 14px;
@@ -1230,44 +1470,95 @@ $sign-y: 171px;
 $sign-frames: 90;
 $sign-duration: 1.5s;
 $sign-delay: 0.5s;
-
 #rb-sign {
-    display: block;
-    margin: 0 auto;
-    width: $sign-x;
-    height: $sign-y;
-    background: url(http://reiter.wpengine.com/wp-content/uploads/2017/11/sequence.png) no-repeat;
-		background-size: 100% auto;
-    &.white {
-        //background-image: url(http://drygiel.com/projects/sign/frames-255-white.png);
-    }
-
-    &.play {
-        -moz-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
-        -o-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
-        -webkit-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
-        animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
-    }
+  display: block;
+  margin: 0 auto;
+  width: $sign-x;
+  height: $sign-y;
+  background: url(http://reiter.wpengine.com/wp-content/uploads/2017/11/sequence.png) no-repeat;
+  background-size: 100% auto;
+  &.white {
+    //background-image: url(http://drygiel.com/projects/sign/frames-255-white.png);
+  }
+  &.play {
+    -moz-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
+    -o-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
+    -webkit-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
+    animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
+  }
 }
 
 a#rb-sign {
-    opacity:1;
+  opacity: 1;
 }
 
 @-webkit-keyframes sign-anim {
-    to {
-        background-position: 0 $sign-frames * -$sign-y;
-    }
+  to {
+    background-position: 0 $sign-frames * -$sign-y;
+  }
 }
 
 @-moz-keyframes sign-anim {
-    to {
-        background-position: 0 $sign-frames * -$sign-y;
-    }
+  to {
+    background-position: 0 $sign-frames * -$sign-y;
+  }
 }
 
 @keyframes sign-anim {
-    to {
-        background-position: 0 $sign-frames * -$sign-y;
-    }
+  to {
+    background-position: 0 $sign-frames * -$sign-y;
+  }
 }
+
+
+.animated {
+  animation-duration: 1.33s;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-10%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(10%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+
+// .logo-inside {
+//   animation-name: floating;
+//   animation-duration: 2s;
+//   animation-iteration-count: infinite;
+//   animation-timing-function: ease-in-out;
+// }
+
+// @keyframes floating {
+//   from {
+//             transform: translate(0, 0px) rotateY(-12deg);
+//     text-shadow: 10px 10px 3px rgba(0,0,0,0.15);
+//   }
+//   65% {
+//             transform: translate(0, 15px) rotateY(10deg) rotateX(10deg);
+//     text-shadow: -10px -10px 3px rgba(0,0,0,0.15);
+//   }
+//   to {
+//             transform: translate(0, 0px) rotateY(-12deg);
+//     text-shadow: 10px 10px 3px rgba(0,0,0,0.15);
+//   }
+// }

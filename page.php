@@ -21,40 +21,30 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
+		<div class="logo-inside">
+			<a href="<?php echo home_url('/'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php echo esc_html_e('', 'understrap') ?>"></a>
+		</div>
+
 		<div class="row">
 
-			<!-- Do the left sidebar check -->
-			<?php get_template_part( 'global-templates/left-sidebar-check', 'none' ); ?>
+			<div class="col-md-12 content-area" id="primary">
 
-			<main class="site-main" id="main">
 
-				<?php while ( have_posts() ) : the_post(); ?>
+				<main class="site-main" id="main">
 
-					<?php get_template_part( 'loop-templates/content', 'page' ); ?>
+					<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-					?>
+						<?php get_template_part( 'loop-templates/content', 'page' ); ?>
 
-				<?php endwhile; // end of the loop. ?>
+					<?php endwhile; // end of the loop. ?>
 
-			</main><!-- #main -->
+				</main><!-- #main -->
 
-		</div><!-- #primary -->
+			</div><!-- .content-area col #primary -->
 
-		<!-- Do the right sidebar check -->
-		<?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
+		</div><!-- .row -->
 
-			<?php get_sidebar( 'right' ); ?>
-
-		<?php endif; ?>
-
-	</div><!-- .row -->
-
-</div><!-- Container end -->
+	</div><!-- Container end -->
 
 </div><!-- Wrapper end -->
 

@@ -16,7 +16,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<div class="<?php echo esc_attr( $container ); ?>" id="content">
 
 		<div class="logo-inside">
-			<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php echo esc_html_e('', 'understrap') ?>">
+			<a href="<?php echo home_url('/'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php echo esc_html_e('', 'understrap') ?>"></a>
 		</div>
 
 		<div class="row">
@@ -30,42 +30,57 @@ $container = get_theme_mod( 'understrap_container_type' );
 					</header><!-- .entry-header -->
 
 					<?php 
+						// Attorney Posts
 						$args = array(
-							'post_type' => 'attorneys'
+							'post_type' => 'attorneys',
+							'order' => 'ASC'
 						);
 						$query = new WP_Query( $args );
 					?>
+					
+					<div class="wrap animated fadeIn">
+						<div class="frame" id="basic">
+							<ul class="row d-flex">
+								<?php if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post(); ?>
+									<li class="attorneys">
+										<div id="about-bio" class="box-holder">
+											<a href="<?php the_permalink(); ?>">
+												<img class="img-fluid d-block mx-auto w-100" src="<?php the_field('bio_img') ?>" alt="<?php echo esc_html_e('', 'understrap') ?>">	
+											</a>
+											<div class="social-share">
+												<ul class="py-1 px-1 flex-md-row flex-column">
+													<li><a href="javascript:void(0)"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/share.svg"> </a></li>
+													<li><a href="<?php the_field('linkedin_url') ?>"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/linkedin.svg"> </a></li>
+													<li><a href="javascript:void(0)"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/friend.svg"> </a></li>
+												</ul>
+											</div>
+											<!-- social-share -->
+											<div class="bio-holder px-4 pb-4">
+												<h3 class="mt-3 mb-0"><?php the_title() ?></h3>
+												<p class="title"><?php the_field('sub_title') ?></p>
+												<?php echo custom_field_excerpt(); ?>
+												<a class="btn btn-large btn-secondary btn-block" href="<?php the_permalink(); ?>"><?php _e('Read More') ?></a>
+											</div>
+											<!-- bio-holder -->
+										</div>
+										<!-- about-bio -->
+									</li>
+									<!-- column -->
+								<?php endwhile; endif; wp_reset_postdata(); ?>
+							</ul>
+						</div>
+						<!-- .frame #basic -->
 
-					<div class=" no-gutters">
-						<div class="row d-flex align-items-center">
-
-							<?php if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post(); ?>
-
-							<div class="col-md-4 attorneys animated fadeInLeft">
-								<div id="about-bio" class="box-holder">
-									<a href="<?php the_permalink(); ?>">
-										<img class="img-fluid d-block mx-auto w-100" src="<?php the_field('bio_img') ?>" alt="<?php echo esc_html_e('', 'understrap') ?>">	
-									</a>
-
-									<div class="bio-holder px-4 pb-4">
-										<h3 class="mt-3"><?php the_title() ?></h3>
-										<p><?php the_field('sub_title') ?></p>
-										<?php echo custom_field_excerpt(); ?>
-										<a class="btn btn-large btn-secondary" href="<?php the_permalink(); ?>"><?php _e('Read More') ?></a>
-									</div>
-									<!-- bio-holder -->
-								</div>
-								<!-- about-bio -->
+						<div class="scrollbar">
+							<div class="handle" style="transform: translateZ(0px) translateX(152px); width: 190px;">
+								<div class="mousearea"></div>
 							</div>
-							<!-- colomn -->
+						</div>
+						<!-- scrollbar -->
+					</div>
+					<!-- .wrap -->
 
-							<?php endwhile; endif; wp_reset_postdata(); ?>
-
-						</div><!-- row -->
-
-					</div><!-- container -->
-
-					<footer class="entry-footer">
+					<footer class="entry-footer" >
 
 						<?php edit_post_link( __( 'Edit', 'understrap' ), '<span class="edit-link">', '</span>' ); ?>
 
@@ -77,6 +92,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		</div><!-- .row -->
 
+
 	</div><!-- #content.container -->
+
+	<div class="controls center">
+		<button class="btn prevPage"><i class=""></i></button>
+		<button class="btn nextPage"><i class=""></i></button>
+	</div>
+	<!-- controls -->
 
 <?php get_footer(); ?>

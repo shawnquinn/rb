@@ -17,16 +17,16 @@
 
 // IIFE for jQuery
 ( function( $ ) {
-  // Wait for Signature to Load then add Parallax effect to logo
-  // First Instance
-  setTimeout(function() { 
-    // Second Instance
-    var logo = document.getElementById('main-home');
-    var pxInstance2 = new Parallax(logo);
-  }, 3600);
-
 
   if( $('body.home').length ){
+  // Wait for Signature to Load then add Parallax effect to logo
+  // First Instance
+    setTimeout(function() { 
+      // Second Instance
+      var logo = document.getElementById('main-home');
+      var pxInstance2 = new Parallax(logo);
+    }, 3600);
+
     // Second Instance
     var scene = document.getElementById('plx');
     var pxInstance1 = new Parallax(scene);
@@ -121,6 +121,83 @@
     oneToOneTouch: false
   });
 
+  // Attorney Index Horizontal Slider
+    var $frame  = $('#basic');
+		var $slidee = $frame.children('ul').eq(0);
+    var $wrap   = $frame.parent();
+    var $masterWrap = $('#attorneys-index');
+    
+    var options = {
+			horizontal: 1,
+			itemNav: 'basic',
+			smart: 0,
+			activateOn: 'click',
+			mouseDragging: 1,
+			touchDragging: 1,
+      releaseSwing: 0,
+			startAt: 0,
+			scrollBar: $wrap.find('.scrollbar'),
+			scrollBy: 1,
+			pagesBar: $wrap.find('.pages'),
+			activatePageOn: 'click',
+      speed: 700,
+      swingSpeed: 1,
+			elasticBounds: 1,
+			easing: 'easeOutExpo',
+			dragHandle: 1,
+			dynamicHandle: 1,
+      clickBar: 1,
+
+			// Buttons
+			forward: $wrap.find('.forward'),
+			backward: $wrap.find('.backward'),
+			prev: $wrap.find('.prev'),
+			next: $wrap.find('.next'),
+			prevPage: $masterWrap.find('.prevPage'),
+			nextPage: $masterWrap.find('.nextPage')
+		};
+
+		// Call Sly on frame
+    $frame.sly(options);
+    
+    $(window).resize(function(e) {
+      $frame.sly('reload');
+    });
+
+		// To Start button
+		$wrap.find('.toStart').on('click', function () {
+			var item = $(this).data('item');
+			// Animate a particular item to the start of the frame.
+			// If no item is provided, the whole content will be animated.
+			$frame.sly('toStart', item);
+		});
+
+		// To Center button
+		$wrap.find('.toCenter').on('click', function () {
+			var item = $(this).data('item');
+			// Animate a particular item to the center of the frame.
+			// If no item is provided, the whole content will be animated.
+			$frame.sly('toCenter', item);
+		});
+
+		// To End button
+		$wrap.find('.toEnd').on('click', function () {
+			var item = $(this).data('item');
+			// Animate a particular item to the end of the frame.
+			// If no item is provided, the whole content will be animated.
+			$frame.sly('toEnd', item);
+		});
+
+		// Add item
+		$wrap.find('.add').on('click', function () {
+			$frame.sly('add', '<li>' + $slidee.children().length + '</li>');
+		});
+
+		// Remove item
+		$wrap.find('.remove').on('click', function () {
+			$frame.sly('remove', -1);
+		});
+	
 
 
 } )( jQuery );

@@ -15,7 +15,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<div class="<?php echo esc_attr( $container ); ?>" id="content">
 
 		<div class="logo-inside">
-			<img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php echo esc_html_e('', 'understrap') ?>">
+			<a href="<?php echo home_url('/') ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php echo esc_html_e('', 'understrap') ?>"></a>
 		</div>
 
 		<div class="row">
@@ -32,35 +32,38 @@ $container = get_theme_mod( 'understrap_container_type' );
 						</header><!-- .entry-header -->
 
 						<div class="container">
-						<div id="about-bio" class="row d-flex align-items-center">
-						  <div class="col-lg-4 px-0">
+						<div id="about-bio" class="row d-flex align-items-stretch">
+						  <div class="col-lg-4 px-0 animated fadeInLeft">
 								<div class="social-share">
-									<ul class="py-2 px-3 flex-md-row flex-column">
+									<ul class="py-2 px-1 flex-md-row flex-column">
 										<li><a href="javascript:void(0)"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/share.svg"> </a></li>
 										<li><a href="<?php the_field('linkedin_url') ?>"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/linkedin.svg"> </a></li>
 										<li><a href="javascript:void(0)"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/friend.svg"> </a></li>
 									</ul>
 								</div>
+								<!-- social-share -->
 								<img class="img-fluid d-block mx-auto w-100" src="<?php the_field('bio_img') ?>" alt="<?php echo esc_html_e('', 'understrap') ?>">
-						  </div>
+						  </div><!-- col -->
 
-							<div class="col-lg-8 my-4 my-lg-0">
-						  	<div class="row mx-4">
-									<?php the_field('bio_content') ?>
-						  	</div>
-								<div id="bio-links" class="row mx-4 mt-3">
-								  <div class="col-sm-6 px-0 py-3 py-sm-0">
-								  	<a href="<?php the_field('case_list') ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/cases.svg"><h5><?php echo esc_html_e('View List of Trial Cases', 'understrap') ?></h5></a>
-								  </div>
+							<div class="bio-content col-lg-8 my-4 my-lg-0 d-flex align-items-center animated fadeInRight">
+								<div class="flex-holder">
+									<div class="row mx-4">
+										<?php the_field('bio_content') ?>
+									</div>
+									<div id="bio-links" class="row mx-4 mt-3">
+										<div class="col-sm-6 px-0 py-3 py-sm-0">
+											<a href="<?php the_field('case_list') ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/cases.svg"><h5><?php echo esc_html_e('Representative Trial Cases', 'understrap') ?></h5></a>
+										</div>
 
-									<div class="col-sm-6 px-0 py-3 py-sm-0">
-								  	<a href="<?php the_field('resume') ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/pdf.svg"><h5><?php echo esc_html_e('Download Resume', 'understrap') ?></h5></a>
-								  </div>
-								</div>
-						  </div>
+										<div class="col-sm-6 px-0 py-3 py-sm-0">
+											<a href="<?php the_field('resume') ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/pdf.svg"><h5><?php echo esc_html_e('Download Resume', 'understrap') ?></h5></a>
+										</div>
+									</div>
+								</div><!-- null div -->
+						  	</div><!-- #bio-content -->
 						</div><!-- #about-bio -->
 
-						<div id="about-content" class="row credentials px-0">
+						<div id="about-content" class="row credentials px-0 animated fadeIn">
 								<div class="col-md-4 col-sm-6 pl-0">
 									<h3><?php echo esc_html_e('Experience', 'understrap') ?></h3>
 									<?php the_field('bio_experience') ?>

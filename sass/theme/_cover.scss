@@ -10,14 +10,37 @@ a:hover {
 }
 
 /* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: #333;
+.btn-primary,
+.btn-primary:focus {
+  color: #fff;
   text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #fff;
-  border: .05rem solid #fff;
+  background-color: $brand-primary;
+  border: .05rem solid $brand-primary;
   border-radius: 0;
+  padding: 0.5rem 2rem;
+
+  &:hover {
+    color: #fff;
+    background-color: $brand-black;
+    border: .05rem solid $brand-black;
+  }
+}
+
+// Secondary Button Styles
+.btn-secondary,
+.btn-secondary:focus {
+  color: #fff;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: $brand-black;
+  border: .05rem solid $brand-black;
+  border-radius: 0;
+  padding: 0.5rem 2rem;
+
+  &:hover {
+    color: $brand-black;
+    background-color: #fff;
+    border: .05rem solid #fff;
+  }
 }
 
 /*
@@ -173,6 +196,7 @@ body {
     }
     p {
       margin-bottom: 0.25rem;
+      color: rgba($white, 0.8);
       &.in-touch {
         font-weight: 700;
         font-size: 14px;

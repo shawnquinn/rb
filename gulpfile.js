@@ -229,6 +229,12 @@ gulp.task('scripts', function() {
         // BXSlider
         basePaths.dev + 'js/jquery.bxslider.min.js',
 
+        // Sly
+        basePaths.dev + 'js/jquery.easing.min.js',
+
+        // Sly
+        basePaths.dev + 'js/sly.min.js',
+
         // WOW js
         //basePaths.dev + 'js/wow.js',
 

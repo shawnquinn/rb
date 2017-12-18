@@ -20,7 +20,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<a href="<?php echo esc_url( home_url('') ) ?>"><img class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/logo-mini.png" alt="<?php echo bloginfo() ?>"></a>
 					</div>
 					<div class="copy">
-						<p class="in-touch">GET IN TOUCH:  <span class="d-block d-md-inline-block"><a class="ml-0" href="tel:+1-312-123-4567"><?php echo esc_html_e('312.123.4567', 'understrap') ?></a> / <a href="mailto:kate@reiterburns.com"><?php echo esc_html_e('kate@reiterburns.com', 'understrap') ?></a></span></p>
+						<p class="in-touch">GET IN TOUCH:  <span class="d-block d-md-inline-block"><a class="ml-0" href="tel:+1-312-982-0090"><?php echo esc_html_e('312.982.0090', 'understrap') ?></a> / <a href="mailto:kate@reiterburns.com"><?php echo esc_html_e('kate@reiterburns.com', 'understrap') ?></a></span></p>
 						<p><?php echo esc_html_e('155 North Wacker Drive, Chicago, IL 60606, USA.', 'understrap') ?></p>
 					</div>
 				</div>
@@ -32,7 +32,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<?php endif; ?>
 
 				<div class="col-lg-3 col-md-4 px-0 text-center text-md-right mt-4 mt-md-0">
-						<p><a href="<?php echo esc_url( home_url('') ) ?>"><?php echo esc_html_e('Terms &amp; Conditions', 'understrap') ?></a> / <a href="<?php echo esc_url( home_url('') ) ?>"><?php echo esc_html_e('Privacy Policy', 'understrap') ?></a>.</p>
+						<p><a href="<?php echo esc_url( home_url('') ) ?>"><?php echo esc_html_e('Terms &amp; Conditions', 'understrap') ?></a> / <a href="<?php echo home_url('') ?>"><?php echo esc_html_e('Privacy Policy', 'understrap') ?></a>.</p>
 						<p><?php echo esc_html_e('Copyright &copy;', 'understrap') ?> <?php echo date('Y'); ?> <?php bloginfo(); echo esc_html_e(' LLC.', 'understrap') ?></p>
 				</div>
 			</div>
