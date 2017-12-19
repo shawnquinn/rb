@@ -13059,6 +13059,8 @@ body {
     body {
       background: url("../img/slide-1.jpg") no-repeat center center;
       background-size: cover; } }
+  body.home {
+    overflow: hidden; }
 
 @media (max-width: 575px) {
   #framed-body {
@@ -13557,6 +13559,7 @@ h6 {
   top: 0;
   left: 0;
   overflow-x: hidden;
+  overflow-y: hidden;
   /* Disable horizontal scroll */
   width: 0;
   /* 0 width - change this with JavaScript */
@@ -14123,7 +14126,7 @@ body {
 .scrollbar {
   margin: 2rem 0 0 0;
   height: 16px;
-  padding: 3px 0 3px 0;
+  padding: 3px;
   background: rgba(255, 255, 255, 0.3);
   line-height: 0;
   border-radius: 50px; }
@@ -14378,7 +14381,7 @@ body {
   margin: 0 auto;
   width: 586px;
   height: 171px;
-  background: url(http://reiter.wpengine.com/wp-content/uploads/2017/11/sequence.png) no-repeat;
+  background: url(../img/sequence.png) no-repeat;
   background-size: 100% auto; }
   #rb-sign.play {
     -webkit-animation: sign-anim 1.5s 0.5s steps(90) forwards;

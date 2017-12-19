@@ -24,6 +24,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<script src="https://use.typekit.net/rgx3fsq.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
+	<script>
+	
+		var images = new Array();
+		function preloadimages(){
+			for (i=0; i< preloadimages.arguments.length; i++){
+				images[i]=new Image()
+				images[i].src=preloadimages.arguments[i]
+			}
+		}
+		preloadimages( window.location + "/wp-content/themes/reiterburns/img/sequence.png");
+
+	</script>
+
 	<?php wp_head(); ?>
 </head>
 
@@ -43,7 +56,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		</div>
 
 	<?php else : ?>
-		<div id="preloader-inside" hidden></div>
+		<!-- <div id="preloader-inside" hidden></div> -->
 	<?php endif; ?>
 
 	<div id="framed-body">
@@ -123,8 +136,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<p>Email <span class="email"><a href="mailto:kate@reiterburns.com">kate@reiterburns.com</a></span></p>
 
 							<p>Offices</p> <address>
-								155 North Wacker Drive, <br />
-								Chicago, IL 60606,<br />
+								311 S Wacker Drive<br/>
+								Suite 5200<br/>
+								Chicago, IL 60606<br/>
 								USA
 							</address>
 						</div>

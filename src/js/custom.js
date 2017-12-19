@@ -18,6 +18,18 @@
 // IIFE for jQuery
 ( function( $ ) {
 
+  // Preloader
+  $(window).on('load', function() { // makes sure the whole site is loaded
+    //$('#progressive').delay(2000).addClass('dumped'); // will first fade out the loading animation
+    // $("#progressive").delay(2000).queue(function(next) {
+    //   $(this).addClass('dumped');
+    //   next();
+    // });
+    $('#preloader').delay(2200).fadeOut(1200); // will fade out the white DIV that covers the website.
+    //$('#preload-logo').delay(200).addClass('loaded'); // Load in logo zoomed.
+    //$('body').delay(350).css({'overflow':'visible'});
+  });
+
   if( $('body.home').length ){
   // Wait for Signature to Load then add Parallax effect to logo
   // First Instance
@@ -63,7 +75,8 @@
 
     $('#close-button').css("opacity", 1);
   });
-// Close on click
+
+  // Close on click
   $('#close-button').click(function() {
     $('#slideoutnav').css("width", "0%");
     $('#close-button').css("opacity", 0);
@@ -71,6 +84,7 @@
     $('.stack-1').css("width", "0%");
     $('.stack-2').css("width", "0%");
   });
+
 
   //Preloader Progress Bar
   $(".progress-bar").animate({
@@ -90,22 +104,19 @@
     $('.sidenav').removeClass('shadowed');
   });
 
-  // Preloader
-  $(window).on('load', function() { // makes sure the whole site is loaded
-    //$('#progressive').delay(2000).addClass('dumped'); // will first fade out the loading animation
-    // $("#progressive").delay(2000).queue(function(next) {
-    //   $(this).addClass('dumped');
-    //   next();
-    // });
-    $('#preloader').delay(2200).fadeOut(1200); // will fade out the white DIV that covers the website.
-    //$('#preload-logo').delay(200).addClass('loaded'); // Load in logo zoomed.
-    //$('body').delay(350).css({'overflow':'visible'});
+  $('.site-wrapper').click(function() {
+    $('#slide-nav').css({opacity:0});
+    $('.menu-logo').css({opacity:0});
+    $('#slideoutnav').css("width", "0%");
+    $('.stack-1').css("width", "0%");
+    $('.stack-2').css("width", "0%");
   });
+
   
   // Preloader inside pages
-  $(window).on('load', function() { // makes sure the whole site is loaded
-    $('#preloader-inside').fadeOut(1000); // will fade out the white DIV that covers the website.
-  });
+  // $(window).on('load', function() { // makes sure the whole site is loaded
+  //   $('#preloader-inside').fadeOut(1000); // will fade out the white DIV that covers the website.
+  // });
 
   //Homepage BG Slider
   $('.bxslider-OFF').bxSlider({

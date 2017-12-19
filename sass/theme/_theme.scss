@@ -26,6 +26,9 @@ body {
     background: url('../img/slide-1.jpg') no-repeat center center;
     background-size: cover;
   }
+  &.home {
+    overflow: hidden;
+  }
 }
 
 // Body Border
@@ -615,6 +618,7 @@ h6 {
   top: 0;
   left: 0;
   overflow-x: hidden;
+  overflow-y: hidden;
   /* Disable horizontal scroll */
   width: 0;
   /* 0 width - change this with JavaScript */
@@ -1264,7 +1268,7 @@ body {
 .scrollbar {
   margin: 2rem 0 0 0;
   height: 16px;
-  padding: 3px 0 3px 0;
+  padding: 3px;
   background: rgba($white, 0.3);
   line-height: 0;
   border-radius: 50px;
@@ -1588,7 +1592,8 @@ $sign-delay: 0.5s;
   margin: 0 auto;
   width: $sign-x;
   height: $sign-y;
-  background: url(http://reiter.wpengine.com/wp-content/uploads/2017/11/sequence.png) no-repeat;
+  background: url(../img/sequence.png) no-repeat;
+  //background: url(http://reiter.wpengine.com/wp-content/uploads/2017/11/sequence.png) no-repeat;
   background-size: 100% auto;
   &.white {
     //background-image: url(http://drygiel.com/projects/sign/frames-255-white.png);
