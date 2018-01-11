@@ -17,7 +17,12 @@ a:hover {
   background-color: $brand-primary;
   border: .05rem solid $brand-primary;
   border-radius: 0;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 0;
+  font-size: 18px;
+
+  @include media-breakpoint-down(md) {
+    font-size: 12px;
+  }
 
   &:hover {
     color: #fff;

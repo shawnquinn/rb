@@ -13801,7 +13801,10 @@ h6 {
   position: relative;
   z-index: 999;
   margin: 0;
-  padding: 5rem 0 15px; }
+  padding: 8rem 0 15px; }
+  @media (max-width: 575px) {
+    .wrapper {
+      padding: 5rem 0 15px; } }
   .wrapper #content {
     position: relative; }
 
@@ -13868,6 +13871,9 @@ h6 {
     z-index: 5;
     top: 0;
     left: 0; }
+    @media (max-width: 767px) {
+      #about-bio .social-share {
+        width: 50px; } }
     #about-bio .social-share ul {
       display: -webkit-box;
       display: -webkit-flex;
@@ -13898,7 +13904,7 @@ h6 {
                 align-items: center; }
         @media (max-width: 767px) {
           #about-bio .social-share ul li {
-            padding: 2rem 0;
+            padding: 1.25rem 0;
             border-right: 0;
             border-bottom: 1px solid rgba(33, 33, 33, 0.5); } }
         #about-bio .social-share ul li:last-child {
@@ -13941,6 +13947,12 @@ h6 {
     @media (max-width: 991px) {
       #about-content h3 {
         font-size: 24px; } }
+    @media (max-width: 767px) {
+      #about-content h3 {
+        font-size: 18px; } }
+    @media (max-width: 575px) {
+      #about-content h3 {
+        font-size: 16px; } }
   #about-content h4 {
     font-size: 18px; }
     @media (max-width: 991px) {
@@ -13953,8 +13965,14 @@ h6 {
     @media (max-width: 991px) {
       #about-content ul {
         font-size: 12px; } }
+    @media (max-width: 767px) {
+      #about-content ul {
+        font-size: 8px; } }
     #about-content ul li {
       list-style-type: none; }
+      @media (max-width: 767px) {
+        #about-content ul li {
+          margin-bottom: 0.3rem; } }
       #about-content ul li::before {
         display: inline-block;
         width: 10px;
@@ -13962,6 +13980,11 @@ h6 {
         padding-right: 1.5rem;
         content: '';
         background: url("../img/svg/bullet.svg") no-repeat; }
+        @media (max-width: 767px) {
+          #about-content ul li::before {
+            background-size: 40%;
+            padding-right: 0.5rem;
+            height: 5px; } }
 
 #bio-links {
   padding-top: 1.5rem;
@@ -14348,13 +14371,25 @@ body {
   font-family: museo-sans,museo-sans,sans-serif; }
   #contact-page #contact-info div[class*="col-"] {
     padding-left: 3rem; }
+    @media (max-width: 767px) {
+      #contact-page #contact-info div[class*="col-"] {
+        padding-left: 15px; } }
   #contact-page #contact-info img {
     width: 100%;
     max-width: 50px;
     height: auto; }
+    @media (max-width: 767px) {
+      #contact-page #contact-info img {
+        max-width: 30px; } }
   #contact-page #contact-info h4 {
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     padding-bottom: 0.5rem; }
+    @media (max-width: 767px) {
+      #contact-page #contact-info h4 {
+        font-size: 18px; } }
+    @media (max-width: 575px) {
+      #contact-page #contact-info h4 {
+        font-size: 16px; } }
   #contact-page #contact-info #email a {
     background-color: #174ca1;
     -webkit-transition: all 0.33s ease-in-out;
@@ -14365,9 +14400,15 @@ body {
       text-decoration: none; }
   #contact-page #contact-info #office img {
     max-width: 40px; }
+    @media (max-width: 767px) {
+      #contact-page #contact-info #office img {
+        max-width: 25px; } }
   #contact-page #contact-info #office h4 span {
     float: right;
     display: inline-block; }
+    @media (max-width: 767px) {
+      #contact-page #contact-info #office h4 span {
+        float: none; } }
   #contact-page #contact-info #office h4 span a {
     font-size: 13px;
     color: rgba(255, 255, 255, 0.6);
@@ -14375,6 +14416,12 @@ body {
   #contact-page #contact-info p {
     font-size: 20px;
     font-weight: 700; }
+    @media (max-width: 767px) {
+      #contact-page #contact-info p {
+        font-size: 14px; } }
+    @media (max-width: 575px) {
+      #contact-page #contact-info p {
+        font-size: 12px; } }
 
 #breadcrumbs {
   font-size: 14px;
@@ -14455,7 +14502,12 @@ a:hover {
   background-color: #174ca1;
   border: 0.05rem solid #174ca1;
   border-radius: 0;
-  padding: 0.5rem 2rem; }
+  padding: 0.5rem 0;
+  font-size: 18px; }
+  @media (max-width: 991px) {
+    .btn-primary,
+    .btn-primary:focus {
+      font-size: 12px; } }
   .btn-primary:hover,
   .btn-primary:focus:hover {
     color: #fff;

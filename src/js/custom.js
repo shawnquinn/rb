@@ -52,7 +52,7 @@
   var num = "95%";
 
   if ($(window).width() < 992) {
-      num = "95%";
+      num = "100%";
   }
   else {
       num = "66.67%";
@@ -60,7 +60,7 @@
 
   $(window).resize(function() {
     if ($(window).width() < 992) {
-      num = "95%";
+      num = "100%";
     }
     else {
       num = "66.67%";

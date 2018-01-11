@@ -33,11 +33,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 						<div class="container">
 						<div id="about-bio" class="row d-flex align-items-stretch">
-							<div class="col-lg-4 px-0 animated fadeInLeft">
+							<div class="col-md-4 px-0 animated fadeInLeft">
 								<img class="img-fluid d-block mx-auto w-100" src="<?php the_field('bio_img') ?>" alt="<?php echo esc_html_e('', 'understrap') ?>">
 							</div>
 
-							<div class="bio-content col-lg-8 my-4 my-lg-0 d-flex align-items-center animated fadeInRight">
+							<div class="bio-content col-md-8 py-4 py-lg-0 d-flex align-items-center animated fadeInRight">
 								<div class="flex-holder">
 									<div class="row mx-4">
 										<?php the_field('bio_content') ?>
@@ -52,10 +52,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 						</div><!-- #about-bio -->
 
 						<div id="about-content" class="row credentials px-0 animated fadeIn">
-								<div class="col-md-7 col-sm-6 pl-0">
+								<div class="col-md-7 col-sm-6 pl-sm-0">
 									<h3><?php echo esc_html_e('Other Practice Areas', 'understrap') ?></h3>
 									<div class="row">
-										<div class="col-md-5">
+										<div class="col-md-5 col-6">
 											<h4 class="text-uppercase"><?php echo esc_html_e('Litigation', 'understrap') ?></h4>
 											<?php 
 												// Attorney Posts
@@ -71,7 +71,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 												<?php endwhile; endif; wp_reset_postdata(); ?>
 											</ul>
 										</div><!-- col -->	
-										<div class="col-md-7">
+										<div class="col-md-7 col-6">
 											<h4 class="text-uppercase"><?php echo esc_html_e('Corporate', 'understrap') ?></h4>
 											<?php 
 												// Attorney Posts
@@ -90,20 +90,20 @@ $container = get_theme_mod( 'understrap_container_type' );
 									</div><!-- row -->
 								</div><!-- col -->
 
-								<div id="bio-contact" class="col-md-5 col-sm-12 text-left pr-0">
+								<div id="bio-contact" class="col-md-5 col-sm-6 text-left pr-sm-0">
 									<h3><?php echo _e( 'Practice Lead', 'understrap' ) ?></h3>
 									<?php
 										$post_object = get_field('lead_attorney');
 										if( $post_object ) : 
 									?>
 										<div id="practice-lead" class="row align-items-center">
-											<div class="col-sm-6">
+											<div class="col-sm-6 mb-3">
 												<img class="img-fluid d-block mx-auto w-100" src="<?php the_field('bio_img', $post_object->ID) ?>" alt="<?php echo get_the_title($post_object->ID); ?>">
 											</div><!-- col -->
 											<div class="col-sm-6">
 											<h4><?php echo get_the_title($post_object->ID); ?></h4>
 											<p><?php the_field('sub_title', $post_object->ID) ?></p>
-											<a class="btn btn-large btn-primary" href="<?php the_permalink($post_object->ID); ?>"><?php _e('Learn More') ?></a>
+											<a class="btn btn-large btn-primary btn-block" href="<?php the_permalink($post_object->ID); ?>"><?php _e('Learn More') ?></a>
 											</div><!-- col -->
 										</div><!-- row -->
 										<?php wp_reset_postdata(); ?>

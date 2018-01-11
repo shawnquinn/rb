@@ -54,7 +54,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								</div><!-- box-holder -->
 							</div><!-- practice-areas -->
 
-							<div class="col-md-6 practice-areas d-flex animated fadeInRight">
+							<div class="col-md-6 practice-areas d-flex mt-5 mt-md-0 animated fadeInRight">
 								<div class="box-holder">
 									<img src="<?php the_field('corporate_image') ?>" class="img-fluid d-block mx-auto w-100" />
 									<div class="p-3">

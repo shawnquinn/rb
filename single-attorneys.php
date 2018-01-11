@@ -33,9 +33,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 						<div class="container">
 						<div id="about-bio" class="row d-flex align-items-stretch">
-						  <div class="col-lg-4 px-0 animated fadeInLeft">
+						  <div class="col-md-4 px-0 animated fadeInLeft">
 								<div class="social-share">
-									<ul class="py-2 px-1 flex-md-row flex-column">
+									<ul class="py-2 px-1 flex-md-row flex-column align-items-center">
 										<li><a href="javascript:void(0)"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/share.svg"> </a></li>
 										<li><a href="<?php the_field('linkedin_url') ?>"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/linkedin.svg"> </a></li>
 										<li><a href="javascript:void(0)"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/friend.svg"> </a></li>
@@ -45,7 +45,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								<img class="img-fluid d-block mx-auto w-100" src="<?php the_field('bio_img') ?>" alt="<?php echo esc_html_e('', 'understrap') ?>">
 						  </div><!-- col -->
 
-							<div class="bio-content col-lg-8 my-4 my-lg-0 d-flex align-items-center animated fadeInRight">
+							<div class="bio-content col-md-8 py-4 py-lg-0 d-flex align-items-center animated fadeInRight">
 								<div class="flex-holder">
 									<div class="row mx-4">
 										<?php the_field('bio_content') ?>
@@ -64,17 +64,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 						</div><!-- #about-bio -->
 
 						<div id="about-content" class="row credentials px-0 animated fadeIn">
-								<div class="col-md-4 col-sm-6 pl-0">
+								<div class="col-md-4 col-6 pl-0">
 									<h3><?php echo esc_html_e('Experience', 'understrap') ?></h3>
 									<?php the_field('bio_experience') ?>
 								</div>
 
-								<div class="col-md-4 col-sm-6">
-									<h3>Credentials</h3>
+								<div class="col-md-4 col-6 pr-0">
+									<h3><?php echo esc_html_e('Credentials', 'understrap') ?></h3>
 									<?php the_field('bio_creds') ?>
 								</div>
 
-								<div id="bio-contact" class="col-md-4 col-sm-12 text-md-right pr-0">
+								<div id="bio-contact" class="col-md-4 col-sm-12 text-center text-md-right pr-0">
 									<h3>Contact</h3>
 									<p class="phone text-uppercase">Phone <span><?php the_field('contact_phone') ?></span></p>
 									<p class="email text-uppercase"><span class="d-block">Email</span> <a href="mailto:<?php the_field('contact_email') ?>"><?php the_field('contact_email') ?></a></p>
