@@ -23,7 +23,7 @@ body {
   color: $white;
   background: transparent;
   @include media-breakpoint-down(xs) {
-    background: url('../img/slide-1.jpg') no-repeat center center;
+    background: url("../img/slide-1.jpg") no-repeat center center;
     background-size: cover;
   }
   &.home {
@@ -193,7 +193,7 @@ body {
       background: $brand-primary;
       &:hover {
         transform: translateY(-1.5rem);
-        box-shadow: 0 -4px 8px rgba(#000, .7);
+        box-shadow: 0 -4px 8px rgba(#000, 0.7);
       }
     }
   }
@@ -328,19 +328,19 @@ h6 {
       background-position: 65% center;
     }
     &.slide-1 {
-      background: url('../img/slide-1.jpg');
+      background: url("../img/slide-1.jpg");
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
     }
     &.slide-2 {
-      background: url('../img/slide-2.jpg');
+      background: url("../img/slide-2.jpg");
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
     }
     &.slide-3 {
-      background: url('../img/slide-3.jpg');
+      background: url("../img/slide-3.jpg");
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
@@ -363,8 +363,8 @@ h6 {
         display: block;
         width: 100%;
         height: 100%;
-        content: '';
-        background-color: rgba($white, .5);
+        content: "";
+        background-color: rgba($white, 0.5);
       }
     }
     h1 {
@@ -390,7 +390,7 @@ h6 {
         width: 42%;
         height: 5px;
         margin-top: 2rem;
-        content: '';
+        content: "";
         background-color: $brand-primary;
         @include media-breakpoint-down(xs) {
           margin: 2rem auto 0;
@@ -417,7 +417,6 @@ h6 {
     height: 550px; //position: relative;
   }
 }
-
 
 /*
 // Homepage Section
@@ -482,7 +481,6 @@ h6 {
   }
 }
 
-
 /*
 // Footer info
 */
@@ -490,7 +488,7 @@ h6 {
 #wrapper-footer {
   color: #fff; //  background-color: $brand-primary;
   background: linear-gradient(135deg, $brand-primary, $brand-black);
-  background: url('../img/bg-smooth.jpg');
+  background: url("../img/bg-smooth.jpg");
   background-position: center top;
   background-size: cover;
   img.footer-logo {
@@ -567,7 +565,7 @@ h6 {
       width: 90%;
       height: 1px;
       margin-top: 0.5rem;
-      content: '';
+      content: "";
       background: rgba($white, 0.5);
     }
   }
@@ -581,16 +579,15 @@ h6 {
     transition: color 0.2s ease-in-out;
   }
 
-  a:hover, 
+  a:hover,
   a:hover h4 {
     text-decoration: none;
   }
   a:hover h4,
   a:hover h5 {
-    color:$brand-black;
+    color: $brand-black;
   }
 }
-
 
 /* The side navigation menu Logo*/
 
@@ -613,7 +610,6 @@ h6 {
     max-width: 225px;
   }
 }
-
 
 /* The side navigation menu */
 
@@ -640,7 +636,6 @@ h6 {
     //box-shadow: 80px 0 0 rgba($brand-primary, .9), 160px 0 1px rgba($brand-primary, .6), 240px 0 2px rgba($brand-primary, .3);
   }
   @include media-breakpoint-down(sm) {
-    
   }
 }
 
@@ -694,7 +689,6 @@ h6 {
   }
 }
 
-
 /* The navigation menu links */
 
 .navbar-nav {
@@ -706,8 +700,8 @@ h6 {
         width: 10px;
         height: 10px;
         padding-right: 1.5rem;
-        content: '';
-        background: url('../img/svg/bullet-black.svg') no-repeat;
+        content: "";
+        background: url("../img/svg/bullet-black.svg") no-repeat;
       }
       &::after {
         position: absolute;
@@ -716,8 +710,8 @@ h6 {
         display: block;
         width: 24px;
         height: 20px;
-        content: '';
-        background: url('../img/svg/arrow-black.svg') no-repeat;
+        content: "";
+        background: url("../img/svg/arrow-black.svg") no-repeat;
       }
     }
     a {
@@ -735,17 +729,16 @@ h6 {
         width: 10px;
         height: 10px;
         padding-right: 1.5rem;
-        content: '';
-        background: url('../img/svg/bullet.svg') no-repeat;
+        content: "";
+        background: url("../img/svg/bullet.svg") no-repeat;
       }
       &:hover::before {
-        content: '';
-        background: url('../img/svg/bullet-black.svg') no-repeat;
+        content: "";
+        background: url("../img/svg/bullet-black.svg") no-repeat;
       }
     }
   }
 }
-
 
 /* When you mouse over the navigation links, change their color */
 
@@ -753,7 +746,6 @@ h6 {
 .sidenav a:hover {
   color: #f1f1f1;
 }
-
 
 /* Position and style the close button (top right corner) */
 
@@ -779,7 +771,7 @@ h6 {
     display: block;
     margin-top: 0.55rem;
     text-transform: uppercase;
-    color: rgba($white, .8);
+    color: rgba($white, 0.8);
   }
 }
 
@@ -805,7 +797,7 @@ h6 {
     }
   }
   &:hover img {
-    transform: scale(.9);
+    transform: scale(0.9);
   }
   span {
     font-family: $font-body-alt;
@@ -815,7 +807,7 @@ h6 {
     margin-top: 1rem;
     transition: color 0.2s ease;
     text-transform: uppercase;
-    color: rgba($white, .8);
+    color: rgba($white, 0.8);
   }
   &:hover span {
     color: rgba($white, 1);
@@ -827,7 +819,6 @@ h6 {
 .sidenav .closebtn {
   text-decoration: none !important;
 }
-
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 
@@ -882,15 +873,15 @@ h6 {
     height: 100%;
   }
   .slide-1 {
-    background: url('../img/slide-1.jpg') no-repeat top center;
+    background: url("../img/slide-1.jpg") no-repeat top center;
     background-size: cover;
   }
   .slide-2 {
-    background: url('../img/slide-2.jpg') no-repeat top center;
+    background: url("../img/slide-2.jpg") no-repeat top center;
     background-size: cover;
   }
   .slide-3 {
-    background: url('../img/slide-3.jpg') no-repeat top center;
+    background: url("../img/slide-3.jpg") no-repeat top center;
     background-size: cover;
   }
 }
@@ -957,7 +948,7 @@ h6 {
 
 // About Page
 .entry-header {
-  border-bottom: 1px solid rgba($white, .5);
+  border-bottom: 1px solid rgba($white, 0.5);
   @include media-breakpoint-down(sm) {
     text-align: center;
   }
@@ -1002,12 +993,12 @@ h6 {
         display: flex;
         height: 18px;
         padding: 0 0.5rem;
-        border-right: 1px solid rgba($brand-black, .5);
+        border-right: 1px solid rgba($brand-black, 0.5);
         align-items: center;
         @include media-breakpoint-down(sm) {
           padding: 1.25rem 0;
           border-right: 0;
-          border-bottom: 1px solid rgba($brand-black, .5);
+          border-bottom: 1px solid rgba($brand-black, 0.5);
         }
         &:last-child {
           border: 0;
@@ -1053,7 +1044,7 @@ h6 {
     display: inline-block;
     margin: 2.5rem 0 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba($white, .7);
+    border-bottom: 1px solid rgba($white, 0.7);
     @include media-breakpoint-down(md) {
       font-size: 24px;
     }
@@ -1090,8 +1081,8 @@ h6 {
         width: 10px;
         height: 10px;
         padding-right: 1.5rem;
-        content: '';
-        background: url('../img/svg/bullet.svg') no-repeat;
+        content: "";
+        background: url("../img/svg/bullet.svg") no-repeat;
         @include media-breakpoint-down(sm) {
           background-size: 40%;
           padding-right: 0.5rem;
@@ -1132,14 +1123,14 @@ h6 {
         margin-top: 0.25rem;
         margin-right: auto;
         margin-left: auto;
-        content: '';
+        content: "";
         transition: all 0.2s ease-in-out;
         background: $white;
       }
     }
     &:hover h5::after {
       width: 100%;
-      content: '';
+      content: "";
     }
     img {
       display: block;
@@ -1210,7 +1201,7 @@ h6 {
       font-weight: 600;
       color: rgba(255, 255, 255, 0.7);
       &::after {
-        content: '';
+        content: "";
         height: 2px;
         display: block;
         background-color: rgba(255, 255, 255, 0.7);
@@ -1245,7 +1236,6 @@ body {
   margin: 0.5rem 0;
 }
 
-
 /* Frame */
 
 .frame {
@@ -1278,13 +1268,13 @@ body {
     @include media-breakpoint-down(xs) {
       margin-left: 25px;
     }
-  } 
+  }
   &:last-child {
     margin-right: 0;
     @include media-breakpoint-down(xs) {
       margin-right: 0;
     }
-  } 
+  }
   @include media-breakpoint-down(lg) {
     width: 395px;
   }
@@ -1303,7 +1293,6 @@ body {
 .frame ul li.attorneys.active {
   color: #fff; //background: #a03232;
 }
-
 
 /* Scrollbar */
 
@@ -1333,7 +1322,6 @@ body {
   height: 30px;
 }
 
-
 /* Scroll Items Pages Controller */
 
 .pages {
@@ -1353,7 +1341,7 @@ body {
   cursor: pointer;
   overflow: hidden;
   background: #fff;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .2);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
 }
 
 .pages li:hover {
@@ -1363,7 +1351,6 @@ body {
 .pages li.active {
   background: #666;
 }
-
 
 /* Controls */
 
@@ -1385,7 +1372,7 @@ body {
     font-weight: normal;
     line-height: 1;
     padding: 0;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     text-transform: uppercase;
     border-radius: 0;
     @media screen and (max-width: 1300px) {
@@ -1428,12 +1415,11 @@ body {
 // Buttons Foucs
 .btn.focus,
 .btn:focus,
-.wpcf7 input.focus[type=submit],
-.wpcf7 input[type=submit]:focus {
+.wpcf7 input.focus[type="submit"],
+.wpcf7 input[type="submit"]:focus {
   outline: 0;
   box-shadow: none;
 }
-
 
 //Practice Areas Page
 #practices-areas-page {
@@ -1450,7 +1436,7 @@ body {
     border-top: 1px solid rgba(#fff, 0.4);
     li {
       a {
-        font-family: museo-sans,museo-sans,sans-serif;
+        font-family: museo-sans, museo-sans, sans-serif;
         font-size: 14px;
         font-weight: 600;
         position: relative;
@@ -1466,7 +1452,7 @@ body {
           width: 10px;
           height: 10px;
           padding-right: 1.5rem;
-          content: '';
+          content: "";
           background: url(../img/svg/bullet.svg) no-repeat;
         }
         &:hover::before {
@@ -1474,15 +1460,13 @@ body {
           width: 10px;
           height: 10px;
           padding-right: 1.5rem;
-          content: '';
+          content: "";
           background: url(../img/svg/bullet-black.svg) no-repeat;
         }
       }
     }
   }
 }
-
-
 
 #litigation-single {
   #about-content {
@@ -1495,7 +1479,7 @@ body {
     }
   }
   #bio-contact p {
-    font-family: museo-sans,museo-sans,sans-serif;
+    font-family: museo-sans, museo-sans, sans-serif;
     font-size: 14px;
     font-weight: 600;
     opacity: 0.7;
@@ -1507,7 +1491,6 @@ body {
 #contact-page {
   div.wpcf7 {
     max-width: 100%;
-   
   }
 
   .wpcf7 .wpcf7-form label {
@@ -1517,72 +1500,75 @@ body {
   .wpcf7 input,
   .wpcf7 textarea {
     font-weight: 700;
-    background-color:rgba(#fff, 0.6);
+    background-color: rgba(#fff, 0.6);
     border: 0;
     border-radius: 0;
     padding: 1rem 0.75rem;
     transition: background-color 0.33s ease-in-out;
   }
 
-  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
     color: $brand-black;
   }
-  ::-moz-placeholder { /* Firefox 19+ */
+  ::-moz-placeholder {
+    /* Firefox 19+ */
     color: $brand-black;
   }
-  :-ms-input-placeholder { /* IE 10+ */
+  :-ms-input-placeholder {
+    /* IE 10+ */
     color: $brand-black;
   }
-  :-moz-placeholder { /* Firefox 18- */
+  :-moz-placeholder {
+    /* Firefox 18- */
     color: $brand-black;
   }
 
-  .wpcf7 input:focus ,
+  .wpcf7 input:focus,
   .wpcf7 textarea:focus {
     background-color: $brand-primary;
     color: #fff;
   }
 
-  .wpcf7 input[type=submit],
-  .wpcf7 input[type=submit]:focus,
-  .wpcf7 input[type=submit]:active {
+  .wpcf7 input[type="submit"],
+  .wpcf7 input[type="submit"]:focus,
+  .wpcf7 input[type="submit"]:active {
     background-color: $brand-primary;
     color: #fff;
   }
 
-  .wpcf7 input[type=submit]:hover {
+  .wpcf7 input[type="submit"]:hover {
     background-color: $brand-black;
     color: #fff;
   }
-
 }
 
 #contact-page {
   #contact-info {
-    font-family: museo-sans,museo-sans,sans-serif;
+    font-family: museo-sans, museo-sans, sans-serif;
     div[class*="col-"] {
       padding-left: 3rem;
       @include media-breakpoint-down(sm) {
         padding-left: 15px;
-      } 
+      }
     }
     img {
       width: 100%;
       max-width: 50px;
       height: auto;
       @include media-breakpoint-down(sm) {
-        max-width:30px;
-      } 
+        max-width: 30px;
+      }
     }
     h4 {
       border-bottom: 1px solid rgba($white, 0.5);
       padding-bottom: 0.5rem;
       @include media-breakpoint-down(sm) {
-        font-size:18px;
+        font-size: 18px;
       }
       @include media-breakpoint-down(xs) {
-        font-size:16px;
-      } 
+        font-size: 16px;
+      }
     }
     #email {
       a {
@@ -1598,16 +1584,16 @@ body {
     }
     #office {
       img {
-        max-width:40px;
+        max-width: 40px;
         @include media-breakpoint-down(sm) {
-          max-width:25px;
-        } 
+          max-width: 25px;
+        }
       }
       h4 span {
         float: right;
         display: inline-block;
         @include media-breakpoint-down(sm) {
-          float:none;
+          float: none;
         }
       }
       h4 span a {
@@ -1615,7 +1601,6 @@ body {
         color: rgba(#fff, 0.6);
         text-transform: none !important;
       }
-
     }
     p {
       font-size: 20px;
@@ -1629,7 +1614,6 @@ body {
     }
   }
 }
-
 
 #breadcrumbs {
   font-size: 14px;
@@ -1650,24 +1634,30 @@ body {
 // Signature Sign
 $sign-x: 586px;
 $sign-y: 171px;
-$sign-frames: 90;
-$sign-duration: 1.5s;
+$sign-frames: 179;
+// $sign-duration: 1.5s;
+// $sign-delay: 0.5s;
+//$sign-frames: 180;
+$sign-duration: 2.5s;
 $sign-delay: 0.5s;
 #rb-sign {
   display: block;
   margin: 0 auto;
   width: $sign-x;
   height: $sign-y;
-  background: url(../img/sequence.png) no-repeat;
+  background: url(../img/sequence-60fps.jpg) no-repeat;
+  //background: url(../img/sequence.png) no-repeat;
   //background: url(http://reiter.wpengine.com/wp-content/uploads/2017/11/sequence.png) no-repeat;
   background-size: 100% auto;
   &.white {
-    //background-image: url(http://drygiel.com/projects/sign/frames-255-white.png);
   }
   &.play {
-    -moz-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
-    -o-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
-    -webkit-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
+    -moz-animation: sign-anim $sign-duration $sign-delay steps($sign-frames)
+      forwards;
+    -o-animation: sign-anim $sign-duration $sign-delay steps($sign-frames)
+      forwards;
+    -webkit-animation: sign-anim $sign-duration $sign-delay steps($sign-frames)
+      forwards;
     animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
   }
 }
@@ -1694,7 +1684,7 @@ a#rb-sign {
   }
 }
 
-
+// Animated CSS
 .animated {
   animation-duration: 1.33s;
 }
@@ -1722,8 +1712,6 @@ a#rb-sign {
     transform: none;
   }
 }
-
-
 
 // .logo-inside {
 //   animation-name: floating;

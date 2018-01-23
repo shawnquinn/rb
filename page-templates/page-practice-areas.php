@@ -16,7 +16,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<div class="<?php echo esc_attr( $container ); ?>" id="content">
 
 		<div class="logo-inside">
-			<a href="<?php echo home_url('/'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php echo esc_html_e('', 'understrap') ?>"></a>
+		<?php
+			$custom_logo_id = get_theme_mod( 'custom_logo' );
+			$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+			if ( has_custom_logo() ) {
+				echo '<a href="'. get_home_url('/') .'"><img src="'. esc_url( $logo[0] ) .'"></a>';
+			}
+		?>
 		</div>
 
 		<div class="row">

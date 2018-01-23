@@ -24,6 +24,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<script src="https://use.typekit.net/rgx3fsq.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
+	<?php if (is_front_page()) : ?>
+
 	<script>
 	
 		var images = new Array();
@@ -33,9 +35,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 				images[i].src=preloadimages.arguments[i]
 			}
 		}
-		preloadimages( window.location + "/wp-content/themes/reiterburns/img/sequence.png");
+		preloadimages( window.location + "/wp-content/themes/reiterburns/img/sequence-60fps.jpg");
 
 	</script>
+
+	<?php endif; ?>
 
 	<?php wp_head(); ?>
 </head>
@@ -70,7 +74,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	  	<a href="javascript:void(0)" id="close-button" class="closebtn nav-button"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/arrow-left.svg" /><span>Close Menu</span></a>
 
-		  <a href="<?php echo home_url('/') ?>"><img class="menu-logo" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php echo bloginfo() ?>"></a>
+		<?php
+			$custom_logo_id = get_theme_mod( 'custom_logo' );
+			$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+			if ( has_custom_logo() ) {
+				echo '<a href="'. get_home_url('/') .'"><img class="menu-logo" src="'. esc_url( $logo[0] ) .'"></a>';
+			}
+		?>
 
 		<header id="slide-nav" class="container-fluid px-0">
 			<div class="row">

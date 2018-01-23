@@ -56,7 +56,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 </div><!-- Wrapper end -->
 
 			<main id="main-home" role="main" class="inner cover" data-relative-input="true">
-				<h1 data-depth="0.1" class="cover-heading"><img class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php echo esc_html_e('', 'understrap') ?>"></h1>
+				<h1 data-depth="0.1" class="cover-heading">
+				<?php
+					$custom_logo_id = get_theme_mod( 'custom_logo' );
+					$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+					if ( has_custom_logo() ) {
+						echo '<img class="img-fluid d-block mx-auto" src="'. esc_url( $logo[0] ) .'">';
+					}
+				?>
+				</h1>
 				<p id="home-content" data-depth="0.05" class="lead text-center animated fadeIn">Long-term colleagues formed a new law firm to advise clients, try lawsuits, and provide real value in an era of challenge and change.</p>
 			</main>
 

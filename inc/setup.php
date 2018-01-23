@@ -21,6 +21,8 @@ if ( ! function_exists( 'understrap_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function understrap_setup() {
+		
+		add_theme_support( 'custom-logo' );
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
