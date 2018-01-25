@@ -51,7 +51,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 				<p><a href="tel:+1-312-982-0090">312.982.0090</a></p>
 			</div>
 
-			<div id="email" class="col-sm-4 col-6">
+			<div id="email" class="col-sm-4 col-6 mb-4">
 				<img class="d-block mb-3" src="<?php echo get_template_directory_uri(); ?>/img/svg/email.svg">
 				<h4 class="text-uppercase">Email</h4>
 				<p><a href="mailto:kate@reiterburns.com">kate@reiterburns.com</a></p>
@@ -60,9 +60,10 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 			<div id="office" class="col-sm-4">
 				<img class="d-block mb-3" src="<?php echo get_template_directory_uri(); ?>/img/svg/office.svg">
 				<h4 class="text-uppercase">Offices <span><a target="_blank" href="<?php echo esc_url('https://goo.gl/maps/t3k6PLVTxqE2') ?>">Get Directions</a></span></h4>
-				<p>311 South Wacker Drive,<br/> 
-				Chicago, IL 60606, USA.
+				<p>311 S Wacker Drive,<br/> 
+				Suite 5200,<br/>  Chicago, IL 60606
 				</p>
+				<a target="_blank" href="<?php echo esc_url("https://spothero.com/search?starts=2018-01-25T04%3A00&ends=2018-01-25T07%3A00&latitude=41.8774376&longitude=-87.6359115&search_string=311%20S%20Wacker%20Dr%2C%20Chicago%2C%20IL%2060606%2C%20USA") ?>"><img class="spot-hero img-fluid mr-auto d-block" src="<?php echo get_template_directory_uri(); ?>/img/spot-hero.png" alt="<?php echo bloginfo(); ?> | Spot Hero" /></a>
 			</div>
 		</div>
 

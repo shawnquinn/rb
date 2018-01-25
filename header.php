@@ -20,6 +20,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/img/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/img/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/img/favicons/favicon-16x16.png">
+	<link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/img/favicons/manifest.json">
+	<link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/img/favicons/safari-pinned-tab.svg" color="#174ca1">
+	<meta name="theme-color" content="#ffffff">
+
 	<!-- TypeKit -->
 	<script src="https://use.typekit.net/rgx3fsq.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -35,7 +43,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				images[i].src=preloadimages.arguments[i]
 			}
 		}
-		preloadimages( window.location + "/wp-content/themes/reiterburns/img/sequence-60fps.jpg");
+		preloadimages( "http://reiter.wpengine.com/wp-content/uploads/2018/01/sequence-60fps.jpg");
 
 	</script>
 
@@ -137,6 +145,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 									//'walker'          => new WP_Bootstrap_Navwalker(),
 								)
 							); ?>
+							<a href="<?php echo home_url( '/support-staff/' ) ?>"><h5><?php echo esc_html( 'Support Staff' ) ?></h5></a>
 						</div>
 
 						<div id="nav-contact-info" class="col-sm-4 mb-5 mb-sm-0">
@@ -149,8 +158,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 								311 S Wacker Drive<br/>
 								Suite 5200<br/>
 								Chicago, IL 60606<br/>
-								USA
 							</address>
+							<a target="_blank" href="<?php echo esc_url("https://spothero.com/search?starts=2018-01-25T04%3A00&ends=2018-01-25T07%3A00&latitude=41.8774376&longitude=-87.6359115&search_string=311%20S%20Wacker%20Dr%2C%20Chicago%2C%20IL%2060606%2C%20USA") ?>"><img class="spot-hero img-fluid mr-auto d-block" src="<?php echo get_template_directory_uri(); ?>/img/spot-hero.png" alt="<?php echo bloginfo(); ?> | Spot Hero" /></a>
 						</div>
 					</div>
 				</div>

@@ -283,12 +283,12 @@ function follow_the_breadcrumbs() {
 // Custom Excerpt function for Advanced Custom Fields
 function custom_field_excerpt() {
 	global $post;
-	$text = get_field('bio_content'); //The ACF Field i.e. my_field
+	$text = get_field('bio_excerpt'); //The ACF Field i.e. my_field
 	if ( '' != $text ) {
 		$text = strip_shortcodes( $text );
 		$text = apply_filters('the_content', $text);
 		$text = str_replace(']]&gt;', ']]&gt;', $text);
-		$excerpt_length = 20; // 20 words
+		$excerpt_length = 40; // 40 words
 		$excerpt_more = apply_filters('excerpt_more', ' ' . '');
 		$text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
 	}

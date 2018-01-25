@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Template for for displaying all single attorney posts
+ * Template for for displaying all single staff bio posts
  *
  * @package understrap
  */
@@ -39,59 +39,63 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 						<div class="container">
 						<div id="about-bio" class="row d-flex align-items-stretch">
+						<?php if( get_field('bio_img') ): ?>
 						  <div class="col-md-4 px-0 animated fadeInLeft">
 								<div class="social-share">
 									<ul class="py-2 px-1 flex-md-row flex-column align-items-center">
+
 										<li><a href="javascript:void(0)"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/share.svg"> </a></li>
+`
 										<?php if( get_field('linkedin_url') ): ?>
 											<li><a href="<?php the_field('linkedin_url') ?>"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/linkedin.svg"> </a></li>
 										<?php endif; ?>
+
 										<li><a href="javascript:void(0)"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/friend.svg"> </a></li>
+
 									</ul>
 								</div>
 								<!-- social-share -->
-								<img class="img-fluid d-block mx-auto w-100" src="<?php the_field('bio_img') ?>" alt="<?php echo esc_html_e('', 'understrap') ?>">
+																		
+									<img class="img-fluid d-block mx-auto w-100" src="<?php the_field('bio_img') ?>" alt="<?php echo esc_html_e('', 'understrap') ?>">
+								
 						  </div><!-- col -->
+						  <?php endif; ?>
 
-							<div class="bio-content col-md-8 py-3 d-flex align-items-center animated fadeInRight">
-								<div class="flex-holder">
+						<?php if( get_field('bio_img') ): ?>
+							<div class="bio-content col-md-8 py-4 py-lg-0 d-flex align-items-center animated fadeInRight">
+						<?php else : ?>
+							<div class="bio-content col-md-12 py-5 d-flex align-items-center animated fadeInRight">
+						<?php endif; ?>
+								<div class="flex-holder w-100">
 									<div class="row mx-4">
 										<?php the_field('bio_content') ?>
 									</div>
-
 									
-									<?php if ( get_field('case_list') || get_field('resume') ) : ?>
-									<div id="bio-links" class="row justify-content-around mx-4 mt-3">
-										<?php if ( get_field('case_list') ) : ?>
-											<div class="col-sm-6 px-0 py-3 py-sm-0">
-												<a href="<?php the_field('case_list') ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/cases.svg"><h5><?php the_field('case_list_title') ?></h5></a>
-											</div>
-										<?php endif; ?>
-										<?php if ( get_field('resume') ) : ?>
-											<div class="col-sm-6 px-0 py-3 py-sm-0">
-												<a href="<?php the_field('resume') ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/pdf.svg"><h5><?php the_field('resume_title') ?></h5></a>
-											</div>
-										<?php endif; ?>
-									</div>
-									<!-- Bio Links -->
-									<?php endif; ?>
+									<div id="bio-links" class="row mx-4 mt-3">
+										<div class="col-sm-6 px-0 py-3 py-sm-0">
+											<a href="<?php the_field('case_list') ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/cases.svg"><h5><?php echo esc_html_e('Representative Trial Cases', 'understrap') ?></h5></a>
+										</div>
 
+										<div class="col-sm-6 px-0 py-3 py-sm-0">
+											<a href="<?php the_field('resume') ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/pdf.svg"><h5><?php echo esc_html_e('Download Resume', 'understrap') ?></h5></a>
+										</div>
+									</div>
 								</div><!-- null div -->
 						  	</div><!-- #bio-content -->
 						</div><!-- #about-bio -->
 
 						<div id="about-content" class="row credentials px-0 animated fadeIn">
-								<div class="col-md-4 col-sm-6 text-center text-sm-left pl-sm-0">
+								<div class="col-md-4 col-6 pl-0">
 									<h3><?php echo esc_html_e('Experience', 'understrap') ?></h3>
 									<?php the_field('bio_experience') ?>
 								</div>
 
-								<div class="col-md-4 col-sm-6 text-center text-sm-left pr-sm-0">
+								<div class="col-md-4 col-6 pr-0">
 									<h3><?php echo esc_html_e('Credentials', 'understrap') ?></h3>
 									<?php the_field('bio_creds') ?>
 								</div>
 
-								<div id="bio-contact" class="col-md-4 text-center text-md-right pr-sm-0">
+								<div id="bio-contact" class="col-md-4 col-sm-12 text-center text-md-right pr-0">
 									<h3>Contact</h3>
 									<p class="phone text-uppercase">Phone <span><?php the_field('contact_phone') ?></span></p>
 									<p class="email text-uppercase"><span class="d-block">Email</span> <a href="mailto:<?php the_field('contact_email') ?>"><?php the_field('contact_email') ?></a></p>

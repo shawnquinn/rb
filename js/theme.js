@@ -3954,17 +3954,20 @@ b*(7.5625*(a-=2.25/2.75)*a+0.9375)+c:b*(7.5625*(a-=2.625/2.75)*a+0.984375)+c},ea
 
   //Open Nav menu on click
   $("#open-button").click(function() {
-    $(".stack-1").animate({ width: "85%" }, 100, "swing");
+    $(".stack-1").animate({ width: "86.67%" }, 100, "swing");
     $(".stack-2")
       .stop()
       .delay(200)
-      .animate({ width: "75%" }, 100, "swing");
+      .animate({ width: "76.67%" }, 100, "swing");
     $("#slideoutnav")
       .stop()
       .delay(400)
       .animate({ width: num }, 100, "swing");
 
-    $("#close-button").css("opacity", 1);
+    $("#close-button")
+      .stop()
+      .delay(300)
+      .animate({ opacity: 1 }, 300, "swing");
   });
 
   // Close on click
@@ -4019,6 +4022,13 @@ b*(7.5625*(a-=2.25/2.75)*a+0.9375)+c:b*(7.5625*(a-=2.625/2.75)*a+0.984375)+c},ea
   // $(window).on('load', function() { // makes sure the whole site is loaded
   //   $('#preloader-inside').fadeOut(1000); // will fade out the white DIV that covers the website.
   // });
+
+  // Recaptcha Appear
+  var recaptcha = $("#rb-recaptcha");
+  //$('#rb-recaptcha').hide();
+  $(".wpcf7 input, .wpcf7 textarea").click(function() {
+    recaptcha.addClass("appear");
+  });
 
   //Homepage BG Slider
   $(".bxslider-OFF").bxSlider({

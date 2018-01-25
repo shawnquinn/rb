@@ -48,11 +48,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 									<div class="row mx-4">
 										<?php the_field('bio_content') ?>
 									</div>
-									<div id="bio-links" class="row mx-4 mt-3">
-										<div class="col-12 px-0 py-3 py-sm-0 border-0">
-											<a href="<?php the_field('case_list') ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/cases.svg"><h5><?php echo esc_html_e('Representative Trial Cases', 'understrap') ?></h5></a>
-										</div>
-									</div><!-- bio-links -->
+									
+									<?php if ( get_field('case_list') ) : ?>
+										<div id="bio-links" class="row mx-4 mt-3">
+											<div class="col-12 px-0 py-3 py-sm-0 border-0">
+												<a href="<?php the_field('case_list') ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/cases.svg"><h5><?php echo esc_html_e('Representative Trial Cases', 'understrap') ?></h5></a>
+											</div>
+										</div><!-- bio-links -->
+									<?php endif; ?>
+
 								</div><!-- flex-holder -->
 						  </div>
 						</div><!-- #about-bio -->

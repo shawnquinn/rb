@@ -65,7 +65,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					}
 				?>
 				</h1>
-				<p id="home-content" data-depth="0.05" class="lead text-center animated fadeIn">Long-term colleagues formed a new law firm to advise clients, try lawsuits, and provide real value in an era of challenge and change.</p>
+				<p id="home-content" data-depth="0.05" class="lead text-center animated fadeIn">Long-term colleagues formed a new law firm to advise clients, try lawsuits and provide real value in an era of challenge and change.</p>
 			</main>
 
 </div><!-- end cover-container -->

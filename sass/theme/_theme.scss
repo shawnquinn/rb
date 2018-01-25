@@ -18,10 +18,13 @@
   background: darken($brand-primary, 5%);
 }
 
+//Text Rendering
+
 body {
   font-family: $font-body;
   color: $white;
   background: transparent;
+
   @include media-breakpoint-down(xs) {
     background: url("../img/slide-1.jpg") no-repeat center center;
     background-size: cover;
@@ -481,6 +484,10 @@ h6 {
   }
 }
 
+.content-area {
+  min-height: 550px;
+}
+
 /*
 // Footer info
 */
@@ -524,6 +531,9 @@ h6 {
   padding-left: 3rem !important;
   text-align: left;
   opacity: 0;
+  @include media-breakpoint-down(xs) {
+    padding-left: 1rem !important;
+  }
   h3,
   h4,
   h5 {
@@ -551,14 +561,14 @@ h6 {
   h4 {
     font-size: 32px;
     margin: 1rem 0;
+    @include media-breakpoint-up(lg) {
+      font-size: 24px;
+    }
     @include media-breakpoint-down(lg) {
       font-size: 22px;
     }
     @include media-breakpoint-down(sm) {
       font-size: 18px;
-    }
-    @media screen and (max-width: 1430px) {
-      font-size: 24px;
     }
     &::after {
       display: block;
@@ -572,6 +582,10 @@ h6 {
   h5 {
     font-size: 18px;
     margin: 1.5rem 0 0.75rem;
+    @include media-breakpoint-down(xs) {
+      font-size: 15px;
+      margin: 1rem 0 0.5rem;
+    }
   }
 
   a h4,
@@ -601,13 +615,10 @@ h6 {
   opacity: 0;
 
   @include media-breakpoint-down(xs) {
-    position: relative;
-    right: 0;
-    left: 3.5rem;
-    top: 0;
-  }
-  @include media-breakpoint-down(xs) {
-    max-width: 225px;
+    position: absolute;
+    right: 1rem;
+    top: 1.75rem;
+    max-width: 170px;
   }
 }
 
@@ -636,6 +647,17 @@ h6 {
     //box-shadow: 80px 0 0 rgba($brand-primary, .9), 160px 0 1px rgba($brand-primary, .6), 240px 0 2px rgba($brand-primary, .3);
   }
   @include media-breakpoint-down(sm) {
+    height: calc(100vh + 20px);
+    max-height: calc(100vh + 20px);
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; // mobile safari
+  }
+  @include media-breakpoint-down(xs) {
+    padding-top: 4.5rem;
+    height: calc(100vh + 20px);
+    max-height: calc(100vh + 20px);
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; // mobile safari
   }
 }
 
@@ -693,20 +715,24 @@ h6 {
 
 .navbar-nav {
   li {
+    padding-left: 1.5rem;
+    @include media-breakpoint-down(xs) {
+      line-height: 1.3;
+    }
     &.current-menu-item a {
       color: #000;
       &::before {
         display: inline-block;
         width: 10px;
         height: 10px;
-        padding-right: 1.5rem;
+        margin-right: -0.6rem;
         content: "";
         background: url("../img/svg/bullet-black.svg") no-repeat;
       }
       &::after {
         position: absolute;
         top: 0;
-        left: -1.5rem;
+        left: -3rem;
         display: block;
         width: 24px;
         height: 20px;
@@ -719,7 +745,7 @@ h6 {
       font-size: 14px;
       font-weight: 600;
       position: relative;
-      padding-left: 1rem;
+      padding-left: 0;
       &:hover {
         text-decoration: none;
         color: #000;
@@ -728,9 +754,11 @@ h6 {
         display: inline-block;
         width: 10px;
         height: 10px;
-        padding-right: 1.5rem;
+        margin-right: -0.6rem;
         content: "";
         background: url("../img/svg/bullet.svg") no-repeat;
+        position: relative;
+        left: -1rem;
       }
       &:hover::before {
         content: "";
@@ -755,12 +783,19 @@ h6 {
   left: 4rem;
   transition: opacity 0.2s ease-in-out;
   opacity: 0;
+  @include media-breakpoint-down(xs) {
+    top: 1.5rem;
+    left: 1.5rem;
+  }
   img {
     display: block;
     width: auto;
     height: 55px;
     margin: 0 auto;
     transition: transform 0.2s ease;
+    @include media-breakpoint-down(xs) {
+      height: 24px;
+    }
   }
   &:hover img {
     transform: scale(1) translateX(-10px);
@@ -772,6 +807,9 @@ h6 {
     margin-top: 0.55rem;
     text-transform: uppercase;
     color: rgba($white, 0.8);
+    @include media-breakpoint-down(xs) {
+      font-size: 10px;
+    }
   }
 }
 
@@ -949,6 +987,7 @@ h6 {
 // About Page
 .entry-header {
   border-bottom: 1px solid rgba($white, 0.5);
+  margin-bottom: 1.5rem;
   @include media-breakpoint-down(sm) {
     text-align: center;
   }
@@ -972,7 +1011,6 @@ h6 {
 
 #about-bio {
   position: relative;
-  margin-top: 1.25rem;
   //background: $brand-primary;
   .social-share {
     position: absolute;
@@ -1073,6 +1111,7 @@ h6 {
     }
     li {
       list-style-type: none;
+      padding-left: 1.5rem;
       @include media-breakpoint-down(sm) {
         margin-bottom: 0.3rem;
       }
@@ -1080,8 +1119,10 @@ h6 {
         display: inline-block;
         width: 10px;
         height: 10px;
-        padding-right: 1.5rem;
+        margin-right: -0.6rem;
         content: "";
+        position: relative;
+        left: -1rem;
         background: url("../img/svg/bullet.svg") no-repeat;
         @include media-breakpoint-down(sm) {
           background-size: 40%;
@@ -1097,7 +1138,6 @@ h6 {
   padding-top: 1.5rem;
   border-top: 2px solid #000;
   div:first-child {
-    border-right: 2px solid #000;
     @include media-breakpoint-down(sm) {
       border: 0;
     }
@@ -1233,7 +1273,6 @@ body {
 
 .wrap {
   position: relative;
-  margin: 0.5rem 0;
 }
 
 /* Frame */
@@ -1254,6 +1293,7 @@ body {
 
 .frame ul li.attorneys {
   // float: left;
+  display: flex;
   width: 290px;
   padding-left: 0;
   padding-right: 0; // height: 100%;
@@ -1589,6 +1629,11 @@ body {
           max-width: 25px;
         }
       }
+      img.spot-hero {
+        width: 50px;
+        max-width: 100%;
+        margin-top: 1rem;
+      }
       h4 span {
         float: right;
         display: inline-block;
@@ -1612,6 +1657,25 @@ body {
         font-size: 12px;
       }
     }
+  }
+}
+
+#rb-recaptcha {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  &.appear {
+    opacity: 1;
+  }
+}
+
+img.spot-hero {
+  width: 40px;
+  max-width: 100%;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
   }
 }
 
@@ -1647,7 +1711,7 @@ $sign-delay: 0.5s;
   height: $sign-y;
   background: url(../img/sequence-60fps.jpg) no-repeat;
   //background: url(../img/sequence.png) no-repeat;
-  //background: url(http://reiter.wpengine.com/wp-content/uploads/2017/11/sequence.png) no-repeat;
+  //background: url(http://reiter.wpengine.com/wp-content/uploads/2018/01/sequence-60fps.jpg) no-repeat;
   background-size: 100% auto;
   &.white {
   }
