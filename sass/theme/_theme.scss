@@ -1128,9 +1128,12 @@ h6 {
   }
 }
 
+.border-dangler {
+  border-bottom: 2px solid #000;
+}
+
 #bio-links {
-  padding-top: 1.5rem;
-  border-top: 2px solid #000;
+  padding-top: 0.5rem;
   div:first-child {
     @include media-breakpoint-down(sm) {
       border: 0;
@@ -1682,7 +1685,7 @@ img.spot-hero {
 // Signature Sign
 $sign-x: 586px;
 $sign-y: 171px;
-$sign-frames: 179;
+$sign-frames: 89;
 // $sign-duration: 1.5s;
 // $sign-delay: 0.5s;
 //$sign-frames: 180;
@@ -1695,7 +1698,8 @@ $sign-delay: 0.5s;
   height: $sign-y;
   background: url(../img/sequence-new30fps.jpg) no-repeat; //background: url(../img/sequence.png) no-repeat;
   //background: url(http://reiter.wpengine.com/wp-content/uploads/2018/01/sequence-60fps.jpg) no-repeat;
-  background-size: 100% auto;
+  //background-size: 100% auto;
+  background-size: 586px 15390px;
   &.white {}
   &.play {
     -moz-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;

@@ -14025,9 +14025,11 @@ h6 {
             padding-right: 0.5rem;
             height: 5px; } }
 
+.border-dangler {
+  border-bottom: 2px solid #000; }
+
 #bio-links {
-  padding-top: 1.5rem;
-  border-top: 2px solid #000; }
+  padding-top: 0.5rem; }
   @media (max-width: 767px) {
     #bio-links div:first-child {
       border: 0; } }
@@ -14508,22 +14510,22 @@ img.spot-hero {
   margin: 0 auto;
   width: 586px;
   height: 171px;
-  background: url(../img/sequence-60fps.jpg) no-repeat;
-  background-size: 100% auto; }
+  background: url(../img/sequence-new30fps.jpg) no-repeat;
+  background-size: 586px 15390px; }
   #rb-sign.play {
-    -webkit-animation: sign-anim 2.5s 0.5s steps(179) forwards;
-    animation: sign-anim 2.5s 0.5s steps(179) forwards; }
+    -webkit-animation: sign-anim 2.5s 0.5s steps(89) forwards;
+    animation: sign-anim 2.5s 0.5s steps(89) forwards; }
 
 a#rb-sign {
   opacity: 1; }
 
 @-webkit-keyframes sign-anim {
   to {
-    background-position: 0 -30609px; } }
+    background-position: 0 -15219px; } }
 
 @keyframes sign-anim {
   to {
-    background-position: 0 -30609px; } }
+    background-position: 0 -15219px; } }
 
 .animated {
   -webkit-animation-duration: 1.33s;
