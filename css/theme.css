@@ -14088,6 +14088,9 @@ h6 {
 #bio-contact p.phone span {
   font-size: 25px;
   display: block; }
+  @media (max-width: 991px) {
+    #bio-contact p.phone span {
+      font-size: 18px; } }
 
 #bio-contact p {
   font-family: "museo-sans", museo-sans, sans-serif;

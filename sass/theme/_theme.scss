@@ -19,12 +19,10 @@
 }
 
 //Text Rendering
-
 body {
   font-family: $font-body;
   color: $white;
   background: transparent;
-
   @include media-breakpoint-down(xs) {
     background: url("../img/slide-1.jpg") no-repeat center center;
     background-size: cover;
@@ -587,12 +585,10 @@ h6 {
       margin: 1rem 0 0.5rem;
     }
   }
-
   a h4,
   a h5 {
     transition: color 0.2s ease-in-out;
   }
-
   a:hover,
   a:hover h4 {
     text-decoration: none;
@@ -613,7 +609,6 @@ h6 {
   top: 3rem;
   right: 5rem;
   opacity: 0;
-
   @include media-breakpoint-down(xs) {
     position: absolute;
     right: 1rem;
@@ -1010,8 +1005,7 @@ h6 {
 }
 
 #about-bio {
-  position: relative;
-  //background: $brand-primary;
+  position: relative; //background: $brand-primary;
   .social-share {
     position: absolute;
     z-index: 5;
@@ -1193,6 +1187,9 @@ h6 {
     span {
       font-size: 25px;
       display: block;
+      @include media-breakpoint-down(md) {
+        font-size: 18px;
+      }
     }
   }
   p {
@@ -1297,8 +1294,7 @@ body {
   width: 290px;
   padding-left: 0;
   padding-right: 0; // height: 100%;
-  margin: 0 100px 0 0;
-  // padding: 0;
+  margin: 0 100px 0 0; // padding: 0;
   //background: #333;
   //color: #ddd;
   //text-align: center;
@@ -1418,7 +1414,6 @@ body {
     @media screen and (max-width: 1300px) {
       width: 40px;
     }
-
     &.prevPage,
     &.nextPage {
       position: absolute;
@@ -1481,12 +1476,10 @@ body {
         font-weight: 600;
         position: relative;
         padding-left: 1rem;
-
         &:hover {
           text-decoration: none;
           color: #000;
         }
-
         &::before {
           display: inline-block;
           width: 10px;
@@ -1527,16 +1520,13 @@ body {
 }
 
 // Contact
-
 #contact-page {
   div.wpcf7 {
     max-width: 100%;
   }
-
   .wpcf7 .wpcf7-form label {
     margin-bottom: 1rem;
   }
-
   .wpcf7 input,
   .wpcf7 textarea {
     font-weight: 700;
@@ -1546,7 +1536,6 @@ body {
     padding: 1rem 0.75rem;
     transition: background-color 0.33s ease-in-out;
   }
-
   ::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     color: $brand-black;
@@ -1563,20 +1552,17 @@ body {
     /* Firefox 18- */
     color: $brand-black;
   }
-
   .wpcf7 input:focus,
   .wpcf7 textarea:focus {
     background-color: $brand-primary;
     color: #fff;
   }
-
   .wpcf7 input[type="submit"],
   .wpcf7 input[type="submit"]:focus,
   .wpcf7 input[type="submit"]:active {
     background-color: $brand-primary;
     color: #fff;
   }
-
   .wpcf7 input[type="submit"]:hover {
     background-color: $brand-black;
     color: #fff;
@@ -1615,7 +1601,6 @@ body {
         background-color: $brand-primary;
         transition: all 0.33s ease-in-out;
         padding: 3px 5px;
-
         &:hover {
           background-color: $brand-black;
           text-decoration: none;
@@ -1673,7 +1658,6 @@ img.spot-hero {
   max-width: 100%;
   margin-top: 1.5rem;
   transition: all 0.3s ease;
-
   &:hover {
     transform: scale(1.05);
   }
@@ -1709,19 +1693,14 @@ $sign-delay: 0.5s;
   margin: 0 auto;
   width: $sign-x;
   height: $sign-y;
-  background: url(../img/sequence-60fps.jpg) no-repeat;
-  //background: url(../img/sequence.png) no-repeat;
+  background: url(../img/sequence-new30fps.jpg) no-repeat; //background: url(../img/sequence.png) no-repeat;
   //background: url(http://reiter.wpengine.com/wp-content/uploads/2018/01/sequence-60fps.jpg) no-repeat;
   background-size: 100% auto;
-  &.white {
-  }
+  &.white {}
   &.play {
-    -moz-animation: sign-anim $sign-duration $sign-delay steps($sign-frames)
-      forwards;
-    -o-animation: sign-anim $sign-duration $sign-delay steps($sign-frames)
-      forwards;
-    -webkit-animation: sign-anim $sign-duration $sign-delay steps($sign-frames)
-      forwards;
+    -moz-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
+    -o-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
+    -webkit-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
     animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
   }
 }
@@ -1758,7 +1737,6 @@ a#rb-sign {
     opacity: 0;
     transform: translate3d(-10%, 0, 0);
   }
-
   to {
     opacity: 1;
     transform: none;
@@ -1770,7 +1748,6 @@ a#rb-sign {
     opacity: 0;
     transform: translate3d(10%, 0, 0);
   }
-
   to {
     opacity: 1;
     transform: none;
@@ -1783,7 +1760,6 @@ a#rb-sign {
 //   animation-iteration-count: infinite;
 //   animation-timing-function: ease-in-out;
 // }
-
 // @keyframes floating {
 //   from {
 //             transform: translate(0, 0px) rotateY(-12deg);

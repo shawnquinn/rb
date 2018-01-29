@@ -43,7 +43,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 				images[i].src=preloadimages.arguments[i]
 			}
 		}
-		preloadimages( "http://reiter.wpengine.com/wp-content/uploads/2018/01/sequence-60fps.jpg");
+		preloadimages( window.location + "http://reiter.wpengine.com/wp-content/uploads/2018/01/sequence-60fps.jpg");
+
+		console.log(window.location);
 
 	</script>
 
