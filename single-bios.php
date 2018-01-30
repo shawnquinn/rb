@@ -47,7 +47,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 										<li><a href="javascript:void(0)"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/share.svg"> </a></li>
 `
 										<?php if( get_field('linkedin_url') ): ?>
-											<li><a href="<?php the_field('linkedin_url') ?>"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/linkedin.svg"> </a></li>
+											<li><a href="<?php the_field('linkedin_url') ?>" target="_blank"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/linkedin.svg"> </a></li>
 										<?php endif; ?>
 
 										<li><a href="javascript:void(0)"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/friend.svg"> </a></li>
@@ -67,7 +67,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div class="bio-content col-md-12 py-5 d-flex align-items-center animated fadeInRight">
 						<?php endif; ?>
 								<div class="flex-holder w-100">
-									<div class="row mx-4">
+									<div class="row mx-4 border-dangler">
 										<?php the_field('bio_content') ?>
 									</div>
 									

@@ -13555,7 +13555,13 @@ h6 {
   position: absolute;
   top: 3rem;
   right: 5rem;
-  opacity: 0; }
+  opacity: 0;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  .menu-logo:hover {
+    -webkit-transform: scale(1.025);
+        -ms-transform: scale(1.025);
+            transform: scale(1.025); }
   @media (max-width: 575px) {
     .menu-logo {
       position: absolute;
@@ -13729,6 +13735,25 @@ h6 {
       .sidenav .closebtn span {
         font-size: 10px; } }
 
+.home-button {
+  font-family: "museo-sans", museo-sans, sans-serif;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  position: absolute;
+  top: 8.5rem;
+  left: 4rem;
+  opacity: 0;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease; }
+  @media (max-width: 575px) {
+    .home-button {
+      position: relative;
+      top: 0.5rem;
+      left: 1.5rem; } }
+  .home-button:hover {
+    color: white;
+    text-decoration: none; }
+
 .openbtn {
   position: absolute;
   z-index: 1001;
@@ -13850,14 +13875,33 @@ h6 {
   width: 180px;
   margin-top: 1.5rem;
   z-index: 9; }
+  .logo-inside a img {
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    -webkit-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+            transform-origin: 50% 50%; }
+  .logo-inside a:hover img {
+    -webkit-transform: scale(1.05) translateY(-5px);
+        -ms-transform: scale(1.05) translateY(-5px);
+            transform: scale(1.05) translateY(-5px); }
+  @media (max-width: 991px) {
+    .logo-inside {
+      top: -1.75rem;
+      margin-top: 0; } }
   @media (max-width: 767px) {
     .logo-inside {
       position: relative;
       right: 0;
+      top: 0;
       width: 250px;
       margin-top: 2rem;
       margin-right: auto;
       margin-left: auto; } }
+
+#main-home,
+.cover-container {
+  background-color: transparent; }
 
 .cover-container {
   position: relative;
@@ -13875,7 +13919,8 @@ h6 {
               animation-delay: 3.5s; }
       @media (max-width: 991px) {
         .cover-container .cover p {
-          font-size: 24px; } }
+          font-size: 24px;
+          margin-top: 25px; } }
       @media (max-width: 575px) {
         .cover-container .cover p {
           font-size: 16px; } }
@@ -14119,7 +14164,7 @@ h6 {
       background: #000; }
 
 #attorneys-index .bio-holder h3 {
-  font-size: 24px; }
+  font-size: 22px; }
   @media (max-width: 1199px) {
     #attorneys-index .bio-holder h3 {
       font-size: 20px; } }
@@ -14453,8 +14498,7 @@ body {
     max-width: 100%;
     margin-top: 1rem; }
   #contact-page #contact-info #office h4 span {
-    float: right;
-    display: inline-block; }
+    float: right; }
     @media (max-width: 767px) {
       #contact-page #contact-info #office h4 span {
         float: none; } }
@@ -14513,8 +14557,8 @@ img.spot-hero {
   background: url(../img/sequence-new30fps.jpg) no-repeat;
   background-size: 586px 15390px; }
   #rb-sign.play {
-    -webkit-animation: sign-anim 2.5s 0.5s steps(89) forwards;
-    animation: sign-anim 2.5s 0.5s steps(89) forwards; }
+    -webkit-animation: sign-anim 1.5s 0.5s steps(89) forwards;
+    animation: sign-anim 1.5s 0.5s steps(89) forwards; }
 
 a#rb-sign {
   opacity: 1; }

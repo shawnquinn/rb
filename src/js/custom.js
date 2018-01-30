@@ -82,12 +82,18 @@
       .stop()
       .delay(300)
       .animate({ opacity: 1 }, 300, "swing");
+
+    $(".home-button")
+      .stop()
+      .delay(1000)
+      .animate({ opacity: 1 }, 300, "swing");
   });
 
   // Close on click
   $("#close-button").click(function() {
     $("#slideoutnav").css("width", "0%");
     $("#close-button").css("opacity", 0);
+    $(".home-button").css("opacity", 0);
 
     $(".stack-1").css("width", "0%");
     $(".stack-2").css("width", "0%");

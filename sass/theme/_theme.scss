@@ -609,6 +609,10 @@ h6 {
   top: 3rem;
   right: 5rem;
   opacity: 0;
+  transition: all 0.2s ease;
+  &:hover {
+    transform: scale(1.025);
+  }
   @include media-breakpoint-down(xs) {
     position: absolute;
     right: 1rem;
@@ -638,9 +642,6 @@ h6 {
   transition: 0.5s;
   /* 0.5 second transition effect to slide in the sidenav */
   background-color: $brand-primary; //box-shadow: 0 0 0 rgba($brand-primary, .9), 0 0 1px rgba($brand-primary, .6), 0 0 2px rgba($brand-primary, .3);
-  &.shadowed {
-    //box-shadow: 80px 0 0 rgba($brand-primary, .9), 160px 0 1px rgba($brand-primary, .6), 240px 0 2px rgba($brand-primary, .3);
-  }
   @include media-breakpoint-down(sm) {
     height: calc(100vh + 20px);
     max-height: calc(100vh + 20px);
@@ -808,6 +809,26 @@ h6 {
   }
 }
 
+.home-button {
+  font-family: $font-body-alt;
+  color: rgba($white, 0.8);
+  font-size: 12px;
+  position: absolute;
+  top: 8.5rem;
+  left: 4rem;
+  opacity: 0;
+  transition: color 0.2s ease;
+  @include media-breakpoint-down(xs) {
+    position: relative;
+    top: 0.5rem;
+    left: 1.5rem;
+  }
+  &:hover {
+    color: rgba($white, 1);
+    text-decoration: none;
+  }
+}
+
 .openbtn {
   position: absolute;
   z-index: 1001;
@@ -947,14 +968,33 @@ h6 {
   width: 180px;
   margin-top: 1.5rem;
   z-index: 9;
+  a {
+    img {
+      transition: all 0.2s ease;
+      transform-origin: 50% 50%;
+    }
+    &:hover img {
+      transform: scale(1.05) translateY(-5px);
+    }
+  }
+  @include media-breakpoint-down(md) {
+    top: -1.75rem;
+    margin-top: 0;
+  }
   @include media-breakpoint-down(sm) {
     position: relative;
     right: 0;
+    top: 0;
     width: 250px;
     margin-top: 2rem;
     margin-right: auto;
     margin-left: auto;
   }
+}
+
+#main-home,
+.cover-container {
+  background-color: transparent;
 }
 
 .cover-container {
@@ -971,6 +1011,7 @@ h6 {
       animation-delay: 3.5s;
       @include media-breakpoint-down(md) {
         font-size: 24px;
+        margin-top: 25px;
       }
       @include media-breakpoint-down(xs) {
         font-size: 16px;
@@ -1226,7 +1267,7 @@ h6 {
 #attorneys-index {
   .bio-holder {
     h3 {
-      font-size: 24px;
+      font-size: 22px;
       @include media-breakpoint-down(lg) {
         font-size: 20px;
       }
@@ -1623,8 +1664,7 @@ body {
         margin-top: 1rem;
       }
       h4 span {
-        float: right;
-        display: inline-block;
+        float: right; //display: inline-block;
         @include media-breakpoint-down(sm) {
           float: none;
         }
@@ -1689,7 +1729,7 @@ $sign-frames: 89;
 // $sign-duration: 1.5s;
 // $sign-delay: 0.5s;
 //$sign-frames: 180;
-$sign-duration: 2.5s;
+$sign-duration: 1.5s;
 $sign-delay: 0.5s;
 #rb-sign {
   display: block;
@@ -1700,11 +1740,13 @@ $sign-delay: 0.5s;
   //background: url(http://reiter.wpengine.com/wp-content/uploads/2018/01/sequence-60fps.jpg) no-repeat;
   //background-size: 100% auto;
   background-size: 586px 15390px;
-  &.white {}
   &.play {
-    -moz-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
-    -o-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
-    -webkit-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
+    -moz-animation: sign-anim $sign-duration $sign-delay steps($sign-frames)
+      forwards;
+    -o-animation: sign-anim $sign-duration $sign-delay steps($sign-frames)
+      forwards;
+    -webkit-animation: sign-anim $sign-duration $sign-delay steps($sign-frames)
+      forwards;
     animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
   }
 }

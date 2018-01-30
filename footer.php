@@ -20,8 +20,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<a href="<?php echo esc_url( home_url('') ) ?>"><img class="img-fluid d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/logo-mini.png" alt="<?php echo bloginfo() ?>"></a>
 					</div>
 					<div class="copy">
-						<p class="in-touch">GET IN TOUCH:  <span class="d-block d-md-inline-block"><a class="ml-0" href="tel:+1-312-982-0090"><?php echo esc_html_e('312.982.0090', 'understrap') ?></a> / <a href="mailto:kate@reiterburns.com"><?php echo esc_html_e('kate@reiterburns.com', 'understrap') ?></a></span></p>
-						<p><?php echo esc_html_e('311 S Wacker Drive, Suite 5200, Chicago, IL 60606', 'understrap') ?></p>
+						<p class="in-touch">GET IN TOUCH:  <span class="d-block d-md-inline-block"><a class="ml-0" href="tel:+1-312-982-0090"><?php echo esc_html_e('312 982 0090', 'understrap') ?></a> / <a href="mailto:kate@reiterburns.com"><?php echo esc_html_e('kate@reiterburns.com', 'understrap') ?></a></span></p>
+						<p><?php echo esc_html_e('311 S Wacker Drive Suite 5200 Chicago IL 60606', 'understrap') ?></p>
 					</div>
 				</div>
 

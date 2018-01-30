@@ -45,7 +45,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 							<div class="bio-content col-lg-8 py-4 py-lg-0 d-flex align-items-center animated fadeInRight">
 								<div class="flex-holder">
-									<div class="row mx-4">
+									<div class="row mx-4 border-dangler">
 										<?php the_field('bio_content') ?>
 									</div>
 									

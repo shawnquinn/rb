@@ -45,7 +45,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		}
 		preloadimages( window.location.href + "/wp-content/themes/reiterburns/img/sequence-new30fps.jpg");
 
-		console.log(window.location.href);
+		console.log(window.location.href + "/wp-content/themes/reiterburns/img/sequence-new30fps.jpg");
 
 	</script>
 
@@ -84,6 +84,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	  	<a href="javascript:void(0)" id="close-button" class="closebtn nav-button"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/arrow-left.svg" /><span>Close Menu</span></a>
 
+
+		<a href="<?php echo home_url( '/'); ?>" class="home-button"><span><i class="fa fa-home"></i> HOME</span></a>
 		<?php
 			$custom_logo_id = get_theme_mod( 'custom_logo' );
 			$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
@@ -152,16 +154,16 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 						<div id="nav-contact-info" class="col-sm-4 mb-5 mb-sm-0">
 							<a href="<?php echo home_url( '/contact/' ) ?>"><h4><?php echo esc_html( 'Contact Us' ) ?></h4></a>
-							<p>Phone <span class="tel"><a href="tel:+1-312-982-0090">312.982.0090</a></span></p>
+							<p>Phone <span class="tel"><a href="tel:+1-312-982-0090">312 982 0090</a></span></p>
 
 							<p>Email <span class="email"><a href="mailto:kate@reiterburns.com">kate@reiterburns.com</a></span></p>
 
 							<p>Offices</p> <address>
 								311 S Wacker Drive<br/>
 								Suite 5200<br/>
-								Chicago, IL 60606<br/>
+								Chicago IL 60606<br/>
 							</address>
-							<a target="_blank" href="<?php echo esc_url("https://spothero.com/search?starts=2018-01-25T04%3A00&ends=2018-01-25T07%3A00&latitude=41.8774376&longitude=-87.6359115&search_string=311%20S%20Wacker%20Dr%2C%20Chicago%2C%20IL%2060606%2C%20USA") ?>"><img class="spot-hero img-fluid mr-auto d-block" src="<?php echo get_template_directory_uri(); ?>/img/spot-hero.png" alt="<?php echo bloginfo(); ?> | Spot Hero" /></a>
+							<a target="_blank" href="<?php echo esc_url("https://spothero.com/search?latitude=41.8774376&longitude=-87.6359115&search_string=311%20S%20Wacker%20Dr%2C%20Chicago%2C%20IL%2060606%2C%20USA") ?>"><img class="spot-hero img-fluid mr-auto d-block" src="<?php echo get_template_directory_uri(); ?>/img/spot-hero.png" alt="<?php echo bloginfo(); ?> | Spot Hero" /></a>
 						</div>
 					</div>
 				</div>

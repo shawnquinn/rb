@@ -49,9 +49,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 								<?php if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post(); ?>
 									<div class="staff-bio col-md-4 mb-4">
 										<div id="about-bio" class="box-holder">
-											<a href="<?php the_permalink(); ?>">
+											
 												<img class="img-fluid d-block mx-auto w-100" src="<?php the_field('bio_img') ?>" alt="<?php echo esc_html_e('', 'understrap') ?>">	
-											</a>
+											
 											<div class="social-share" hidden>
 												<!-- HIDING -->
 												<ul class="py-1 px-1 flex-md-row flex-column">

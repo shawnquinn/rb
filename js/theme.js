@@ -3968,12 +3968,18 @@ b*(7.5625*(a-=2.25/2.75)*a+0.9375)+c:b*(7.5625*(a-=2.625/2.75)*a+0.984375)+c},ea
       .stop()
       .delay(300)
       .animate({ opacity: 1 }, 300, "swing");
+
+    $(".home-button")
+      .stop()
+      .delay(1000)
+      .animate({ opacity: 1 }, 300, "swing");
   });
 
   // Close on click
   $("#close-button").click(function() {
     $("#slideoutnav").css("width", "0%");
     $("#close-button").css("opacity", 0);
+    $(".home-button").css("opacity", 0);
 
     $(".stack-1").css("width", "0%");
     $(".stack-2").css("width", "0%");
