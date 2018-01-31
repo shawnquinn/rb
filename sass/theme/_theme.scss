@@ -1741,12 +1741,9 @@ $sign-delay: 0.5s;
   //background-size: 100% auto;
   background-size: 586px 15390px;
   &.play {
-    -moz-animation: sign-anim $sign-duration $sign-delay steps($sign-frames)
-      forwards;
-    -o-animation: sign-anim $sign-duration $sign-delay steps($sign-frames)
-      forwards;
-    -webkit-animation: sign-anim $sign-duration $sign-delay steps($sign-frames)
-      forwards;
+    -moz-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
+    -o-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
+    -webkit-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
     animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
   }
 }
