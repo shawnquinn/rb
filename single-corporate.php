@@ -113,7 +113,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											<div class="col-md-6">
 												<h4 class="text-center text-sm-left"><?php echo get_the_title($post_object->ID); ?></h4>
 												<p class="text-center text-sm-left"><?php the_field('sub_title', $post_object->ID) ?></p>
-												<a class="btn btn-large btn-primary btn-block" href="<?php the_permalink($post_object->ID); ?>"><?php _e('Learn More') ?></a>
+												<a class="btn btn-large btn-primary btn-block" href="<?php the_permalink($post_object->ID); ?>"><?php _e('Bio') ?></a>
 											</div><!-- col -->
 										</div><!-- row -->
 										<?php wp_reset_postdata(); ?>

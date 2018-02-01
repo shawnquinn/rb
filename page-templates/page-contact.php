@@ -49,6 +49,8 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 				<img class="d-block mb-3" src="<?php echo get_template_directory_uri(); ?>/img/svg/phone.svg">
 				<h4 class="text-uppercase">Phone</h4>
 				<p><a href="tel:+1-312-982-0090">312 982 0090</a></p>
+				<h4 class="text-uppercase">Fax</h4>
+				<p><a href="tel:+1-312-429-0644">312 429 0644</a></p>
 			</div>
 
 			<div id="email" class="col-sm-4 col-6 mb-4">

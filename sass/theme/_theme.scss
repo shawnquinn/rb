@@ -881,8 +881,14 @@ h6 {
   transition: margin-left 0.5s;
 }
 
-.entry-content {
+.entry-content,
+.page-template-default .entry-content {
   min-height: 450px;
+}
+
+.page-template-default .entry-content {
+  background-color: $brand-primary;
+  padding: 1.5rem !important;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */

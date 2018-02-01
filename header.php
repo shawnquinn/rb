@@ -105,8 +105,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<div class="row pt-3 px-4">
 						<div class="col-sm-4 mb-3 mb-sm-0">
-							<a href="<?php echo home_url( '/practice-philosophy/' ) ?>"><h4><?php echo esc_html( 'Practice Areas' ) ?></h4></a>
-							<a href="<?php echo home_url( '/practice-philosophy/' ) ?>"><h5><?php echo esc_html( 'Litigation' ) ?></h5></a>
+							<a href="<?php echo home_url( '/practice-areas/' ) ?>"><h4><?php echo esc_html( 'Practice Areas' ) ?></h4></a>
+							<a href="<?php echo home_url( '/practice-areas/' ) ?>"><h5><?php echo esc_html( 'Litigation' ) ?></h5></a>
 							<!-- The WordPress Menu goes here -->
 							<?php wp_nav_menu(
 								array(
@@ -120,7 +120,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								)
 							); ?>
 
-							<a href="<?php echo home_url( '/practice-philosophy/' ) ?>"><h5><?php echo esc_html( 'Corporate' ) ?></h5></a>
+							<a href="<?php echo home_url( '/practice-areas/' ) ?>"><h5><?php echo esc_html( 'Corporate' ) ?></h5></a>
 							<!-- The WordPress Menu goes here -->
 							<?php wp_nav_menu(
 								array(
@@ -149,12 +149,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 									//'walker'          => new WP_Bootstrap_Navwalker(),
 								)
 							); ?>
-							<a href="<?php echo home_url( '/support-staff/' ) ?>"><h5><?php echo esc_html( 'Support Staff' ) ?></h5></a>
+							<a href="<?php echo home_url( '/staff/' ) ?>"><h5><?php echo esc_html( 'Staff' ) ?></h5></a>
 						</div>
 
 						<div id="nav-contact-info" class="col-sm-4 mb-5 mb-sm-0">
 							<a href="<?php echo home_url( '/contact/' ) ?>"><h4><?php echo esc_html( 'Contact Us' ) ?></h4></a>
 							<p>Phone <span class="tel"><a href="tel:+1-312-982-0090">312 982 0090</a></span></p>
+
+							<p>Fax <span class="tel"><a href="tel:+1-312-429-0644">312 429 0644</a></span></p>
 
 							<p>Email <span class="email"><a href="mailto:kate@reiterburns.com">kate@reiterburns.com</a></span></p>
 

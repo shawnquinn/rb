@@ -55,8 +55,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 											<div class="social-share">
 												<ul class="py-1 px-1 flex-md-row flex-column">
 													<li hidden><a href="javascript:void(0)"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/share.svg"> </a></li>
+													<?php if( get_field('linkedin_url') ): ?>
 													<li><a href="<?php the_field('linkedin_url') ?>" target="_blank"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/linkedin.svg"> </a></li>
-													<li><a href="javascript:void(0)"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/friend.svg"> </a></li>
+													<?php endif; ?>
+													<li><a href="<?php the_field('vcard') ?>"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/friend.svg"> </a></li>
 												</ul>
 											</div>
 											<!-- social-share -->
