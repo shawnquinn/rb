@@ -60,10 +60,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 						</div><!-- #about-bio -->
 
 						<div id="about-content" class="row credentials px-0 animated fadeIn">
-								<div class="col-md-7 col-sm-6 pl-sm-0">
+								<div class="col-md-7 col-sm-6 text-center text-sm-left pl-sm-0">
 									<h3><?php echo esc_html_e('Other Practice Areas', 'understrap') ?></h3>
 									<div class="row">
-										<div class="col-md-5 col-6">
+										<div class="col-md-5">
 											<h4 class="text-uppercase"><?php echo esc_html_e('Litigation', 'understrap') ?></h4>
 											<?php 
 												// Attorney Posts
@@ -79,7 +79,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 												<?php endwhile; endif; wp_reset_postdata(); ?>
 											</ul>
 										</div><!-- col -->	
-										<div class="col-md-7 col-6">
+										<div class="col-md-7">
 											<h4 class="text-uppercase"><?php echo esc_html_e('Corporate', 'understrap') ?></h4>
 											<?php 
 												// Attorney Posts

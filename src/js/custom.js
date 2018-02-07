@@ -17,19 +17,21 @@
 // IIFE for jQuery
 (function($) {
   // Preloader
-  $(window).on("load", function() {
-    // makes sure the whole site is loaded
-    //$('#progressive').delay(2000).addClass('dumped'); // will first fade out the loading animation
-    // $("#progressive").delay(2000).queue(function(next) {
-    //   $(this).addClass('dumped');
-    //   next();
-    // });
-    $("#preloader")
-      .delay(3200)
-      .fadeOut(1200); // will fade out the white DIV that covers the website.
-    //$('#preload-logo').delay(200).addClass('loaded'); // Load in logo zoomed.
-    //$('body').delay(350).css({'overflow':'visible'});
-  });
+  $(window)
+    .on("resize", function() {
+      // makes sure the whole site is loaded
+      //$('#progressive').delay(2000).addClass('dumped'); // will first fade out the loading animation
+      // $("#progressive").delay(2000).queue(function(next) {
+      //   $(this).addClass('dumped');
+      //   next();
+      // });
+      $("#preloader")
+        .delay(3200)
+        .fadeOut(1200); // will fade out the white DIV that covers the website.
+      //$('#preload-logo').delay(200).addClass('loaded'); // Load in logo zoomed.
+      //$('body').delay(350).css({'overflow':'visible'});
+    })
+    .resize();
 
   if ($("body.home").length) {
     // Wait for Signature to Load then add Parallax effect to logo
@@ -66,6 +68,12 @@
     }
   });
 
+  $(window).on("load", function() {
+    if ($(window).width() < 992) {
+      $("#home-content").removeClass("animated fadeIn");
+    }
+  });
+
   //Open Nav menu on click
   $("#open-button").click(function() {
     $(".stack-1").animate({ width: "86.67%" }, 100, "swing");
@@ -73,11 +81,27 @@
       .stop()
       .delay(200)
       .animate({ width: "76.67%" }, 100, "swing");
-    $("#slideoutnav")
-      .stop()
-      .delay(400)
-      .animate({ width: num }, 100, "swing");
 
+    if ($(window).width() < 992) {
+      $("#slideoutnav")
+        .stop()
+        .animate({ width: num }, 100, "swing");
+
+      $("#close-button")
+        .stop()
+
+        .animate({ opacity: 1 }, 300, "swing");
+
+      $(".home-button")
+        .stop()
+
+        .animate({ opacity: 1 }, 300, "swing");
+    } else {
+      $("#slideoutnav")
+        .stop()
+        .delay(400)
+        .animate({ width: num }, 100, "swing");
+    }
     $("#close-button")
       .stop()
       .delay(300)
@@ -109,15 +133,26 @@
 
   // Reveal Opacity of Nav
   $("#open-button").click(function() {
-    $("#slide-nav")
-      .stop()
-      .delay(1000)
-      .animate({ opacity: 1 }, 500, "swing");
-    $(".menu-logo")
-      .stop()
-      .delay(1350)
-      .animate({ opacity: 1 }, 1000, "swing");
-    $(".sidenav").addClass("shadowed");
+    if ($(window).width() < 992) {
+      $("#slide-nav")
+        .stop()
+        .delay(300)
+        .animate({ opacity: 1 }, 500, "swing");
+      $(".menu-logo")
+        .stop()
+        .delay(300)
+        .animate({ opacity: 1 }, 1000, "swing");
+    } else {
+      $("#slide-nav")
+        .stop()
+        .delay(1000)
+        .animate({ opacity: 1 }, 500, "swing");
+      $(".menu-logo")
+        .stop()
+        .delay(1350)
+        .animate({ opacity: 1 }, 1000, "swing");
+    }
+    //$(".sidenav").addClass("shadowed");
   });
   // Hide Opacity of Nav on Close
   $("#close-button").click(function() {
@@ -149,6 +184,75 @@
   $(".wpcf7 input, .wpcf7 textarea").click(function() {
     recaptcha.addClass("appear");
   });
+
+  // Popover
+
+  // default init
+
+  // $(function() {
+  //   $('[data-toggle="popover"]').popover({
+  //     content: "hello",
+  //   });
+  // });
+
+  $(".btn-share").popover({
+    html: true,
+    // container: ".btn-share",
+    content: function() {
+      return $(this)
+        .next(".popoverContent")
+        .html();
+    },
+    template:
+      '<div class="popover" role="tooltip"><div class="arrow"></div><div class="popover-body"></div></div>'
+  });
+
+  $(document).click(function(event) {
+    //   // hide share button popover
+    if (!$(event.target).closest(".btn-share").length) {
+      $(".btn-share").popover("hide");
+    }
+  });
+
+  // var isDragging = false;
+  // $(".frame")
+  //   .mousedown(function() {
+  //     isDragging = false;
+  //   })
+  //   .mousemove(function() {
+  //     isDragging = true;
+  //   })
+  //   .mouseup(function() {
+  //     var wasDragging = isDragging;
+  //     isDragging = false;
+  //     if (wasDragging) {
+  //       $('[data-toggle="popover"]').popover("hide");
+  //     }
+  //   });
+
+  $(".frame").on("mousedown", function(e) {
+    //only buttons
+    if (
+      $(e.target).data("toggle") !== "popover" &&
+      $(e.target).parents(".popover.in").length === 0
+    ) {
+      $('[data-toggle="popover"]').popover("hide");
+    }
+    //   //buttons and icons within buttons
+  });
+
+  // $("a.twitter").attr(
+  //   "href",
+  //   "https://twitter.com/home?status=" + window.location.href
+  // );
+  // $("a.facebook").attr(
+  //   "href",
+  //   "https://www.facebook.com/sharer/sharer.php?u=" + window.location.href
+  // );
+  // $("a.google-plus").attr(
+  //   "href",
+  //   "https://plus.google.com/share?url=" + window.location.href
+  // );
 
   //Homepage BG Slider
   $(".bxslider-OFF").bxSlider({

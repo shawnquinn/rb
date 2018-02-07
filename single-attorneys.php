@@ -49,12 +49,30 @@ $container = get_theme_mod( 'understrap_container_type' );
 										$post_slug=$post->post_name;
 									?>
 									<ul class="py-2 px-1 flex-md-row flex-column align-items-center">
-										<li hidden><a href="javascript:void(0)"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/share.svg"> </a></li>
+										<li hidden><a href="javascript:void(0)" class="btn-share" data-container="body" data-toggle="popover" data-placement="bottom"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/share.svg"> </a>
+											<span class="popoverContent hidden">
+												<p>Share</p>
+												<a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=Reiter%20Burns&summary=&source=" class="btn-media linkedin">
+													<i class="fa fa-linkedin"></i>
+												</a>													
+												<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" class="btn-media facebook">
+													<i class="fa fa-facebook"></i>
+												</a>
+												<a target="_blank" href="https://twitter.com/home?status=<?php the_permalink(); ?>" class="btn-media twitter">
+													<i class="fa fa-twitter"></i>
+												</a>
+												<a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>" class="btn-media google-plus">
+													<i class="fa fa-google-plus"></i>
+												</a>												
+											</span>
+										</li>
 										<?php if( get_field('linkedin_url') ): ?>
 											<li><a href="<?php the_field('linkedin_url') ?>" target="_blank"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/linkedin.svg"> </a></li>
 										<?php endif; ?>
-										<li><a href="<?php the_field('vcard') ?>"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/friend.svg"> </a></li>
+										<li><a href="<?php the_field('vcard') ?>"><img class="d-block mx-auto" src="<?php echo get_template_directory_uri(); ?>/img/svg/friend.svg"></a></li>
 									</ul>
+									
+									
 								</div>
 								<!-- social-share -->
 								<img class="img-fluid d-block mx-auto w-100" src="<?php the_field('bio_img') ?>" alt="<?php echo esc_html_e('', 'understrap') ?>">

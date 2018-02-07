@@ -62,7 +62,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						</div><!-- #about-bio -->
 
 						<div id="about-content" class="row credentials px-0 animated fadeIn">
-								<div class="col-md-7 col-6 pl-0">
+								<div class="col-md-7 col-sm-6 text-center text-sm-left pl-sm-0">
 									<h3><?php echo esc_html_e('Other Practice Areas', 'understrap') ?></h3>
 									<div class="row">
 										<div class="col-md-5">
@@ -100,7 +100,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 									</div><!-- row -->
 								</div><!-- col -->
 
-								<div id="bio-contact" class="col-md-5 col-6 text-left pr-0">
+								<div id="bio-contact" class="col-md-5 col-sm-6 text-left pr-0">
 									<h3><?php echo _e( 'Practice Lead', 'understrap' ) ?></h3>
 									<?php
 										$post_object = get_field('lead_attorney');

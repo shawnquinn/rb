@@ -165,7 +165,7 @@ function follow_the_breadcrumbs() {
 	/* === END OF OPTIONS === */
 
 	global $post, $paged, $page;
-	$homeLink = home_url('/');
+	$homeLink = home_url('');
 	$linkBefore = '<span typeof="v:Breadcrumb">';
 	$linkAfter = '</span>';
 	$linkAttr = ' rel="v:url" property="v:title"';

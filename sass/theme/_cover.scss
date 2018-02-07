@@ -71,11 +71,15 @@ body {
     height: auto;
     min-height: inherit;
   }
+  @include media-breakpoint-down(md) {
+    height: initial;
+  }
 }
 
 .home .site-wrapper {
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .site-wrapper-inner {
@@ -91,6 +95,12 @@ body {
 .cover-container {
   margin-right: auto;
   margin-left: auto;
+  @include media-breakpoint-down(md) {
+    padding: 12rem 0 0 0;
+  }
+  @include media-breakpoint-down(xs) {
+    padding: 6rem 0;
+  }
 }
 
 /* Padding for spacing */
@@ -180,8 +190,8 @@ body {
   position: fixed;
   bottom: 0;
   left: 0;
-  @include media-breakpoint-down(sm) {
-    //    position: relative;
+  @include media-breakpoint-down(md) {
+    position: relative;
   }
 
   .inner {

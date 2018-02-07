@@ -165,7 +165,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								Suite 5200<br/>
 								Chicago IL 60606<br/>
 							</address>
-							<a target="_blank" href="<?php echo esc_url("https://spothero.com/search?latitude=41.8774376&longitude=-87.6359115&search_string=311%20S%20Wacker%20Dr%2C%20Chicago%2C%20IL%2060606%2C%20USA") ?>"><img class="spot-hero img-fluid mr-auto d-block" src="<?php echo get_template_directory_uri(); ?>/img/spot-hero.png" alt="<?php echo bloginfo(); ?> | Spot Hero" /></a>
+							<a target="_blank" href="<?php echo esc_url("https://spothero.com/search?latitude=41.8774376&longitude=-87.6359115&search_string=311%20S%20Wacker%20Dr%2C%20Chicago%2C%20IL%2060606%2C%20USA") ?>"><img class="spot-hero img-fluid mr-auto d-block pb-5 mb-5" src="<?php echo get_template_directory_uri(); ?>/img/spot-hero.png" alt="<?php echo bloginfo(); ?> | Spot Hero" /></a>
 						</div>
 					</div>
 				</div>
