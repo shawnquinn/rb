@@ -916,7 +916,6 @@ h6 {
   position: absolute !important;
   height: 100%;
   width: 100%;
-
   @include media-breakpoint-down(md) {
     display: none;
   }
@@ -1067,8 +1066,12 @@ h6 {
 #about-bio {
   position: relative; //background: $brand-primary;
   min-height: 580px;
+
   @include media-breakpoint-down(lg) {
     min-height: 650px;
+  }
+  @include media-breakpoint-down(md) {
+    min-height: 600px;
   }
   .social-share {
     position: absolute;
@@ -1346,10 +1349,6 @@ h6 {
     height: 100%;
     background: #222;
   }
-}
-
-body {
-  background: #e8e8e8;
 }
 
 .container {

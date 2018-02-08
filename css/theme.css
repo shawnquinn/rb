@@ -13970,6 +13970,9 @@ h6 {
   @media (max-width: 1199px) {
     #about-bio {
       min-height: 650px; } }
+  @media (max-width: 991px) {
+    #about-bio {
+      min-height: 600px; } }
   #about-bio .social-share {
     position: absolute;
     z-index: 5;
@@ -14237,9 +14240,6 @@ h6 {
     /* overriden if dynamicHandle: 1 */
     height: 100%;
     background: #222; }
-
-body {
-  background: #e8e8e8; }
 
 .container {
   margin: 0 auto; }
@@ -14789,9 +14789,7 @@ body {
   min-height: 100%; }
   @media (max-width: 575px) {
     .site-wrapper {
-      display: block;
-      height: auto;
-      min-height: inherit; } }
+      display: block; } }
   @media (max-width: 991px) {
     .site-wrapper {
       height: initial; } }
@@ -14835,7 +14833,7 @@ body {
   margin-left: auto; }
   @media (max-width: 991px) {
     .cover-container {
-      padding: 12rem 0 0 0; } }
+      padding: 12rem 0 8rem 0; } }
   @media (max-width: 575px) {
     .cover-container {
       padding: 6rem 0; } }
