@@ -79,7 +79,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 												</ul>
 											</div>
 											<!-- social-share -->
-											<div class="bio-holder px-4 pb-4">
+											<div class="bio-holder px-4 pb-5">
 												<h3 class="mt-3 mb-0"><?php the_title() ?></h3>
 												<p class="title"><?php the_field('sub_title') ?></p>
 												<?php echo custom_field_excerpt(); ?>

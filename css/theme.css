@@ -13965,8 +13965,7 @@ h6 {
   background: #174ca1; }
 
 #about-bio {
-  position: relative;
-  min-height: 580px; }
+  position: relative; }
   @media (max-width: 1199px) {
     #about-bio {
       min-height: 650px; } }

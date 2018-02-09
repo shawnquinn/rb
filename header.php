@@ -29,8 +29,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<meta name="theme-color" content="#ffffff">
 
 	<!-- TypeKit -->
-	<script src="https://use.typekit.net/rgx3fsq.js"></script>
-	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	<link rel="stylesheet" href="https://use.typekit.net/dum8ocx.css">
 
 	<?php if (is_front_page()) : ?>
 
@@ -52,6 +51,18 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<?php endif; ?>
 
 	<?php wp_head(); ?>
+
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113884470-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-113884470-1');
+	</script>
+	
 </head>
 
 <body <?php body_class(); ?>>

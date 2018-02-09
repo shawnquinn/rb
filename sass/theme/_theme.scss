@@ -1065,8 +1065,7 @@ h6 {
 
 #about-bio {
   position: relative; //background: $brand-primary;
-  min-height: 580px;
-
+  //min-height: 580px;
   @include media-breakpoint-down(lg) {
     min-height: 650px;
   }
@@ -1542,7 +1541,7 @@ h6 {
   text-decoration: underline !important;
   padding: 0 !important;
   margin: 0 !important;
-  & > span {
+  &>span {
     /* avoid button movement on click IE */
     position: relative;
   }
@@ -1889,12 +1888,9 @@ $sign-delay: 0.5s;
   //background-size: 100% auto;
   background-size: 586px 15390px;
   &.play {
-    -moz-animation: sign-anim $sign-duration $sign-delay steps($sign-frames)
-      forwards;
-    -o-animation: sign-anim $sign-duration $sign-delay steps($sign-frames)
-      forwards;
-    -webkit-animation: sign-anim $sign-duration $sign-delay steps($sign-frames)
-      forwards;
+    -moz-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
+    -o-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
+    -webkit-animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
     animation: sign-anim $sign-duration $sign-delay steps($sign-frames) forwards;
   }
 }
